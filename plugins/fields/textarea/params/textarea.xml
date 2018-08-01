@@ -7,7 +7,6 @@
 				type="number"
 				label="PLG_FIELDS_TEXTAREA_PARAMS_ROWS_LABEL"
 				description="PLG_FIELDS_TEXTAREA_PARAMS_ROWS_DESC"
-				filter="integer"
 				size="5"
 			/>
 
@@ -16,7 +15,6 @@
 				type="number"
 				label="PLG_FIELDS_TEXTAREA_PARAMS_COLS_LABEL"
 				description="PLG_FIELDS_TEXTAREA_PARAMS_COLS_DESC"
-				filter="integer"
 				size="5"
 			/>
 

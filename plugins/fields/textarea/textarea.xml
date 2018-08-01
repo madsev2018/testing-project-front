@@ -27,7 +27,6 @@
 					label="PLG_FIELDS_TEXTAREA_PARAMS_ROWS_LABEL"
 					description="PLG_FIELDS_TEXTAREA_PARAMS_ROWS_DESC"
 					default="10"
-					filter="integer"
 					size="5"
 				/>
 
@@ -37,7 +36,6 @@
 					label="PLG_FIELDS_TEXTAREA_PARAMS_COLS_LABEL"
 					description="PLG_FIELDS_TEXTAREA_PARAMS_COLS_DESC"
 					default="10"
-					filter="integer"
 					size="5"
 				/>
 

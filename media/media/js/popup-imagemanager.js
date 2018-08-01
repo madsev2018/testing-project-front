@@ -99,7 +99,7 @@
 		 */
 		getImageFolder: function ()
 		{
-			return this.getQueryObject(this.frame.location.search.substring(1)).folder.replace(/%2F/gi, "/");
+			return this.getQueryObject(this.frame.location.search.substring(1)).folder;
 		},
 
 		/**
@@ -178,7 +178,6 @@
 		 */
 		setFolder: function (folder, asset, author)
 		{
-                       folder = folder.replace(/%2F/gi, "/");
 			for (var i = 0, l = this.folderlist.length; i < l; i++)
 			{
 				if (folder == this.folderlist.options[i].value)

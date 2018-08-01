@@ -244,8 +244,9 @@ class FinderIndexerQuery
 		// Remove the temporary date storage.
 		unset($this->dates);
 
-		// Lastly, determine whether this query can return a result set.
-
+		/*
+		 * Lastly, determine whether this query can return a result set.
+		 */
 		// Check if we have a query string.
 		if (!empty($this->input))
 		{

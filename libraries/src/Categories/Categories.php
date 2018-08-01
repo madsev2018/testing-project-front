@@ -113,6 +113,8 @@ class Categories
 		$options['currentlang'] = Multilanguage::isEnabled() ? Factory::getLanguage()->getTag() : 0;
 
 		$this->_options = $options;
+
+		return true;
 	}
 
 	/**

@@ -896,10 +896,7 @@ class User extends \JObject
 		 * user parameters, but for right now we'll leave it how it is.
 		 */
 
-		if ($table->params)
-		{
-			$this->_params->loadString($table->params);
-		}
+		$this->_params->loadString($table->params);
 
 		// Assuming all is well at this point let's bind the data
 		$this->setProperties($table->getProperties());

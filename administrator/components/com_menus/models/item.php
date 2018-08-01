@@ -627,8 +627,6 @@ class MenusModelItem extends JModelAdmin
 			$this->setState('item.menutypeid', $menuTypeId);
 		}
 
-		$data = (object) $data;
-
 		$this->preprocessData('com_menus.item', $data);
 
 		return $data;
@@ -1596,7 +1594,7 @@ class MenusModelItem extends JModelAdmin
 	/**
 	 * Method to change the home state of one or more items.
 	 *
-	 * @param   array    $pks    A list of the primary keys to change.
+	 * @param   array    &$pks   A list of the primary keys to change.
 	 * @param   integer  $value  The value of the home state.
 	 *
 	 * @return  boolean  True on success.
@@ -1683,7 +1681,7 @@ class MenusModelItem extends JModelAdmin
 	/**
 	 * Method to change the published state of one or more records.
 	 *
-	 * @param   array    $pks    A list of the primary keys to change.
+	 * @param   array    &$pks   A list of the primary keys to change.
 	 * @param   integer  $value  The value of the published state.
 	 *
 	 * @return  boolean  True on success.

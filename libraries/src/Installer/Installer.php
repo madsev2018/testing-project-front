@@ -996,7 +996,7 @@ class Installer extends \JAdapter
 				if (count($queries) === 0)
 				{
 					// No queries to process
-					continue;
+					return 0;
 				}
 
 				// Process each query in the $queries array (split out of sql file).

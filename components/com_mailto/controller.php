@@ -12,7 +12,9 @@ defined('_JEXEC') or die;
 /**
  * Mailer Component Controller.
  *
- * @since  1.5
+ * @package     Joomla.Site
+ * @subpackage  com_mailto
+ * @since       1.5
  */
 class MailtoController extends JControllerLegacy
 {
@@ -21,10 +23,12 @@ class MailtoController extends JControllerLegacy
 	 *
 	 * @return  void
 	 *
-	 * @since   1.5
+	 * @since 1.5
 	 */
 	public function mailto()
 	{
+		$session = JFactory::getSession();
+		$session->set('com_mailto.formtime', time());
 		$this->input->set('view', 'mailto');
 		$this->display();
 	}
@@ -42,34 +46,24 @@ class MailtoController extends JControllerLegacy
 		$this->checkToken();
 
 		$app     = JFactory::getApplication();
-		$model   = $this->getModel('mailto');
-		$data    = $model->getData();
+		$session = JFactory::getSession();
+		$timeout = $session->get('com_mailto.formtime', 0);
 
-		// Validate the posted data.
-		$form = $model->getForm();
-
-		if (!$form)
+		if ($timeout == 0 || time() - $timeout < 20)
 		{
-			JError::raiseError(500, $model->getError());
+			JError::raiseNotice(500, JText::_('COM_MAILTO_EMAIL_NOT_SENT'));
 
-			return false;
+			return $this->mailto();
 		}
 
-		if (!$model->validate($form, $data))
+		$SiteName = $app->get('sitename');
+		$link     = MailtoHelper::validateHash($this->input->get('link', '', 'post'));
+
+		// Verify that this is a local link
+		if (!$link || !JUri::isInternal($link))
 		{
-			$errors = $model->getErrors();
-
-			foreach ($errors as $error)
-			{
-				$errorMessage = $error;
-
-				if ($error instanceof Exception)
-				{
-					$errorMessage = $error->getMessage();
-				}
-
-				$app->enqueueMessage($errorMessage, 'error');
-			}
+			// Non-local url...
+			JError::raiseNotice(500, JText::_('COM_MAILTO_EMAIL_NOT_SENT'));
 
 			return $this->mailto();
 		}
@@ -83,16 +77,24 @@ class MailtoController extends JControllerLegacy
 			'cc:'
 		);
 
+		// An array of the input fields to scan for injected headers
+		$fields = array(
+			'mailto',
+			'sender',
+			'from',
+			'subject',
+		);
+
 		/*
 		 * Here is the meat and potatoes of the header injection test.  We
 		 * iterate over the array of form input and check for header strings.
 		 * If we find one, send an unauthorized header and die.
 		 */
-		foreach ($data as $key => $value)
+		foreach ($fields as $field)
 		{
 			foreach ($headers as $header)
 			{
-				if (strpos($value, $header) !== false)
+				if (strpos($_POST[$field], $header) !== false)
 				{
 					JError::raiseError(403, '');
 				}
@@ -104,36 +106,25 @@ class MailtoController extends JControllerLegacy
 		 */
 		unset($headers, $fields);
 
-		$siteName = $app->get('sitename');
-		$link     = MailtoHelper::validateHash($this->input->post->get('link', '', 'post'));
-
-		// Verify that this is a local link
-		if (!$link || !JUri::isInternal($link))
-		{
-			// Non-local url...
-			JError::raiseNotice(500, JText::_('COM_MAILTO_EMAIL_NOT_SENT'));
-
-			return $this->mailto();
-		}
-
-		$subject_default = JText::sprintf('COM_MAILTO_SENT_BY', $data['sender']);
-		$subject         = $data['subject'] !== '' ? $data['subject'] : $subject_default;
+		$email           = $this->input->post->getString('mailto', '');
+		$sender          = $this->input->post->getString('sender', '');
+		$from            = $this->input->post->getString('from', '');
+		$subject_default = JText::sprintf('COM_MAILTO_SENT_BY', $sender);
+		$subject         = $this->input->post->getString('subject', '') !== '' ? $this->input->post->getString('subject') : $subject_default;
 
 		// Check for a valid to address
 		$error = false;
 
-		if (!$data['emailto'] || !JMailHelper::isEmailAddress($data['emailto']))
+		if (!$email || !JMailHelper::isEmailAddress($email))
 		{
-			$error = JText::sprintf('COM_MAILTO_EMAIL_INVALID', $data['emailto']);
-
+			$error = JText::sprintf('COM_MAILTO_EMAIL_INVALID', $email);
 			JError::raiseWarning(0, $error);
 		}
 
 		// Check for a valid from address
-		if (!$data['emailfrom'] || !JMailHelper::isEmailAddress($data['emailfrom']))
+		if (!$from || !JMailHelper::isEmailAddress($from))
 		{
-			$error = JText::sprintf('COM_MAILTO_EMAIL_INVALID', $data['emailfrom']);
-
+			$error = JText::sprintf('COM_MAILTO_EMAIL_INVALID', $from);
 			JError::raiseWarning(0, $error);
 		}
 
@@ -144,19 +135,19 @@ class MailtoController extends JControllerLegacy
 
 		// Build the message to send
 		$msg  = JText::_('COM_MAILTO_EMAIL_MSG');
-		$body = sprintf($msg, $siteName, $data['sender'], $data['emailfrom'], $link);
+		$body = sprintf($msg, $SiteName, $sender, $from, $link);
 
 		// Clean the email data
 		$subject = JMailHelper::cleanSubject($subject);
 		$body    = JMailHelper::cleanBody($body);
 
 		// To send we need to use punycode.
-		$data['emailfrom'] = JStringPunycode::emailToPunycode($data['emailfrom']);
-		$data['emailfrom'] = JMailHelper::cleanAddress($data['emailfrom']);
-		$data['emailto']   = JStringPunycode::emailToPunycode($data['emailto']);
+		$from  = JStringPunycode::emailToPunycode($from);
+		$from  = JMailHelper::cleanAddress($from);
+		$email = JStringPunycode::emailToPunycode($email);
 
 		// Send the email
-		if (JFactory::getMailer()->sendMail($data['emailfrom'], $data['sender'], $data['emailto'], $subject, $body) !== true)
+		if (JFactory::getMailer()->sendMail($from, $sender, $email, $subject, $body) !== true)
 		{
 			JError::raiseNotice(500, JText::_('COM_MAILTO_EMAIL_NOT_SENT'));
 

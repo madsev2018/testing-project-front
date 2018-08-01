@@ -26,7 +26,6 @@
 					description="PLG_SYSTEM_LOG_FIELD_LOG_USERNAME_DESC"
 					class="btn-group btn-group-yesno"
 					default="0"
-					filter="integer"
 					>
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
