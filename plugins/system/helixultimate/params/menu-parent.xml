@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="params" addfieldpath="/plugins/system/helixultimate/fields">
+		<fieldset name="spmegamenu" label="HELIX_ULTIMATE_MENU">
+			<field name="menulayout" type="megamenu" />
+		</fieldset>
+	</fields>
+</form>

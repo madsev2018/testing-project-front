@@ -1,0 +1,279 @@
+$offcanvas-width: 300px !default;
+body.offcanvas-active {
+    overflow:hidden; 
+}
+#offcanvas-toggler {
+    display: block;
+    height: $header_height;
+    line-height: $header_height;
+    font-size: 20px;
+    color: $menu_text_color;
+    &:hover {
+        color: $menu_text_active_color;
+    }
+    >span {
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    &.offcanvas-toggler-right {
+        float: right;
+        margin-left: 20px;
+    }
+
+    &.offcanvas-toggler-left {
+        float: left;
+        margin-right: 20px;
+    }
+}
+.offcanvas-menu {
+    background:#fff;
+    overflow-x: scroll;
+}
+.offcanvas-active{
+    overflow-x: hidden;
+    position: relative;
+    .close-offcanvas {
+        left: -40px;
+        visibility: visible;
+        z-index: 1111111;
+        @media (min-width: 320px) and (max-width: 360px) {
+            left: -20px;
+        }
+    }
+}
+
+.offcanvas-active {
+    .offcanvas-overlay{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.offcanvas-overlay {
+    background: rgba(0,0,0,.5);
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    visibility: hidden;
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+}
+
+.body-wrapper{
+    position: relative;
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+    backface-visibility: hidden;
+}
+
+.offcanvs-position-left{
+    .body-wrapper{
+        left: 0;
+    }
+
+    .offcanvas-menu {
+        left: -$offcanvas-width;
+    }
+
+    &.offcanvas-active {
+        .offcanvas-menu {
+            left: 0;
+        }
+        .body-wrapper{
+            left: $offcanvas-width;
+        }
+    }
+}
+
+.offcanvs-position-right{
+    .body-wrapper{
+        right: 0;
+    }
+
+    .offcanvas-menu {
+        right: -$offcanvas-width;
+    }
+
+    &.offcanvas-active {
+        .offcanvas-menu {
+            right: 0;
+        }
+    
+        .body-wrapper{
+            right: $offcanvas-width;
+        }
+    }
+}
+
+.close-offcanvas {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    z-index: 1;
+    border-radius: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    background: #333;
+    color: #fff;
+    visibility: hidden;
+    &:hover {
+        color: $global_color;
+    }
+}
+
+.offcanvas-menu {
+    width: $offcanvas-width;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    overflow: visible;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
+    z-index: 10000;
+    .slicknav_menu .slicknav_btn {
+        box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
+        padding: 10px 30px;
+        display: block;
+    }
+    .offcanvas-inner {
+        overflow-x: scroll;
+        height: 100%;
+        padding:0 30px;
+       box-sizing: border-box;
+       .sp-module {
+        margin:30px 0 30px 0;
+       }
+        #login-form {
+            .login-greeting {
+                //color: #fff;
+            }
+        }
+        #login-form {
+          .userdata {
+            display: block;
+            width: 100%;
+            .input-prepend {
+              display: block;
+            }
+            #form-login-remember {
+              padding-bottom:20px;
+              //color: #fff;
+              .control-label {
+               // color: #fff;
+              }
+            }
+            .unstyled {
+              li {
+                line-height: 20px;
+                &:before {
+                    content: "\ec34";
+                    font-family: "Linearicons";
+                    display: inline-block;
+                    //color: #fff;
+                    font-size: 12px;
+                    padding-right:10px;
+                  }
+                a {
+                  font-size: 14px;
+                  line-height: 20px;
+                  display: inline-block;
+                  &:hover {
+                   //color: #fff;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .sp-module {
+            padding: 0;
+            //margin: 0;
+
+            .sp-module-title {
+                //color: #fff;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+
+            ul {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                > li {
+                    border: 0;
+                    padding: 0;
+                    margin: 0;
+                    position: relative;
+                    overflow: hidden;
+                    display: block;
+                    a,
+                    span {
+                        display: block;
+                        font-size: 1rem;
+                        padding: .125rem 0;
+                        position: relative;
+                    }
+
+                    &.menu-parent {
+                        >a,
+                        >.menu-separator {
+                            >.menu-toggler {
+                                display: block;
+                                position: absolute;
+                                right: 0;
+                                top: 50%;
+                                cursor: pointer;
+                                transform: translateY(-50%);
+                                -webkit-transform: translateY(-50%);
+                                font-family: FontAwesome;
+                                &:after {
+                                    content: "\f055";
+                                }
+                            }
+                        }
+
+                        &.menu-parent-open {
+                            >a,
+                            >.menu-separator {
+                                >.menu-toggler {
+                                    &:after {
+                                        content: "\f056";
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+
+                    ul {
+                        display: none;
+                        margin-left: 10px;
+                        li {
+                            a {
+                                font-size: 0.875rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
