@@ -50,7 +50,7 @@ if(isset($options->background_type)){
 		} else {
 			$style .= 'background-image:url('. JURI::base(true) . '/' . $options->background_image.');';
 		}
-	
+
 		if (isset($options->background_repeat) && $options->background_repeat) $style .= 'background-repeat:'.$options->background_repeat.';';
 		if (isset($options->background_size) && $options->background_size) $style .= 'background-size:'.$options->background_size.';';
 		if (isset($options->background_attachment) && $options->background_attachment) $style .= 'background-attachment:'.$options->background_attachment.';';
@@ -87,7 +87,7 @@ if(isset($options->background_type)){
 		} else {
 			$style .= 'background-image:url('. JURI::base(true) . '/' . $options->background_image.');';
 		}
-	
+
 		if (isset($options->background_repeat) && $options->background_repeat) $style .= 'background-repeat:'.$options->background_repeat.';';
 		if (isset($options->background_size) && $options->background_size) $style .= 'background-size:'.$options->background_size.';';
 		if (isset($options->background_attachment) && $options->background_attachment) $style .= 'background-attachment:'.$options->background_attachment.';';
@@ -109,12 +109,18 @@ if($style_xs) {
 
 // Overlay
 if(isset($options->background_type)){
-	if (($options->background_type == 'image' || $options->background_type == 'video') && isset($options->overlay) && $options->overlay) {
-		$row_styles .= '.sp-page-builder .page-content #' . $row_id . ' > .sppb-row-overlay {background-color: '. $options->overlay .'}';
+	if ($options->background_type == 'image' || $options->background_type == 'video') {
+		if(isset($options->overlay) && $options->overlay){
+			$row_styles .= '.sp-page-builder .page-content #' . $row_id . ' > .sppb-row-overlay {background-color: '. $options->overlay .'}';
+		} elseif(isset($options->overlay_image) && $options->overlay_image) {
+			$row_styles .= '.sp-page-builder .page-content #' . $row_id . ' > .sppb-row-overlay {background-image: url('. JURI::base(true) . '/' . $options->overlay_image .');background-position: center center;background-repeat: repeat;}';
+		}
 	}
 } else {
 	if (isset($options->overlay) && $options->overlay) {
 		$row_styles .= '.sp-page-builder .page-content #' . $row_id . ' > .sppb-row-overlay {background-color: '. $options->overlay .'}';
+	} elseif(isset($options->overlay_image) && $options->overlay_image) {
+		$row_styles .= '.sp-page-builder .page-content #' . $row_id . ' > .sppb-row-overlay {background-image: url('. JURI::base(true) . '/' . $options->overlay_image .');background-position: center center;background-repeat: repeat;}';
 	}
 }
 

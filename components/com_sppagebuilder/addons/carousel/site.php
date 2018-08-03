@@ -2,7 +2,7 @@
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @copyright Copyright (c) 2010 - 2018 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
@@ -49,8 +49,8 @@ class SppagebuilderAddonCarousel extends SppagebuilderAddons {
 				$output  .= '<div class="sppb-carousel-text">';
 	
 				if((isset($value->title) && $value->title) || (isset($value->content) && $value->content) ) {
-					$output  .= (isset($value->title) && $value->title) ? '<h2>' . $value->title . '</h2>' : '';
-					$output  .= '<div class="sppb-carousel-content">' . $value->content . '</div>';
+					$output  .= ($value->title) ? '<h2>' . $value->title . '</h2>' : '';
+					$output  .= ($value->content) ? '<div class="sppb-carousel-content">' . $value->content . '</div>': '';
 					if(isset($value->button_text) && $value->button_text) {
 						$button_class = (isset($value->button_type) && $value->button_type) ? ' sppb-btn-' . $value->button_type : ' sppb-btn-default';
 						$button_class .= (isset($value->button_size) && $value->button_size) ? ' sppb-btn-' . $value->button_size : '';
@@ -716,9 +716,9 @@ class SppagebuilderAddonCarousel extends SppagebuilderAddons {
 								<div class="sppb-carousel-text">
 									<# if(carousel_item.title || carousel_item.content) { #>
 										<# if(carousel_item.title) { #>
-											<h2>{{ carousel_item.title }}</h2>
+											<h2 class="sp-editable-content" id="addon-title-{{data.id}}-{{key}}" data-id={{data.id}} data-fieldName="sp_carousel_item-{{key}}-title">{{ carousel_item.title }}</h2>
 										<# } #>
-										<div class="sppb-carousel-content">{{{ carousel_item.content }}}</div>
+										<div class="sppb-carousel-content sp-editable-content" id="addon-content-{{data.id}}-{{key}}" data-id={{data.id}} data-fieldName="sp_carousel_item-{{key}}-content">{{{ carousel_item.content }}}</div>
 										<# if(carousel_item.button_text) { #>
 											<#
 												var btnClass = "";

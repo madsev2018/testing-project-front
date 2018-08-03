@@ -37,7 +37,6 @@ class SppagebuilderAddonArticles extends SppagebuilderAddons{
 		$link_articles 	= (isset($this->addon->settings->link_articles)) ? $this->addon->settings->link_articles : 0;
 		$link_catid 	= (isset($this->addon->settings->link_catid)) ? $this->addon->settings->link_catid : 0;
 		$link_k2catid 	= (isset($this->addon->settings->link_k2catid)) ? $this->addon->settings->link_k2catid : 0;
-		
 
 		$all_articles_btn_text   = (isset($this->addon->settings->all_articles_btn_text) && $this->addon->settings->all_articles_btn_text) ? $this->addon->settings->all_articles_btn_text : 'See all posts';
 		$all_articles_btn_class  = (isset($this->addon->settings->all_articles_btn_size) && $this->addon->settings->all_articles_btn_size) ? ' sppb-btn-' . $this->addon->settings->all_articles_btn_size : '';
@@ -50,7 +49,7 @@ class SppagebuilderAddonArticles extends SppagebuilderAddons{
 
 		$output   = '';
 		//include k2 helper
-		$k2helper 			= JPATH_ROOT . '/components/com_sppagebuilder/helpers/k2.php';
+		$k2helper 		= JPATH_ROOT . '/components/com_sppagebuilder/helpers/k2.php';
 		$article_helper = JPATH_ROOT . '/components/com_sppagebuilder/helpers/articles.php';
 		$isk2installed  = self::isComponentInstalled('com_k2');
 
@@ -71,7 +70,7 @@ class SppagebuilderAddonArticles extends SppagebuilderAddons{
 		}
 
 		if (!count($items)) {
-			$output .= '<p class="alert alert-warning">' . JText::_('COM_SPPAGEBUILDER_ADDON_ARTICLE_NO_ITEMS_FOUND') . '</p>';
+			$output .= '<p class="alert alert-warning">' . JText::_('COM_SPPAGEBUILDER_NO_ITEMS_FOUND') . '</p>';
 			return $output;
 		}
 
@@ -170,14 +169,15 @@ class SppagebuilderAddonArticles extends SppagebuilderAddons{
 					}
 
 					if($show_author) {
-						$output .= '<span class="sppb-meta-author" itemprop="name">' . $item->username . '</span>';
+						$author = ( $item->created_by_alias ?  $item->created_by_alias :  $item->username);
+						$output .= '<span class="sppb-meta-author" itemprop="name">' . $author . '</span>';
 					}
 
 					$output .= '</div>';
 				}
 
 				if($show_intro) {
-					$output .= '<div class="sppb-article-introtext">'. Jhtml::_('string.truncate', ($item->introtext), $intro_limit) .'</div>';
+					$output .= '<div class="sppb-article-introtext">'. substr($item->introtext, 0, $intro_limit) .'...</div>';
 				}
 
 				if($show_readmore) {

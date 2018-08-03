@@ -48,6 +48,7 @@ class SppagebuilderViewPage extends JViewLegacy {
 		$menu = $menus->getActive();
 		$config_params = JComponentHelper::getParams('com_sppagebuilder');
 		$disable_og = $config_params->get('disable_og',0);
+		$disable_tc = $config_params->get('disable_tc',0);
 
 		//Title
 		if (isset($meta['title']) && $meta['title']) {
@@ -75,25 +76,48 @@ class SppagebuilderViewPage extends JViewLegacy {
 		
 		if(!$disable_og) {
 			if ( $og_title) {
-				$this->document->addCustomTag('<meta content="'.$og_title.'" property="og:title" />');
+				$this->document->addCustomTag('<meta property="og:title" content="'.$og_title.'" />');
 			} else {
-				$doc->addCustomTag('<meta content="' . $title . '" property="og:title" />');
+				$doc->addCustomTag('<meta property="og:title" content="' . $title . '" />');
 			}
-	
-			$this->document->addCustomTag('<meta content="website" property="og:type"/>');
-			$this->document->addCustomTag('<meta content="'.JURI::current().'" property="og:url" />');
+
+			$this->document->addCustomTag('<meta property="og:type" content="website" />');
+			$this->document->addCustomTag('<meta property="og:url" content="'.JURI::current().'" />');
+
+			if( $fb_app_id = $config_params->get('fb_app_id', '') ) {
+				$this->document->addCustomTag('<meta property="fb:app_id" content="' . $fb_app_id .'" />');
+			}
+			
+			if ($config->get('sitename', '')) {
+				$this->document->addCustomTag('<meta property="og:site_name" content="'. htmlspecialchars($config->get('sitename', '')) .'" />');
+			}
+
 		}
 
 		$og_image = $this->item->og_image;
 		if (!$disable_og && $og_image) {
-			$this->document->addCustomTag('<meta content="'.JURI::root().$og_image.'" property="og:image" />');
-			$this->document->addCustomTag('<meta content="1200" property="og:image:width" />');
-			$this->document->addCustomTag('<meta content="630" property="og:image:height" />');
+			$this->document->addCustomTag('<meta property="og:image" content="'.JURI::root().$og_image.'" />');
+			$this->document->addCustomTag('<meta property="og:image:width" content="1200" />');
+			$this->document->addCustomTag('<meta property="og:image:height" content="630" />');
 		}
 
 		$og_description = $this->item->og_description;
 		if (!$disable_og && $og_description) {
-			$this->document->addCustomTag('<meta content="'.$og_description.'" property="og:description" />');
+			$this->document->addCustomTag('<meta property="og:description" content="'.$og_description.'" />');
+		}
+
+		if (!$disable_tc) {
+			// Twitter
+			$this->document->addCustomTag('<meta name="twitter:card" content="summary" />');
+			if ($config->get('sitename', '')) {
+				$this->document->addCustomTag('<meta name="twitter:site" content="'. htmlspecialchars($config->get('sitename', '')) .'" />');
+			}
+			if ($og_description) {
+				$this->document->addCustomTag('<meta name="twitter:description" content="'. $og_description .'" />');
+			}
+			if ($og_image) {
+				$this->document->addCustomTag('<meta name="twitter:image:src" content="'. JURI::root() . $og_image .'" />');
+			}
 		}
 
 		if ($menu) {

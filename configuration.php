@@ -12,10 +12,10 @@ class JConfig {
 	public $debug = '0';
 	public $debug_lang = '0';
 	public $dbtype = 'mysqli';
-	public $host = '172.17.0.1';
-	public $user = 'root';
-	public $password = 'toniAltea3';
-	public $db = 'wise_ecommerce_front';
+	public $host = '167.114.229.64';
+	public $user = 'newfront-pre';
+	public $password = 'pFwD9M9MdzMhPqHyqxRp';
+	public $db = 'newfront_pre';
 	public $dbprefix = 'wise_';
 	public $live_site = '';
 	public $secret = 'WazTeisboI6X1CuK';

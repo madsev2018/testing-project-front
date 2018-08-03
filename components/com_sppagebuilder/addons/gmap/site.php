@@ -2,7 +2,7 @@
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @copyright Copyright (c) 2010 - 2018 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
@@ -156,7 +156,7 @@ class SppagebuilderAddonGmap extends SppagebuilderAddons {
 		}
 		</style>
 		<div id="sppb-addon-map-{{ data.id }}" class="sppb-addon sppb-addon-gmap {{ data.class }}">
-			<# if( !_.isEmpty( data.title ) ){ #><{{ data.heading_selector }} class="sppb-addon-title">{{ data.title }}</{{ data.heading_selector }}><# } #>
+			<# if( !_.isEmpty( data.title ) ){ #><{{ data.heading_selector }} class="sppb-addon-title sp-inline-editable-element" data-id={{data.id}} data-fieldName="title" contenteditable="true">{{ data.title }}</{{ data.heading_selector }}><# } #>
 			<div class="sppb-addon-content">
 				<div id="sppb-addon-gmap-{{ data.id }}" class="sppb-addon-gmap-canvas" data-lat="{{ map[0] }}" data-lng="{{ map[1] }}" data-maptype="{{ data.type }}" data-mapzoom="{{ data.zoom }}" data-mousescroll="{{ data.mousescroll }}" data-infowindow="{{ infoText }}"></div>
 			</div>

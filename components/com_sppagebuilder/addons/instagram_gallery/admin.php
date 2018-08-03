@@ -2,7 +2,7 @@
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @copyright Copyright (c) 2010 - 2018 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 
@@ -132,18 +132,42 @@ SpAddonsConfig::addonConfig(
 					'responsive'=>true
 				),
 
-				'user_id'=>array(
-					'type'=>'text',
-					'title'=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_USER_ID'),
-					'desc'=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_USER_ID_DESC'),
-					'std'=>  ''
-				),
-
 				'access_token'=>array(
 					'type'=>'text',
 					'title'=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_ACCESS_TOKEN'),
 					'desc'=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_ACCESS_TOKEN_DESC'),
 					'std'=>  ''
+				),
+
+				'item_resource'=>array(
+					'type'=>'select',
+					'title'=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_GET_IMAGES_BY'),
+					'desc'=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_GET_IMAGES_BY_DESC'),
+					'values'=>array(
+						'userid' =>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_GET_IMAGES_BY_USERID'),
+						'hashtag'	 =>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_GET_IMAGES_BY_HASHTAG'),
+					),
+					'std'=>'userid',
+				),
+
+				'user_id'=>array(
+					'type'=>'text',
+					'title'=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_USER_ID'),
+					'desc'=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_USER_ID_DESC'),
+					'std'=>  '',
+					'depends'=>array(
+						array('item_resource', '=', 'userid'),
+					),
+				),
+
+				'hashtag'=>array(
+					'type'=>'text',
+					'title'=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_GET_IMAGES_BY_HASHTAG'),
+					'desc'=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_HASHTAG_DESC'),
+					'std'=>  '',
+					'depends'=>array(
+						array('item_resource', '=', 'hashtag'),
+					),
 				),
 
 				'limit'=>array(
@@ -158,6 +182,30 @@ SpAddonsConfig::addonConfig(
 					'title'=>JText::_('COM_SPPAGEBUILDER_ADDON_TITLE_THUMB_PER_ROW'),
 					'desc'=>JText::_('COM_SPPAGEBUILDER_ADDON_TITLE_THUMB_PER_ROW_DESC'),
 					'std'=>  '4'
+				),
+
+				'show_stats'=>array(
+					'type'=>'select',
+					'title'=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_SHOW_STATS'),
+					'desc'=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_SHOW_STATS_DESC'),
+					'values'=>array(
+						'author'	=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_SHOW_STATS_AUTHOR'),
+						'caption'	=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_SHOW_STATS_CAPTION'),
+						'likes'		=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_SHOW_STATS_LIKES_COUNT'),
+						'comments'	=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_SHOW_STATS_COMMENTS_COUNT'),
+					),
+					'multiple'=>true,
+				),
+
+				'layout_type'=>array(
+					'type'=>'select',
+					'title'=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_LAYOUT_TYPE'),
+					'desc'=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_LAYOUT_TYPE_DESC'),
+					'values'=>array(
+						'default'	=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_LAYOUT_TYPE_DEFAULT'),
+						'classic'	=>JText::_('COM_SPPAGEBUILDER_ADDON_INSTAGRAM_LAYOUT_TYPE_CLASSIC'),
+					),
+					'std'=>'default',
 				),
 
 				'class'=>array(

@@ -94,6 +94,8 @@ abstract class SppagebuilderHelper {
 					$db->quoteName('title') . ' = ' . $db->quote($attribs['title']),
 					$db->quoteName('text') . ' = ' . $db->quote($attribs['text']),
 					$db->quoteName('published') . ' = ' . $db->quote($attribs['published']),
+					$db->quoteName('catid') . ' = ' . $db->quote($attribs['catid']),
+					$db->quoteName('access') . ' = ' . $db->quote($attribs['access']),
 					$db->quoteName('modified') . ' = ' . $db->quote($attribs['modified']),
 					$db->quoteName('modified_by') . ' = ' . $db->quote($attribs['modified_by']),
 					$db->quoteName('active') . ' = ' . $db->quote($attribs['active'])
@@ -110,6 +112,8 @@ abstract class SppagebuilderHelper {
 				$db->quote($attribs['id']),
 				$db->quote($attribs['active']),
 				$db->quote($attribs['published']),
+				$db->quote($attribs['catid']),
+				$db->quote($attribs['access']),
 				$db->quote($attribs['created_on']),
 				$db->quote($attribs['created_by']),
 				$db->quote($attribs['modified']),
@@ -145,7 +149,9 @@ abstract class SppagebuilderHelper {
 			if (!$params->get('disablecss',0)) {
 				$doc->addStyleSheet(JUri::base(true) . '/components/com_sppagebuilder/assets/css/sppagebuilder.css');
 			}
-			$doc->addScript(JUri::base(true).'/components/com_sppagebuilder/assets/js/jquery.parallax-1.1.3.js');
+			$doc->addScript(JUri::base(true).'/components/com_sppagebuilder/assets/js/jquery.parallax.js');
+			$doc->addScript(JUri::base(true).'/components/com_sppagebuilder/assets/js/jquery.mb.YTPlayer.min.js');
+			$doc->addScript(JUri::base(true).'/components/com_sppagebuilder/assets/js/jquery.mb.vimeo_player.min.js');
 			$doc->addScript(JUri::base(true).'/components/com_sppagebuilder/assets/js/sppagebuilder.js');
 
 			return '<div id="sp-page-builder" class="sp-page-builder"><div class="page-content">' . AddonParser::viewAddons(json_decode($page_content->text),0,$pageName) . '</div></div>';
@@ -198,6 +204,8 @@ abstract class SppagebuilderHelper {
 			'view_id',
 			'active',
 			'published',
+			'catid',
+			'access',
 			'created_on',
 			'created_by',
 			'modified',

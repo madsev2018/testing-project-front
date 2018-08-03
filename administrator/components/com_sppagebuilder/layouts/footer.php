@@ -2,7 +2,6 @@
 defined('_JEXEC') or die();
 
 $doc = JFactory::getDocument();
-$doc->addStylesheet( JURI::base(true) . '/components/com_sppagebuilder/assets/css/linearicons.css' );
 $doc->addStylesheet( JURI::base(true) . '/components/com_sppagebuilder/assets/css/font-awesome.min.css' );
 $doc->addStylesheet( JURI::base(true) . '/components/com_sppagebuilder/assets/css/common.css' );
 ?>

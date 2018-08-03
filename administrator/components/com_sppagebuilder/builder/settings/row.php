@@ -264,10 +264,10 @@ $row_settings = array(
 					array('background_type', '=', 'image')
 				)
 			),
-
+			
 			'overlay'=>array(
 				'type'=>'color',
-				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_OVERLAY'),
+				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BACKGROUND_OVERLAY'),
 				'desc'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_OVERLAY_DESC'),
 				'depends'=>array(
 					array('background_type', '!=', 'none'),
@@ -275,7 +275,7 @@ $row_settings = array(
 					array('background_type', '!=', 'gradient'),
 				)
 			),
-
+			
 			'background_repeat'=>array(
 				'type'=>'select',
 				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BACKGROUND_REPEAT'),
@@ -384,6 +384,15 @@ $row_settings = array(
 				'depends'=>array(
 					array('background_type', '=', 'video'),
 					array('external_background_video','=',1)
+				)
+			),
+			'video_loop'	=> array(
+				'type'		=> 'checkbox',
+				'title'		=> JText::_('COM_SPPAGEBUILDER_ROW_VIDEO_LOOP'),
+				'desc'		=> JText::_('COM_SPPAGEBUILDER_ROW_VIDEO_LOOP_DESC'),
+				'std'		=> false,
+				'depends'=>array(
+					array('background_type', '=', 'video')
 				)
 			),
 

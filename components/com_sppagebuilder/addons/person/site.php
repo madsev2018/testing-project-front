@@ -2,7 +2,7 @@
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @copyright Copyright (c) 2010 - 2018 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
@@ -128,10 +128,10 @@ class SppagebuilderAddonPerson extends SppagebuilderAddons{
 				<# if(data.name || data.designation || data.email ){ #>
 					<div class="sppb-person-information">
 						<# if(!_.isEmpty(data.name)) { #>
-							<span class="sppb-person-name">{{ data.name}}</span>
+							<span class="sppb-person-name sp-inline-editable-element" data-id={{data.id}} data-fieldName="name" contenteditable="true">{{ data.name}}</span>
 						<# } #>
 						<# if(!_.isEmpty(data.designation)) { #>
-							<span class="sppb-person-designation">{{ data.designation}}</span>
+							<span class="sppb-person-designation sp-inline-editable-element" data-id={{data.id}} data-fieldName="designation" contenteditable="true">{{ data.designation}}</span>
 						<# } #>
 						<# if(!_.isEmpty(data.email)) { #>
 							<span class="sppb-person-email">{{ data.email}}</span>
@@ -141,7 +141,7 @@ class SppagebuilderAddonPerson extends SppagebuilderAddons{
 
 				<# if(data.social_position == "after") { #>
 					<# if(!_.isEmpty(data.introtext)) { #>
-						<div class="sppb-person-introtext">{{ data.introtext }}</div>
+						<div class="sppb-person-introtext sp-inline-editable-element" data-id={{data.id}} data-fieldName="introtext" contenteditable="true">{{ data.introtext }}</div>
 					<# } #>
 				<# } #>
 

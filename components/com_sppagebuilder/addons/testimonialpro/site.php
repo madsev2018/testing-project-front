@@ -184,7 +184,7 @@ class SppagebuilderAddonTestimonialpro extends SppagebuilderAddons {
                                 <# } #>
                             <# }
                             } #>
-                            <div class="sppb-testimonial-message">{{{ itemSlide.message }}}</div>
+                            <div class="sppb-testimonial-message sp-editable-content" id="addon-message-{{data.id}}-{{index}}" data-id={{data.id}} data-fieldName="sp_testimonialpro_item-{{index}}-message">{{{ itemSlide.message }}}</div>
 
                             <div class="sppb-addon-testimonial-pro-footer">
                             <# if (data.avatar_on_top !== 1) { 

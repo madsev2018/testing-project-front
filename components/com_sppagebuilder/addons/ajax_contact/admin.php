@@ -3,7 +3,7 @@
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @copyright Copyright (c) 2010 - 2018 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
  */
 //no direct accees
@@ -143,6 +143,16 @@ SpAddonsConfig::addonConfig(
                         'desc' => JText::_('COM_SPPAGEBUILDER_ADDON_AJAX_CONTACT_FORM_EMAIL_DESC'),
                         'std' => ''
                     ),
+                    'show_phone' => array(
+                        'type' => 'checkbox',
+                        'title' => JText::_('COM_SPPAGEBUILDER_ADDON_AJAX_CONTACT_SHOW_PHONE_FIELD'),
+                        'desc' => JText::_('COM_SPPAGEBUILDER_ADDON_AJAX_CONTACT_SHOW_PHONE_FIELD_DESC'),
+                        'values' => array(
+                            '0' => 'No',
+                            '1' => 'Yes'
+                        ),
+                        'std' => '0'
+                    ),
                     'formcaptcha' => array(
                         'type' => 'checkbox',
                         'title' => JText::_('COM_SPPAGEBUILDER_ADDON_AJAX_CONTACT_SHOW_CAPTCHA'),
@@ -248,6 +258,22 @@ SpAddonsConfig::addonConfig(
                         ),
                         'std' => '12'
                     ),
+                    'phone_input_col' => array(
+                        'type' => 'select',
+                        'title' => JText::_('COM_SPPAGEBUILDER_ADDON_AJAX_CONTACT_PHONE_INPUT_COL_SIZE'),
+                        'values' => array(
+                            '3' => '3',
+                            '4' => '4',
+                            '5' => '5',
+                            '6' => '6',
+                            '7' => '7',
+                            '8' => '8',
+                            '9' => '9',
+                            '12' => '12',
+                        ),
+                        'std' => '12',
+                        'depends' => array('show_phone' => '1')
+                    ),
                     'message_input_col' => array(
                         'type' => 'select',
                         'title' => JText::_('COM_SPPAGEBUILDER_ADDON_AJAX_CONTACT_MESSAGE_INPUT_COL_SIZE'),
@@ -271,12 +297,14 @@ SpAddonsConfig::addonConfig(
                     'show_checkbox' => array(
                         'type' => 'checkbox',
                         'title' => JText::_('COM_SPPAGEBUILDER_ADDON_AJAX_CONTACT_SHOW_CHECKBOX'),
-                        'std' => 0,
+                        'desc' => JText::_('COM_SPPAGEBUILDER_ADDON_AJAX_CONTACT_SHOW_CHECKBOX_DESC'),
+                        'std' => 1,
                     ),
                     'checkbox_title' => array(
                         'type' => 'textarea',
                         'title' => JText::_('COM_SPPAGEBUILDER_ADDON_AJAX_CONTACT_CHECKBOX_TITLE'),
-                        'std' => 'I am agree with your <a href="#">terms & conditions</a>.',
+                        'desc' => JText::_('COM_SPPAGEBUILDER_ADDON_AJAX_CONTACT_CHECKBOX_TITLE_DESC'),
+                        'std' => 'I agree with the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a> and I declare that I have read the information that is required in accordance with <a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.L_.2016.119.01.0001.01.ENG&amp;toc=OJ:L:2016:119:TOC" target="_blank">Article 13 of GDPR.</a>',
                         'depends' => array('show_checkbox' => 1)
                     ),
                     // Button
@@ -524,6 +552,16 @@ SpAddonsConfig::addonConfig(
                             'right' => JText::_('COM_SPPAGEBUILDER_GLOBAL_RIGHT'),
                         ),
                         'depends' => array('use_custom_button' => 1)
+                    ),
+                    'button_position' => array(
+                        'type' => 'select',
+                        'title' => JText::_('COM_SPPAGEBUILDER_GLOBAL_BUTTON_POSITION'),
+                        'values' => array(
+                            'sppb-text-left' => JText::_('COM_SPPAGEBUILDER_GLOBAL_LEFT'),
+                            'sppb-text-center' => JText::_('COM_SPPAGEBUILDER_GLOBAL_CENTER'),
+                            'sppb-text-right' => JText::_('COM_SPPAGEBUILDER_GLOBAL_RIGHT'),
+                        ),
+                        'std' => 'sppb-text-left',
                     ),
                     'class' => array(
                         'type' => 'text',

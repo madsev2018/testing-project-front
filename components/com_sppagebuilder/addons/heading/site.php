@@ -3,7 +3,7 @@
 /**
 * @package SP Page Builder
 * @author JoomShaper http://www.joomshaper.com
-* @copyright Copyright (c) 2010 - 2016 JoomShaper
+* @copyright Copyright (c) 2010 - 2018 JoomShaper
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
@@ -231,7 +231,7 @@ class SppagebuilderAddonHeading extends SppagebuilderAddons {
             <# if(data.use_link && data.title_link){ #><a {{ link_target }} href=\'{{ data.title_link }}\'><# } #>
                 <{{ data.heading_selector }} class="sppb-addon-title">
                 <# if(data.title_icon && data.title_icon_position == "before"){ #><span class="fa {{ data.title_icon }} sppb-addon-title-icon"></span> <# } #>
-                {{{ data.title }}}
+                <span class="sp-inline-editable-element" data-id={{data.id}} data-fieldName="title" contenteditable="true">{{{ data.title }}}</span>
                 <# if(data.title_icon && data.title_icon_position == "after"){ #> <span class="fa {{ data.title_icon }} sppb-addon-title-icon"></span><# } #>
                 </{{ data.heading_selector }}>
             <# if(data.use_link && data.title_link){ #></a><# } #>

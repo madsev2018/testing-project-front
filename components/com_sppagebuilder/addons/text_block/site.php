@@ -2,7 +2,7 @@
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @copyright Copyright (c) 2010 - 2018 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
@@ -82,6 +82,10 @@ class SppagebuilderAddonText_block extends SppagebuilderAddons {
 			if(data.dropcap){
 				dropcap = "sppb-dropcap";
 			}
+
+			if(!data.heading_selector){
+				data.heading_selector = "h3";
+			}
 		#>
 		<style type="text/css">
 			#sppb-addon-{{ data.id }}{
@@ -125,8 +129,8 @@ class SppagebuilderAddonText_block extends SppagebuilderAddons {
 			}
 		</style>
 		<div class="sppb-addon sppb-addon-text-block {{ dropcap }} {{ data.alignment }} {{ data.class }}">
-			<# if( !_.isEmpty( data.title ) ){ #><{{ data.heading_selector }} class="sppb-addon-title">{{{ data.title }}}</{{ data.heading_selector }}><# } #>
-			<div class="sppb-addon-content">{{{ data.text }}}</div>
+			<# if( !_.isEmpty( data.title ) ){ #><{{ data.heading_selector }} class="sppb-addon-title sp-inline-editable-element" data-id={{data.id}} data-fieldName="title" contenteditable="true">{{{ data.title }}}</{{ data.heading_selector }}><# } #>
+			<div id="addon-text-{{data.id}}" class="sppb-addon-content sp-editable-content" data-id={{data.id}} data-fieldName="text">{{{ data.text }}}</div>
 		</div>';
 		return $output;
 	}

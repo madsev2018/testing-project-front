@@ -2,7 +2,7 @@
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @copyright Copyright (c) 2010 - 2018 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
@@ -150,9 +150,9 @@ class SppagebuilderAddonAnimated_number extends SppagebuilderAddons{
 		</style>
 		<div class="sppb-addon sppb-addon-animated-number {{ data.alignment }} {{ data.class }}">
 			<div class="sppb-addon-content">
-				<div class="sppb-animated-number" data-digit="{{ data.number }}" data-duration="{{ data.duration }}">0</div>
+				<div class="sppb-animated-number sp-inline-editable-element" data-id={{data.id}} data-fieldName="number" contenteditable="true" data-digit="{{ data.number }}" data-duration="{{ data.duration }}">0</div>
 				<# if(data.counter_title){ #>
-					<div class="sppb-animated-number-title">{{ data.counter_title }}</div>
+					<div class="sppb-animated-number-title sp-inline-editable-element" data-id={{data.id}} data-fieldName="counter_title" contenteditable="true">{{ data.counter_title }}</div>
 				<# } #>
 			</div>
 		</div>';

@@ -51,20 +51,6 @@ class PlgFinderSppagebuilder extends FinderIndexerAdapter
 	protected $autoloadLanguage = true;
 
 	/**
-	 * Method to update the item link information when the item category is
-	 * changed. This is fired when the item category is published or unpublished
-	 * from the list view.
-	 */
-	public function onFinderCategoryChangeState($extension, $pks, $value)
-	{
-		// Make sure we're handling com_contact categories
-		if ($extension === 'com_sppagebuilder')
-		{
-			$this->categoryStateChange($pks, $value);
-		}
-	}
-
-	/**
 	 * Method to remove the link information for items that have been deleted.
 	 */
 	public function onFinderAfterDelete($context, $table)
@@ -101,14 +87,6 @@ class PlgFinderSppagebuilder extends FinderIndexerAdapter
 			$this->reindex($row->id);
 		}
 
-		if ($context === 'com_categories.category')
-		{
-			if (!$isNew && $this->old_cataccess != $row->access)
-			{
-				$this->categoryAccessChange($row);
-			}
-		}
-
 		return true;
 	}
 
@@ -124,14 +102,6 @@ class PlgFinderSppagebuilder extends FinderIndexerAdapter
 			if (!$isNew)
 			{
 				$this->checkItemAccess($row);
-			}
-		}
-
-		if ($context === 'com_categories.category')
-		{
-			if (!$isNew)
-			{
-				$this->checkCategoryAccess($row);
 			}
 		}
 
@@ -168,9 +138,19 @@ class PlgFinderSppagebuilder extends FinderIndexerAdapter
 		}
 
 		$item->setLanguage();
-		$item->url = $this->getUrl($item->id, $this->extension, $this->layout);
-		$item->route = self::getPageRoute($item->id, $item->catid, $item->language);
-		$item->path = FinderIndexerHelper::getContentPath($item->route);
+		if($item->view_id){
+			$item->url = $this->getUrl($item->view_id, $item->extension, $item->extension_view).'&page=sppb';
+			if($item->extension_view == 'article') {
+				$item->route = ContentHelperRoute::getArticleRoute($item->view_id, $item->catid, '*');
+			} else {
+				$item->route = $this->getUrl($item->view_id, $item->extension, $item->extension_view);
+			}
+		} else {
+			$item->url = $this->getUrl($item->id, $this->extension, $this->layout);
+			$item->route = self::getPageRoute($item->id, $item->language);
+		}
+
+		$item->path = $item->route;
 
 		// Get the menu title if it exists.
 		$title = $this->getItemMenuTitle($item->url);
@@ -187,14 +167,8 @@ class PlgFinderSppagebuilder extends FinderIndexerAdapter
 		// Add the type taxonomy data.
 		$item->addTaxonomy('Type', 'Page');
 
-		// Add the category taxonomy data.
-		$item->addTaxonomy('Category', $item->category, $item->cat_state, $item->cat_access);
-
 		// Add the language taxonomy data.
 		$item->addTaxonomy('Language', $item->language);
-
-		// Get content extras.
-		FinderIndexerHelper::getContentExtras($item);
 
 		// Index the item.
 		$this->indexer->index($item);
@@ -205,7 +179,7 @@ class PlgFinderSppagebuilder extends FinderIndexerAdapter
 	 */
 	protected function setup()
 	{
-		FinderIndexerHelper::getContentPath('index.php?option=com_sppagebuilder');
+		JLoader::register('ContentHelperRoute', JPATH_SITE . '/components/com_content/helpers/route.php');
 
 		return true;
 	}
@@ -219,23 +193,12 @@ class PlgFinderSppagebuilder extends FinderIndexerAdapter
 
 		// Check if we can use the supplied SQL query.
 		$query = $query instanceof JDatabaseQuery ? $query : $db->getQuery(true)
-			->select('a.id, a.title AS title, a.text AS body, a.created_on AS start_date')
+			->select('a.id, a.view_id, a.title AS title, a.text AS body, a.created_on AS start_date')
 			->select('a.created_by, a.modified, a.modified_by, a.language')
-			->select('a.access, a.published AS state, a.ordering, a.catid')
-			->select('c.title AS category, c.published AS cat_state, c.access AS cat_access');
-
-		$case_when_category_alias = ' CASE WHEN ';
-		$case_when_category_alias .= $query->charLength('c.alias', '!=', '0');
-		$case_when_category_alias .= ' THEN ';
-		$c_id = $query->castAsChar('c.id');
-		$case_when_category_alias .= $query->concatenate(array($c_id, 'c.alias'), ':');
-		$case_when_category_alias .= ' ELSE ';
-		$case_when_category_alias .= $c_id . ' END as catslug';
-		$query->select($case_when_category_alias)
+			->select('a.access, a.catid, a.extension, a.extension_view, a.published AS state, a.ordering')
 
 			->select('u.name')
 			->from('#__sppagebuilder AS a')
-			->join('LEFT', '#__categories AS c ON c.id = a.catid')
 			->join('LEFT', '#__users AS u ON u.id = a.created_by');
 
 		return $query;
@@ -244,14 +207,9 @@ class PlgFinderSppagebuilder extends FinderIndexerAdapter
 	/**
 	 * Method to get the page URL.
 	 */
-	public static function getPageRoute($id, $catid = 0, $language = 0)
+	public static function getPageRoute($id, $language = 0)
 	{
-		$link = 'index.php?option=com_sppagebuilder&view=page&id=' . $id;
-
-		if ((int) $catid > 1)
-		{
-			$link .= '&catid=' . $catid;
-		}
+		$link = 'index.php?option=com_sppagebuilder&view=page&id='.$id;
 
 		if ($language && $language !== '*' && JLanguageMultilang::isEnabled())
 		{

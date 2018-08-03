@@ -23,6 +23,7 @@ class AddonParser {
   public static $js_content = '';
   private static $sppagebuilderAddonTags = array();
   private static $template = '';
+  public static $authorised = array();
 
   public static function addAddon($tag, $func)
   {
@@ -189,6 +190,8 @@ class AddonParser {
     SpPgaeBuilderBase::loadAddons();
     $addon_list = SpAddonsConfig::$addons;
 
+    self::$authorised = JAccess::getAuthorisedViewLevels(JFactory::getUser()->get('id'));
+
     $layout_path = JPATH_ROOT . '/components/com_sppagebuilder/layouts';
 
     $layouts =  new stdClass;
@@ -246,86 +249,13 @@ class AddonParser {
 
           foreach ($column->addons as $key => $addon) {
 
-            $addon_options = array();
-            if((!isset($addon->type) || $addon->type !== 'inner_row') && isset($addon_list[$addon->name]['attr']) && $addon_list[$addon->name]['attr']) {
-              $addon_groups = $addon_list[$addon->name]['attr'];
-              if (is_array($addon_groups)) {
-                foreach ($addon_groups as $addon_group) {
-                  $addon_options += $addon_group;
-                }
-              }
-            }
-
-            if(!(isset($addon->type) && $addon->type === 'inner_row')){
-
-              foreach ($addon->settings as $key => &$setting) {
-
-                if (isset($setting->md)) {
-                  $md = isset($setting->md) ? $setting->md : "";
-                  $sm = isset($setting->sm) ? $setting->sm : "";
-                  $xs = isset($setting->xs) ? $setting->xs : "";
-                  $setting = $md;
-                  $addon->settings->{$key . '_sm'} = $sm;
-                  $addon->settings->{$key . '_xs'} = $xs;
-                }
-
-                if(isset($addon_options[$key]['selector'])) {
-                  $addon_selector = $addon_options[$key]['selector'];
-                  if(isset($addon->settings->{$key}) && !empty($addon->settings->{$key})) {
-                    $selector_value = $addon->settings->{$key};
-                    $addon->settings->{$key . '_selector'} = str_replace('{{ VALUE }}', $selector_value, $addon_selector);
-                  }
-                }
-
-                // Repeatable
-                if( (!isset($addon->type) || $addon->type !== 'inner_row') &&  (($key == 'sp_'. $addon->name .'_item') || ($key == $addon->name .'_item')) ) {
-                  if(count((array) $setting)) {
-                    foreach ($setting as &$options) {
-                      foreach ($options as $key2 => &$opt) {
-
-                        if (isset($opt->md)) {
-                          $md = isset($opt->md) ? $opt->md : "";
-                          $sm = isset($opt->sm) ? $opt->sm : "";
-                          $xs = isset($opt->xs) ? $opt->xs : "";
-                          $opt = $md;
-                          $options->{$key2 . '_sm'} = $sm;
-                          $options->{$key2 . '_xs'} = $xs;
-                        }
-
-                        if(isset($addon_options[$key]['attr'][$key2]['selector'])) {
-                          $addon_selector = $addon_options[$key]['attr'][$key2]['selector'];
-                          if(isset($options->{$key2}) && !empty($options->{$key2})) {
-                            $selector_value = $options->{$key2};
-                            $options->{$key2 . '_selector'} = str_replace('{{ VALUE }}', $selector_value, $addon_selector);
-                          }
-                        }
-
-                      }
-                    }
-                  }
-                }
-              }
-            }
-
             // Addon Visibility and ACL
             if ( isset($addon->visibility) && !$addon->visibility ) {
               continue;
             }
 
             // ACL
-            $access = true;
-            $authorised = JAccess::getAuthorisedViewLevels(JFactory::getUser()->get('id'));
-            if(isset($addon->settings->acl) && $addon->settings->acl ) {
-              $access_list = $addon->settings->acl;
-              $access = false;
-              foreach ($access_list as $acl) {
-                if(in_array($acl, $authorised)) {
-                  $access = true;
-                }
-              }
-              unset($addon->settings->acl);
-            }
-
+            $access = self::checkAddonACL($addon);
             if(!$access) {
               continue;
             } // End ACL
@@ -350,7 +280,7 @@ class AddonParser {
         }
         return AddonParser::spDoAddon( $output );
       }
-    }else{
+    } else {
       return '<p>'.$content.'</p>';
     }
 
@@ -389,6 +319,64 @@ class AddonParser {
 
     if(file_exists($addon_path . '/site.php')) {
 
+      $addon_options = array();
+      if(isset($addon_list[$addon->name]['attr']) && $addon_list[$addon->name]['attr']) {
+        $addon_groups = $addon_list[$addon->name]['attr'];
+        if (is_array($addon_groups)) {
+          foreach ($addon_groups as $addon_group) {
+            $addon_options += $addon_group;
+          }
+        }
+      }
+
+      foreach ($addon->settings as $key => &$setting) {
+
+        if (isset($setting->md)) {
+          $md = isset($setting->md) ? $setting->md : "";
+          $sm = isset($setting->sm) ? $setting->sm : "";
+          $xs = isset($setting->xs) ? $setting->xs : "";
+          $setting = $md;
+          $addon->settings->{$key . '_sm'} = $sm;
+          $addon->settings->{$key . '_xs'} = $xs;
+        }
+
+        if(isset($addon_options[$key]['selector'])) {
+          $addon_selector = $addon_options[$key]['selector'];
+          if(isset($addon->settings->{$key}) && !empty($addon->settings->{$key})) {
+            $selector_value = $addon->settings->{$key};
+            $addon->settings->{$key . '_selector'} = str_replace('{{ VALUE }}', $selector_value, $addon_selector);
+          }
+        }
+
+        // Repeatable
+        if( (!isset($addon->type) || $addon->type !== 'inner_row') &&  (($key == 'sp_'. $addon->name .'_item') || ($key == $addon->name .'_item')) ) {
+          if(count((array) $setting)) {
+            foreach ($setting as &$options) {
+              foreach ($options as $key2 => &$opt) {
+
+                if (isset($opt->md)) {
+                  $md = isset($opt->md) ? $opt->md : "";
+                  $sm = isset($opt->sm) ? $opt->sm : "";
+                  $xs = isset($opt->xs) ? $opt->xs : "";
+                  $opt = $md;
+                  $options->{$key2 . '_sm'} = $sm;
+                  $options->{$key2 . '_xs'} = $xs;
+                }
+
+                if(isset($addon_options[$key]['attr'][$key2]['selector'])) {
+                  $addon_selector = $addon_options[$key]['attr'][$key2]['selector'];
+                  if(isset($options->{$key2}) && !empty($options->{$key2})) {
+                    $selector_value = $options->{$key2};
+                    $options->{$key2 . '_selector'} = str_replace('{{ VALUE }}', $selector_value, $addon_selector);
+                  }
+                }
+
+              }
+            }
+          }
+        }
+      }
+
       //sbou start
       //plugin support for addonRender
       JPluginHelper::importPlugin( 'system' );
@@ -413,34 +401,16 @@ class AddonParser {
             $newConetnt = '';
             foreach ($item->content as $contentAddon) {
 
-              $addon_options = array();
-              if(isset($addon_list[$contentAddon->name]['attr']) && $addon_list[$contentAddon->name]['attr']) {
-                $addon_groups = $addon_list[$contentAddon->name]['attr'];
-                foreach ($addon_groups as $addon_group) {
-                  $addon_options += $addon_group;
-                }
+              // Addon Visibility and ACL
+              if ( isset($addon->visibility) && !$addon->visibility ) {
+                continue;
               }
 
-              if(!(isset($addon->type) && $addon->type === 'inner_row')){
-                foreach ($contentAddon->settings as $key => &$setting) {
-                  if (isset($setting->md)) {
-                    $md = isset($setting->md) ? $setting->md : "";
-                    $sm = isset($setting->sm) ? $setting->sm : "";
-                    $xs = isset($setting->xs) ? $setting->xs : "";
-                    $setting = $md;
-                    $contentAddon->settings->{$key . '_sm'} = $sm;
-                    $contentAddon->settings->{$key . '_xs'} = $xs;
-                  }
-
-                  if(isset($addon_options[$key]['selector'])) {
-                    $addon_selector = $addon_options[$key]['selector'];
-                    if(isset($contentAddon->settings->{$key}) && !empty($contentAddon->settings->{$key})) {
-                      $selector_value = $contentAddon->settings->{$key};
-                      $contentAddon->settings->{$key . '_selector'} = str_replace('{{ VALUE }}', $selector_value, $addon_selector);
-                    }
-                  }
-                }
-              }
+              // ACL
+              $access = self::checkAddonACL($contentAddon);
+              if(!$access) {
+                continue;
+              } // End ACL
 
               $newConetnt .= self::getAddonHtmlView($contentAddon, $layouts);
             }
@@ -592,6 +562,22 @@ class AddonParser {
     }
 
     return $cssString;
+  }
+
+  public static function checkAddonACL($addon){
+    $access = true;
+    if(isset($addon->settings->acl) && $addon->settings->acl ) {
+      $access_list = $addon->settings->acl;
+      $access = false;
+      foreach ($access_list as $acl) {
+        if(in_array($acl, self::$authorised)) {
+          $access = true;
+        }
+      }
+      unset($addon->settings->acl);
+    }
+
+    return $access;
   }
 }
 

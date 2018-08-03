@@ -2,7 +2,7 @@
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @copyright Copyright (c) 2010 - 2018 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
@@ -147,7 +147,7 @@ class SppagebuilderAddonImage_content extends SppagebuilderAddons{
 				button_classes = button_classes + " " + data.button_block;
 			}
 
-			var button_fontstyle = data.button_fontstyle || "";
+			var button_fontstyle = data.button_font_style || "";
 
 			var padding = "";
 			var padding_sm = "";
@@ -181,7 +181,6 @@ class SppagebuilderAddonImage_content extends SppagebuilderAddons{
 						}).join(" ")
 					}
 				}
-
 			}
 		#>
 		<style type="text/css">
@@ -200,24 +199,34 @@ class SppagebuilderAddonImage_content extends SppagebuilderAddons{
 				<# if(typeof data.button_margin_top !== "undefined" && typeof data.button_margin_top.md !== "undefined"){ #>
 					margin-top: {{ data.button_margin_top.md }}px;
 				<# } #>
-				<# if(_.isArray(button_fontstyle)) { #>
-					<# if(button_fontstyle.indexOf("underline") !== -1){ #>
+				<# if(_.isObject(button_fontstyle)) { #>
+					<# if(button_fontstyle.underline == 1){ #>
 						text-decoration: underline;
 					<# } #>
-					<# if(button_fontstyle.indexOf("uppercase") !== -1){ #>
+					<# if(button_fontstyle.uppercase == 1){ #>
 						text-transform: uppercase;
 					<# } #>
-					<# if(button_fontstyle.indexOf("italic") !== -1){ #>
+					<# if(button_fontstyle.italic == 1){ #>
 						font-style: italic;
 					<# } #>
-					<# if(button_fontstyle.indexOf("lighter") !== -1){ #>
-						font-weight: lighter;
-					<# } else if(button_fontstyle.indexOf("normal") !== -1){#>
-						font-weight: normal;
-					<# } else if(button_fontstyle.indexOf("bold") !== -1){#>
-						font-weight: bold;
-					<# } else if(button_fontstyle.indexOf("bolder") !== -1){#>
-						font-weight: bolder;
+					<# if(button_fontstyle.weight == 100){ #>
+						font-weight: 100;
+					<# } else if(button_fontstyle.weight == 200){#>
+						font-weight: 200;
+					<# } else if(button_fontstyle.weight == 300){#>
+						font-weight: 300;
+					<# } else if(button_fontstyle.weight == 400){#>
+						font-weight: 400;
+					<# } else if(button_fontstyle.weight == 500){#>
+						font-weight: 500;
+					<# } else if(button_fontstyle.weight == 600){#>
+						font-weight: 600;
+					<# } else if(button_fontstyle.weight == 700){#>
+						font-weight: 700;
+					<# } else if(button_fontstyle.weight == 800){#>
+						font-weight: 800;
+					<# } else if(button_fontstyle.weight == 900){#>
+						font-weight: 900;
 					<# } #>
 				<# } #>
 			}
@@ -287,8 +296,8 @@ class SppagebuilderAddonImage_content extends SppagebuilderAddons{
 					<# } #>
 					<div class="sppb-col-sm-6 {{ content_class }}">
 						<div class="sppb-content-holder">
-                            <# if( !_.isEmpty( data.title ) ){ #><{{ data.heading_selector }} class="sppb-image-content-title sppb-addon-title">{{ data.title }}</{{ data.heading_selector }}><# } #>
-                            <# if(data.text){ #><p class="sppb-image-content-text">{{{ data.text }}}</p><# } #>
+                            <# if( !_.isEmpty( data.title ) ){ #><{{ data.heading_selector }} class="sppb-image-content-title sppb-addon-title sp-inline-editable-element" data-id={{data.id}} data-fieldName="title" contenteditable="true">{{ data.title }}</{{ data.heading_selector }}><# } #>
+                            <# if(data.text){ #><p id="addon-text-{{data.id}}" class="sppb-image-content-text sp-editable-content" data-id={{data.id}} data-fieldName="text">{{{ data.text }}}</p><# } #>
 						    <# if(button_text){ #>
                                 <a href=\'{{ data.button_url }}\' target="{{ data.button_target }}" id="btn-{{ data.id }}" class="sppb-btn {{ button_classes }}">{{{ button_text }}}</a>
                             <# } #>

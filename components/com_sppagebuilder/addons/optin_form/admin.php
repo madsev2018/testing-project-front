@@ -2,7 +2,7 @@
 /**
 * @package SP Page Builder
 * @author JoomShaper http://www.joomshaper.com
-* @copyright Copyright (c) 2010 - 2017 JoomShaper
+* @copyright Copyright (c) 2010 - 2018 JoomShaper
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
@@ -242,6 +242,27 @@ array(
 			'separator_general_settings'=>array(
 				'type'=>'separator',
 				'title'=>JText::_('COM_SPPAGEBUILDER_ADDON_OPTIN_GENERAL_SETTINGS'),
+			),
+
+			'recaptcha' => array(
+				'type' => 'checkbox',
+				'title' => JText::_('COM_SPPAGEBUILDER_ADDON_SHOW_RECAPTCHA'),
+				'desc' => JText::_('COM_SPPAGEBUILDER_ADDON_SHOW_RECAPTCHA_DESC'),
+				'std' => 0,
+			),
+
+			'show_checkbox' => array(
+				'type' => 'checkbox',
+				'title' => JText::_('COM_SPPAGEBUILDER_ADDON_SHOW_CHECKBOX'),
+				'desc' => JText::_('COM_SPPAGEBUILDER_ADDON_SHOW_CHECKBOX_DESC'),
+				'std' => 1,
+			),
+			'checkbox_title' => array(
+				'type' => 'textarea',
+				'title' => JText::_('COM_SPPAGEBUILDER_ADDON_CHECKBOX_TITLE'),
+				'desc' => JText::_('COM_SPPAGEBUILDER_ADDON_CHECKBOX_TITLE_DESC'),
+				'std' => 'I agree with the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a> and I declare that I have read the information that is required in accordance with <a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.L_.2016.119.01.0001.01.ENG&amp;toc=OJ:L:2016:119:TOC" target="_blank">Article 13 of GDPR.</a>',
+				'depends' => array('show_checkbox' => 1)
 			),
 
 			// Addon Style

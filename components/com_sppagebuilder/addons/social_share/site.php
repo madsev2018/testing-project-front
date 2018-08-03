@@ -2,7 +2,7 @@
 /**
 * @package SP Page Builder
 * @author JoomShaper http://www.joomshaper.com
-* @copyright Copyright (c) 2010 - 2016 JoomShaper
+* @copyright Copyright (c) 2010 - 2018 JoomShaper
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
@@ -287,20 +287,20 @@ class SppagebuilderAddonSocial_share extends SppagebuilderAddons {
 
 		$output ='
 			<#
-					let current_url = "' . $current_url .'"
-					let page_title = "' . $page_title .'"
-					let show_totalshare = data.show_totalshare || ""
-					let share_col = "sppb-col-sm-12"
-					let icons_col = "sppb-col-sm-12"
-					let totalShareText = "'. JText::_("COM_SPPAGEBUILDER_ADDON_SOCIALSHARE_TOTAL_SHARES") . '"
+				let current_url = "' . $current_url .'"
+				let page_title = "' . $page_title .'"
+				let show_totalshare = data.show_totalshare || ""
+				let share_col = "sppb-col-sm-12"
+				let icons_col = "sppb-col-sm-12"
+				let totalShareText = "'. JText::_("COM_SPPAGEBUILDER_ADDON_SOCIALSHARE_TOTAL_SHARES") . '"
 
-					let sShareClass = data.class || ""
-							sShareClass += (!_.isEmpty(data.social_style))? " sppb-social-share-style-"+data.social_style.replace("_","-"):""
+				let sShareClass = data.class || ""
+						sShareClass += (!_.isEmpty(data.social_style))? " sppb-social-share-style-"+data.social_style.replace("_","-"):""
 
-					if (show_totalshare == 1) {
-						share_col = "sppb-col-sm-3"
-						icons_col = "sppb-col-sm-9"
-					}
+				if (show_totalshare == 1) {
+					share_col = "sppb-col-sm-3"
+					icons_col = "sppb-col-sm-9"
+				}
 			#>
 
 			<style type="text/css">
@@ -349,7 +349,7 @@ class SppagebuilderAddonSocial_share extends SppagebuilderAddons {
 
 			<div class="sppb-addon sppb-addon-social-share {{ sShareClass }}">
 				<div class="sppb-social-share">
-					<# if( !_.isEmpty( data.title ) ){ #><{{ data.heading_selector }} class="sppb-addon-title">{{{ data.title }}}</{{ data.heading_selector }}><# } #>
+					<# if( !_.isEmpty( data.title ) ){ #><{{ data.heading_selector }} class="sppb-addon-title sp-inline-editable-element" data-id={{data.id}} data-fieldName="title" contenteditable="true">{{{ data.title }}}</{{ data.heading_selector }}><# } #>
 					<div class="sppb-social-share-wrap sppb-row">
 
 					<# if(show_totalshare){ #>

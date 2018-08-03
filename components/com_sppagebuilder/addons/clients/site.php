@@ -2,7 +2,7 @@
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @copyright Copyright (c) 2010 - 2018 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
@@ -48,7 +48,7 @@ class SppagebuilderAddonClients extends SppagebuilderAddons {
 	public static function getTemplate(){
 		$output = '
 		<div class="sppb-addon sppb-addon-clients {{ data.class }} {{ data.alignment }}">
-			<# if( !_.isEmpty( data.title ) ){ #><{{ data.heading_selector }} class="sppb-addon-title">{{ data.title }}</{{ data.heading_selector }}><# } #>
+			<# if( !_.isEmpty( data.title ) ){ #><{{ data.heading_selector }} class="sppb-addon-title sp-inline-editable-element" data-id={{data.id}} data-fieldName="title" contenteditable="true">{{ data.title }}</{{ data.heading_selector }}><# } #>
 			<div class="sppb-addon-content">
 				<div class="sppb-row">
 					<# _.each(data.sp_clients_item, function(clients_item, key){ #>

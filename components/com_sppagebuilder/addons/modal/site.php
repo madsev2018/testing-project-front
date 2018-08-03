@@ -2,7 +2,7 @@
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @copyright Copyright (c) 2010 - 2018 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
@@ -78,7 +78,11 @@ class SppagebuilderAddonModal extends SppagebuilderAddons{
 		if($modal_selector=='image') {
 			if ($selector_image) {
 				$url_part_of_button = explode('/', $selector_image);
-				$alt_for_button = end($url_part_of_button);
+				if($selector_text) {
+					$alt_for_button = $selector_text;
+				} else {
+					$alt_for_button = end($url_part_of_button);
+				}
 				$output .= '<a class="sppb-modal-selector sppb-magnific-popup" '. $attribs .' href="'. $url . '" id="'. $modal_unique_id .'-selector"><img src="' . $selector_image . '" alt="'. $alt_for_button .'">';
 					$output  .= ($selector_text) ? '<span class="text">' . $selector_text . '</span>' : '';
 				$output  .= '</a>';

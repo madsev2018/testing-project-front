@@ -2,7 +2,7 @@
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @copyright Copyright (c) 2010 - 2018 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
@@ -403,12 +403,24 @@ class SppagebuilderAddonPricing extends SppagebuilderAddons {
 						line-height: {{data.price_symbol_font_size.sm}}px;
 					}
 				<# } #>
+				<# if( _.isObject(data.price_font_size) ) { #>
+					#sppb-addon-{{ data.id }} .sppb-pricing-price {
+						font-size: {{data.price_font_size.sm}}px;
+						line-height: {{data.price_font_size.sm}}px;
+					}
+				<# } #>
 			}
 			@media (max-width: 767px) {
 				<# if( _.isObject(data.price_symbol_font_size) ) { #>
 					#sppb-addon-{{ data.id }} .sppb-pricing-price-symbol {
 						font-size: {{data.price_symbol_font_size.xs}}px;
 						line-height: {{data.price_symbol_font_size.xs}}px;
+					}
+				<# } #>
+				<# if( _.isObject(data.price_font_size) ) { #>
+					#sppb-addon-{{ data.id }} .sppb-pricing-price {
+						font-size: {{data.price_font_size.xs}}px;
+						line-height: {{data.price_font_size.xs}}px;
 					}
 				<# } #>
 			}
@@ -601,7 +613,7 @@ class SppagebuilderAddonPricing extends SppagebuilderAddons {
 			<div class="sppb-pricing-box {{ data.featured }}">
 				<div class="sppb-pricing-header">
 					<# if( data.title ) { #>
-						<{{ heading_selector }} class="sppb-addon-title sppb-pricing-title">{{ data.title }}</{{ heading_selector }}>
+						<{{ heading_selector }} class="sppb-addon-title sppb-pricing-title sp-inline-editable-element" data-id={{data.id}} data-fieldName="title" contenteditable="true">{{ data.title }}</{{ heading_selector }}>
 					<# } #>
 					<# if( price_position == "after" ) { #>
 						<div class="sppb-pricing-price-container">

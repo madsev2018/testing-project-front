@@ -3,7 +3,7 @@
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @copyright Copyright (c) 2010 - 2018 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
  */
 //no direct accees
@@ -55,6 +55,8 @@ class SppagebuilderAddonButton extends SppagebuilderAddons {
         $options->button_fontstyle = (isset($this->addon->settings->fontstyle) && $this->addon->settings->fontstyle) ? $this->addon->settings->fontstyle : '';
         $options->button_font_style = (isset($this->addon->settings->font_style) && $this->addon->settings->font_style) ? $this->addon->settings->font_style : '';
         $options->button_padding = (isset($this->addon->settings->button_padding) && $this->addon->settings->button_padding) ? $this->addon->settings->button_padding : '';
+        $options->button_padding_sm = (isset($this->addon->settings->button_padding_sm) && $this->addon->settings->button_padding_sm) ? $this->addon->settings->button_padding_sm : '';
+        $options->button_padding_xs = (isset($this->addon->settings->button_padding_xs) && $this->addon->settings->button_padding_xs) ? $this->addon->settings->button_padding_xs : '';
         $options->fontsize = (isset($this->addon->settings->fontsize) && $this->addon->settings->fontsize) ? $this->addon->settings->fontsize : '';
         $options->fontsize_sm = (isset($this->addon->settings->fontsize_sm) && $this->addon->settings->fontsize_sm) ? $this->addon->settings->fontsize_sm : '';
         $options->fontsize_xs = (isset($this->addon->settings->fontsize_xs) && $this->addon->settings->fontsize_xs) ? $this->addon->settings->fontsize_xs : '';
@@ -177,16 +179,16 @@ class SppagebuilderAddonButton extends SppagebuilderAddons {
 
 			<# if(data.type == "custom"){ #>
 				#sppb-addon-{{ data.id }} #btn-{{ data.id }}.sppb-btn-custom{
-                                        <# if(_.isObject(data.fontsize)){ #>
-                                            font-size: {{data.fontsize.md}}px;
-                                        <# } else { #>
-                                            font-size: {{data.fontsize}}px;
-                                        <# } #>
+						<# if(_.isObject(data.fontsize)){ #>
+							font-size: {{data.fontsize.md}}px;
+						<# } else { #>
+							font-size: {{data.fontsize}}px;
+						<# } #>
 					color: {{ data.color }};
 					padding: {{ button_padding }};
 					<# if(data.appearance == "outline"){ #>
 						border-color: {{ data.background_color }};
-                                                background-color: transparent;
+						background-color: transparent;
 					<# } else if(data.appearance == "3d"){ #>
 						border-bottom-color: {{ data.background_color_hover }};
 						background-color: {{ data.background_color }};
@@ -217,18 +219,18 @@ class SppagebuilderAddonButton extends SppagebuilderAddons {
 				}
 				@media (min-width: 768px) and (max-width: 991px) {
 					#sppb-addon-{{ data.id }} #btn-{{ data.id }}.sppb-btn-custom{
-                                            <# if(_.isObject(data.fontsize)){ #>
-                                                font-size: {{data.fontsize.sm}}px;
-                                            <# } #>
-                                            padding: {{ button_padding_sm }};
+						<# if(_.isObject(data.fontsize)){ #>
+							font-size: {{data.fontsize.sm}}px;
+						<# } #>
+						padding: {{ button_padding_sm }};
 					}
 				}
 				@media (max-width: 767px) {
 					#sppb-addon-{{ data.id }} #btn-{{ data.id }}.sppb-btn-custom{
-                                            <# if(_.isObject(data.fontsize)){ #>
-                                                font-size: {{data.fontsize.xs}}px;
-                                            <# } #>
-                                            padding: {{ button_padding_xs }};
+						<# if(_.isObject(data.fontsize)){ #>
+							font-size: {{data.fontsize.xs}}px;
+						<# } #>
+						padding: {{ button_padding_xs }};
 					}
 				}
 			<# } #>

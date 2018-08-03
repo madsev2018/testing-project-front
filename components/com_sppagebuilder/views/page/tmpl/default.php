@@ -30,7 +30,9 @@ if ($params->get('addcontainer', 1)) {
 	$doc->addStyleSheet(JUri::base(true) . '/components/com_sppagebuilder/assets/css/sppagecontainer.css');
 }
 
-$doc->addScript(JUri::base(true) . '/components/com_sppagebuilder/assets/js/jquery.parallax-1.1.3.js');
+$doc->addScript(JUri::base(true) . '/components/com_sppagebuilder/assets/js/jquery.parallax.js');
+$doc->addScript(JUri::base(true).'/components/com_sppagebuilder/assets/js/jquery.mb.YTPlayer.min.js');
+$doc->addScript(JUri::base(true).'/components/com_sppagebuilder/assets/js/jquery.mb.vimeo_player.min.js');
 
 $doc->addScript(JUri::base(true) . '/components/com_sppagebuilder/assets/js/sppagebuilder.js');
 

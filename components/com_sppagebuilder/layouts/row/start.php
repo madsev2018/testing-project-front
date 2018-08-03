@@ -121,6 +121,13 @@ if(isset($options->show_bottom_shape) && $options->show_bottom_shape && !empty($
 }
 
 // Video
+$video_loop = '';
+if (isset($options->video_loop) && $options->video_loop==true) {
+	$video_loop = 1;
+} else {
+	$video_loop = 0;
+}
+
 $video_params = '';
 if(isset($options->background_type)){
 	if ($options->background_type == 'video') {
@@ -131,12 +138,12 @@ if(isset($options->background_type)){
 			$mp4_parsed = parse_url($options->background_video_mp4);
 			$mp4_url = (isset($mp4_parsed['host']) && $mp4_parsed['host']) ? $options->background_video_mp4 : JURI::base(true) . '/' . $options->background_video_mp4;
 	
-			$video_params .= ' data-vide-mp4="' . $mp4_url . '"';}
+			$video_params .= ' data-vide-mp4="' . $mp4_url . '" data-vide-options="loop: '.$video_loop.'"';}
 		if (isset($options->background_video_ogv) && $options->background_video_ogv) {
 			$ogv_parsed = parse_url($options->background_video_ogv);
 			$ogv_url = (isset($ogv_parsed['host']) && $ogv_parsed['host']) ? $options->background_video_ogv : JURI::base(true) . '/' . $options->background_video_ogv;
 	
-			$video_params .= ' data-vide-ogv="' . $ogv_url . '"';
+			$video_params .= ' data-vide-ogv="' . $ogv_url . '" data-vide-options="loop: '.$video_loop.'"';
 		}
 		$video_params .= ' data-vide-bg';
 	}
@@ -150,12 +157,12 @@ if(isset($options->background_type)){
 			$mp4_parsed = parse_url($options->background_video_mp4);
 			$mp4_url = (isset($mp4_parsed['host']) && $mp4_parsed['host']) ? $options->background_video_mp4 : JURI::base(true) . '/' . $options->background_video_mp4;
 	
-			$video_params .= ' data-vide-mp4="' . $mp4_url . '"';}
+			$video_params .= ' data-vide-mp4="' . $mp4_url . '" data-vide-options="loop: '.$video_loop.'"';}
 		if (isset($options->background_video_ogv) && $options->background_video_ogv) {
 			$ogv_parsed = parse_url($options->background_video_ogv);
 			$ogv_url = (isset($ogv_parsed['host']) && $ogv_parsed['host']) ? $options->background_video_ogv : JURI::base(true) . '/' . $options->background_video_ogv;
 	
-			$video_params .= ' data-vide-ogv="' . $ogv_url . '"';
+			$video_params .= ' data-vide-ogv="' . $ogv_url . '" data-vide-options="loop: '.$video_loop.'"';
 		}
 		$video_params .= ' data-vide-bg';
 	}
@@ -169,13 +176,13 @@ if ($background_parallax && isset($options->background_image) && $options->backg
 $html = '';
 
 if(!$fluid_row){
-	$html .= '<section id="' . $row_id . '" class="sppb-section ' . $custom_class . '" '.$addon_attr.' ' . $video_params . $parallax_params . '>';
+	$html .= '<section id="' . $row_id . '" class="sppb-section ' . $custom_class . '" '.$addon_attr.' ' . $video_params . $parallax_params .'>';
 	if (isset($options->overlay) && $options->overlay) {
 		$html .= '<div class="sppb-row-overlay"></div>';
 	}
 	$html .= '<div class="sppb-row-container">';
 } else {
-	$html .= '<div id="' . $row_id . '" class="sppb-section ' . $custom_class . '" '.$addon_attr.' ' . $video_params . $parallax_params . '>';
+	$html .= '<div id="' . $row_id . '" class="sppb-section ' . $custom_class . '" '.$addon_attr.' ' . $video_params . $parallax_params .'>';
 	if (isset($options->overlay) && $options->overlay) {
 		$html .= '<div class="sppb-row-overlay"></div>';
 	}
@@ -216,48 +223,63 @@ if(isset($options->background_type)){
 	if (!empty($external_video) && $options->external_background_video && $options->background_type == 'video') {
 		$video = parse_url($external_video);
 		$src = '';
-		$vidId = '';
+		$vimeoSrc = '';
+		$vidId = '#'. $row_id . ' .sppb-youtube-video-bg';
+		$returnHtml = '';
 		switch($video['host']) {
 			case 'youtu.be':
 			$id = trim($video['path'],'/');
-			$src = '//www.youtube.com/embed/' . $id .'?playlist='.$id.'&iv_load_policy=3&enablejsapi=1&disablekb=1&autoplay=1&controls=0&showinfo=0&rel=0&loop=1&wmode=transparent&widgetid=1&mute=1';
+			$src = '{videoURL:\''.$id.'\',containment:\''.$vidId.'\',autoPlay:true,mute:true,startAt:0,opacity:1,loop:'.$video_loop.',showControls:false,stopMovieOnBlur:false,showYTLogo:false,gaTrack:false,rel:0}';
 			break;
 	
 			case 'www.youtube.com':
 			case 'youtube.com':
 			parse_str($video['query'], $query);
 			$id = $query['v'];
-			$src = '//www.youtube.com/embed/' . $id .'?playlist='.$id.'&iv_load_policy=3&enablejsapi=1&disablekb=1&autoplay=1&controls=0&showinfo=0&rel=0&loop=1&wmode=transparent&widgetid=1&mute=1';
+			$src = '{videoURL:\''.$id.'\',containment:\''.$vidId.'\',autoPlay:true,mute:true,startAt:0,opacity:1,loop:'.$video_loop.',showControls:false,stopMovieOnBlur:false,showYTLogo:false,gaTrack:false,rel:0}';
 			break;
 			case 'vimeo.com':
 			case 'www.vimeo.com':
 			$id = trim($video['path'],'/');
-			$src = "//player.vimeo.com/video/{$id}?background=1?autoplay=1&loop=1&title=0&byline=0&portrait=0";
+			$vimeoSrc = '{videoURL:\''.$id.'\',containment:\''.$vidId.'\',autoPlay:true,mute:true,startAt:0,opacity:1,loop:'.$video_loop.',showControls:false,stopMovieOnBlur:false,showYTLogo:false,gaTrack:false}';
 		}
-		$html .= '<div class="sppb-youtube-video-bg hidden"><iframe src="'.$src.'" frameborder="0" allowfullscreen></iframe></div>';
+		if($video['host'] == 'vimeo.com' || $video['host'] == 'www.vimeo.com'){
+			$returnHtml = '<div class="vimeo-bg-video-player" data-property="'.$vimeoSrc.'"></div>';
+		} else {
+			$returnHtml = '<div class="youtube-bg-video-player" data-property="'.$src.'"></div>';
+		}
+		$html .= '<div class="sppb-youtube-video-bg hidden">'.$returnHtml.'</div>';
 	}
 } else {
 	if (!empty($external_video) && $options->external_background_video && $options->background_video) {
 		$video = parse_url($external_video);
 		$src = '';
+		$vimeoSrc = '';
+		$vidId = '#'. $row_id . ' .sppb-youtube-video-bg';
+		$returnHtml = '';
 		switch($video['host']) {
 			case 'youtu.be':
 			$id = trim($video['path'],'/');
-			$src = '//www.youtube.com/embed/' . $id .'?playlist='.$id.'&iv_load_policy=3&enablejsapi=1&disablekb=1&autoplay=1&controls=0&showinfo=0&rel=0&loop=1&wmode=transparent&widgetid=1&mute=1';
+			$src = '{videoURL:\''.$id.'\',containment:\''.$vidId.'\',autoPlay:true,mute:true,startAt:0,opacity:1,loop:'.$video_loop.',showControls:false,stopMovieOnBlur:false,showYTLogo:false,gaTrack:false,rel:0}';
 			break;
 	
 			case 'www.youtube.com':
 			case 'youtube.com':
 			parse_str($video['query'], $query);
 			$id = $query['v'];
-			$src = '//www.youtube.com/embed/' . $id .'?playlist='.$id.'&iv_load_policy=3&enablejsapi=1&disablekb=1&autoplay=1&controls=0&showinfo=0&rel=0&loop=1&wmode=transparent&widgetid=1&mute=1';
+			$src = '{videoURL:\''.$id.'\',containment:\''.$vidId.'\',autoPlay:true,mute:true,startAt:0,opacity:1,loop:'.$video_loop.',showControls:false,stopMovieOnBlur:false,showYTLogo:false,gaTrack:false}';
 			break;
 			case 'vimeo.com':
 			case 'www.vimeo.com':
 			$id = trim($video['path'],'/');
-			$src = "//player.vimeo.com/video/{$id}?background=1?autoplay=1&loop=1&title=0&byline=0&portrait=0";
+			$vimeoSrc = '{videoURL:\''.$id.'\',containment:\''.$vidId.'\',autoPlay:true,mute:true,startAt:0,opacity:1,loop:'.$video_loop.',showControls:false,stopMovieOnBlur:false,showYTLogo:false,gaTrack:false}';
 		}
-		$html .= '<div class="sppb-youtube-video-bg hidden"><iframe src="'.$src.'" frameborder="0" allowfullscreen></iframe></div>';
+		if($video['host'] == 'vimeo.com' || $video['host'] == 'www.vimeo.com'){
+			$returnHtml = '<div class="vimeo-bg-video-player" data-property="'.$vimeoSrc.'"></div>';
+		} else {
+			$returnHtml = '<div class="youtube-bg-video-player" data-property="'.$src.'"></div>';
+		}
+		$html .= '<div class="sppb-youtube-video-bg hidden">'.$returnHtml.'</div>';
 	}
 }
 

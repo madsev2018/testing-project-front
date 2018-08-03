@@ -2,7 +2,7 @@
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @copyright Copyright (c) 2010 - 2018 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 
@@ -141,28 +141,28 @@ class SppagebuilderAddonBlocknumber extends SppagebuilderAddons{
 			}
 		</style>
 		<div class="sppb-addon sppb-addon-blocknumber {{ data.class }}">
-			<# if( !_.isEmpty( data.title ) ){ #><{{ data.heading_selector }} class="sppb-addon-title">{{{ data.title }}}</{{ data.heading_selector }}><# } #>
+			<# if( !_.isEmpty( data.title ) ){ #><{{ data.heading_selector }} class="sppb-addon-title sp-inline-editable-element" data-id={{data.id}} data-fieldName="title" contenteditable="true">{{{ data.title }}}</{{ data.heading_selector }}><# } #>
 			<div class="sppb-addon-content">
 				<div class="sppb-blocknumber sppb-media">
 					<# if( data.alignment == "center" ) { #>
 						<# if(data.number){ #>
-							<div class="sppb-text-center"><span class="sppb-blocknumber-number">{{ data.number }}</span></div>
+							<div class="sppb-text-center"><span class="sppb-blocknumber-number sp-inline-editable-element" data-id={{data.id}} data-fieldName="number" contenteditable="true">{{ data.number }}</span></div>
 						<# } #>
 						<div class="sppb-media-body sppb-text-center">
 							<# if(data.heading){ #>
-								<h3 class="sppb-media-heading">{{{ data.heading }}}</h3>
+								<h3 class="sppb-media-heading sp-inline-editable-element" data-id={{data.id}} data-fieldName="heading" contenteditable="true">{{{ data.heading }}}</h3>
 							<# } #>
-							{{ data.text }}
+							<div class="sp-inline-editable-element" data-id={{data.id}} data-fieldName="text" contenteditable="true">{{ data.text }}</div>
 						</div>
 					<# } else { #>
 						<# if(data.number){ #>
-							<div class="pull-{{ data.alignment }}"><span class="sppb-blocknumber-number">{{ data.number }}</span></div>
+							<div class="pull-{{ data.alignment }}"><span class="sppb-blocknumber-number sp-inline-editable-element" data-id={{data.id}} data-fieldName="number" contenteditable="true">{{ data.number }}</span></div>
 						<# } #>
 						<div class="sppb-media-body sppb-text-{{ data.alignment }}">
 							<# if(data.heading){ #>
-								<h3 class="sppb-media-heading">{{{ data.heading }}}</h3>
+								<h3 class="sppb-media-heading sp-inline-editable-element" data-id={{data.id}} data-fieldName="heading" contenteditable="true">{{{ data.heading }}}</h3>
 							<# } #>
-							{{ data.text }}
+							<div class="sp-inline-editable-element" data-id={{data.id}} data-fieldName="text" contenteditable="true">{{ data.text }}</div>
 						</div>
 					<# } #>
 				</div>

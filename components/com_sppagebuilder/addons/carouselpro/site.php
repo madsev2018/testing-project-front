@@ -2,7 +2,7 @@
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @copyright Copyright (c) 2010 - 2018 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 
@@ -43,17 +43,18 @@ class SppagebuilderAddonCarouselpro extends SppagebuilderAddons {
 				$bg_class = (isset($value->bg) && $value->bg) ? ' sppb-item-has-bg' : '';
 				$video = (isset($value->video) && $value->video) ? $value->video : '';
 				$image = (isset($value->image) && $value->image) ? $value->image : '';
+				$alt_text = (isset($value->title) && $value->title) ? $value->title : '';
 	
-				$output  .= '<div id="sppb-item-' . $this->addon->id . $key . '" class="sppb-item'. $bg_class . (($key == 0) ? ' active' : '') .'">';
-				$output  .= ($bg) ? '<img src="' . $bg . '" alt="' . $value->title . '">' : '';
+				$output  .= '<div id="sppb-item-' . $this->addon->id . $key . '" class="sppb-item'. $bg_class . (($key == 0) ? ' active' : '') .' carousel-item-'.($key+1).'">';
+				$output  .= ($bg) ? '<img src="' . $bg . '" alt="' . $alt_text . '">' : '';
 	
 				$output  .= '<div class="sppb-carousel-item-inner">';
-				$output  .= '<div>';
+				$output  .= '<div class="sppb-carousel-pro-inner-content">';
 				$output  .= '<div>';
 	
 				$output  .= '<div class="sppb-row">';
 	
-				$output  .= '<div class="sppb-col-sm-6 sppb-col-xs-7">';
+				$output  .= '<div class="sppb-col-sm-6 sppb-col-xs-12">';
 				$output  .= '<div class="sppb-carousel-pro-text">';
 	
 				if((isset($value->title) && $value->title) || (isset($value->content) && $value->content) ) {
@@ -83,7 +84,7 @@ class SppagebuilderAddonCarouselpro extends SppagebuilderAddons {
 				$output  .= '</div>';
 				$output  .= '</div>';
 	
-				$output  .= '<div class="sppb-col-sm-6 sppb-col-xs-5">';
+				$output  .= '<div class="sppb-col-sm-6 sppb-col-xs-12">';
 				$output  .= '<div class="sppb-text-right">';
 	
 				if($video) {
@@ -155,7 +156,7 @@ class SppagebuilderAddonCarouselpro extends SppagebuilderAddons {
 
 			$uniqid = '#sppb-item-' . $this->addon->id . $key . ' ';
 
-			if($value->button_text) {
+			if(isset($value->button_text)) {
 				$css_path = new JLayoutFile('addon.css.button', $layout_path);
 				$css .= $css_path->render(array('addon_id' => $addon_id, 'options' => $value, 'id' => 'btn-' . ($this->addon->id + $key)));
 			}
@@ -427,7 +428,7 @@ class SppagebuilderAddonCarouselpro extends SppagebuilderAddons {
 				}
 			<# }); #>
 		</style>
-		<div class="sppb-carousel sppb-carousel-pro sppb-slide {{ data.class }}"  data-interval="{{ interval }}" {{{ autoplay }}}>
+		<div id="sppb-carousel-{{data.id}}" class="sppb-carousel sppb-carousel-pro sppb-slide {{ data.class }}"  data-interval="{{ interval }}" {{{ autoplay }}}>
 			<# if(data.controllers){ #>
 				<ol class="sppb-carousel-indicators">
 				<# _.each(data.sp_carouselpro_item, function (carousel_item, key){ #>
@@ -452,14 +453,14 @@ class SppagebuilderAddonCarouselpro extends SppagebuilderAddons {
 							<div>
 								<div>
 									<div class="sppb-row">
-										<div class="sppb-col-sm-6 sppb-col-xs-7">
+										<div class="sppb-col-sm-6 sppb-col-xs-12">
 											<div class="sppb-carousel-pro-text">
 												<# if(carousel_item.title || carousel_item.content) { #>
 													<# if(carousel_item.title) { #>
-														<h2>{{ carousel_item.title }}</h2>
+														<h2 class="sp-editable-content" id="addon-title-{{data.id}}-{{key}}" data-id={{data.id}} data-fieldName="sp_carouselpro_item-{{key}}-title">{{ carousel_item.title }}</h2>
 													<# } #>
 													<# if(carousel_item.content) { #>
-														<div class="sppb-carousel-pro-content">{{{ carousel_item.content }}}</div>
+														<div class="sppb-carousel-pro-content sp-editable-content" id="addon-content-{{data.id}}-{{key}}" data-id={{data.id}} data-fieldName="sp_carouselpro_item-{{key}}-content">{{{ carousel_item.content }}}</div>
 													<# } #>
 													<# if(carousel_item.button_text) { #>
 														<#
@@ -482,7 +483,7 @@ class SppagebuilderAddonCarouselpro extends SppagebuilderAddons {
 												<# } #>
 											</div>
 										</div>
-										<div class="sppb-col-sm-6 sppb-col-xs-5">
+										<div class="sppb-col-sm-6 sppb-col-xs-12">
 											<div class="sppb-text-right">
 											<# if(carousel_item.video) { #>
 												<#

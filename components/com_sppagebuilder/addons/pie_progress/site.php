@@ -105,64 +105,64 @@ class SppagebuilderAddonPie_progress extends SppagebuilderAddons {
 
         $output = '
 			<#
-                            let border_color = data.border_color || "#eeeeee"
+                let border_color = data.border_color || "#eeeeee"
 			#>
 
 			<style type="text/css">
-                            #sppb-addon-{{ data.id }} .sppb-pie-chart {
-                                height: {{ data.size }}px;
-                                width: {{ data.size }}px;
-                            }
-                            <# if(_.isObject(data.percentage_font_size)){ #>
-                                #sppb-addon-{{ data.id }} .sppb-chart-percent span{
-                                    font-size: {{data.percentage_font_size.md}}px;
-                                }
-                            <# } else { #>
-                                #sppb-addon-{{ data.id }} .sppb-chart-percent span{
-                                    font-size: {{data.percentage_font_size}}px;
-                                }
-                            <# } #>
-                            <# if(!_.isEmpty(data.percentage_color)){ #>
-                                #sppb-addon-{{ data.id }} .sppb-chart-percent span{
-                                    color: {{data.percentage_color}};
-                                }
-                            <# } #>
-                            @media (min-width: 768px) and (max-width: 991px) {
-                                <# if(_.isObject(data.percentage_font_size)){ #>
-                                    #sppb-addon-{{ data.id }} .sppb-chart-percent span{
-                                        font-size: {{data.percentage_font_size.sm}}px;
-                                    }
-                                <# } #>
-                            }
-                            @media (max-width: 767px) {
-                                <# if(_.isObject(data.percentage_font_size)){ #>
-                                    #sppb-addon-{{ data.id }} .sppb-chart-percent span{
-                                        font-size: {{data.percentage_font_size.xs}}px;
-                                    }
-                                <# } #>
-                            }
+                #sppb-addon-{{ data.id }} .sppb-pie-chart {
+                    height: {{ data.size }}px;
+                    width: {{ data.size }}px;
+                }
+                <# if(_.isObject(data.percentage_font_size)){ #>
+                    #sppb-addon-{{ data.id }} .sppb-chart-percent span{
+                        font-size: {{data.percentage_font_size.md}}px;
+                    }
+                <# } else { #>
+                    #sppb-addon-{{ data.id }} .sppb-chart-percent span{
+                        font-size: {{data.percentage_font_size}}px;
+                    }
+                <# } #>
+                <# if(!_.isEmpty(data.percentage_color)){ #>
+                    #sppb-addon-{{ data.id }} .sppb-chart-percent span{
+                        color: {{data.percentage_color}};
+                    }
+                <# } #>
+                @media (min-width: 768px) and (max-width: 991px) {
+                    <# if(_.isObject(data.percentage_font_size)){ #>
+                        #sppb-addon-{{ data.id }} .sppb-chart-percent span{
+                            font-size: {{data.percentage_font_size.sm}}px;
+                        }
+                    <# } #>
+                }
+                @media (max-width: 767px) {
+                    <# if(_.isObject(data.percentage_font_size)){ #>
+                        #sppb-addon-{{ data.id }} .sppb-chart-percent span{
+                            font-size: {{data.percentage_font_size.xs}}px;
+                        }
+                    <# } #>
+                }
 			</style>
 
 			<div class="sppb-addon sppb-addon-pie-progress {{ data.class }}">
-                            <div class="sppb-addon-content sppb-text-center">
-                                <div class="sppb-pie-chart" data-size="{{ data.size }}" data-percent="{{ data.percentage }}" data-width="{{ data.border_width }}" data-barcolor="{{ data.border_active_color }}" data-trackcolor="{{ border_color }}">
+                <div class="sppb-addon-content sppb-text-center">
+                    <div class="sppb-pie-chart" data-size="{{ data.size }}" data-percent="{{ data.percentage }}" data-width="{{ data.border_width }}" data-barcolor="{{ data.border_active_color }}" data-trackcolor="{{ border_color }}">
 
-                                <# if(!_.isEmpty(data.icon_name)) { #>
-                                    <div class="sppb-chart-icon"><span><i class="fa {{ data.icon_name }} {{ data.icon_size }}"></i></span></div>
-                                <# } else { #>
-                                    <div class="sppb-chart-percent"><span></span></div>
-                                <# } #>
+                    <# if(!_.isEmpty(data.icon_name)) { #>
+                        <div class="sppb-chart-icon"><span><i class="fa {{ data.icon_name }} {{ data.icon_size }}"></i></span></div>
+                    <# } else { #>
+                        <div class="sppb-chart-percent"><span></span></div>
+                    <# } #>
 
-                                </div>
+                    </div>
 
-                                <# if(!_.isEmpty(data.title) && data.heading_selector) { #>
-                                <{{data.heading_selector}} class="sppb-addon-title">{{ data.title }}</{{data.heading_selector}}>
-                                <# } #>
+                    <# if(!_.isEmpty(data.title) && data.heading_selector) { #>
+                    <{{data.heading_selector}} class="sppb-addon-title sp-inline-editable-element" data-id={{data.id}} data-fieldName="title" contenteditable="true">{{ data.title }}</{{data.heading_selector}}>
+                    <# } #>
 
-                                <div class="sppb-addon-text">
-                                    {{{ data.text }}}
-                                </div>
-                            </div>
+                    <div id="addon-text-{{data.id}}" class="sppb-addon-text sp-editable-content" data-id={{data.id}} data-fieldName="text">
+                        {{{ data.text }}}
+                    </div>
+                </div>
 			</div>
 			';
 

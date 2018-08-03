@@ -132,7 +132,7 @@ SpAddonsConfig::addonConfig(
                             'lines' => JText::_('COM_SPPAGEBUILDER_ADDON_TAB_STYLE_LINES'),
                             'custom' => JText::_('COM_SPPAGEBUILDER_ADDON_TAB_STYLE_CUSTOM'),
                         ),
-                        'std' => 'custom'
+                        'std' => 'tabs'
                     ),
                     'active_tab_bg' => array(
                         'type' => 'color',
@@ -197,7 +197,7 @@ SpAddonsConfig::addonConfig(
                         'desc' => JText::_('COM_SPPAGEBUILDER_ADDON_TAB_NAV_WIDTH_DESC'),
                         'responsive' => true,
                         'max' => 100,
-                        'std' => array('md'=>30),
+                        'std' => array('md'=>30, 'sm'=>30, 'xs'=> 30),
                         'depends' => array(
                             array('style', '=', 'custom')
                         ),
@@ -251,7 +251,7 @@ SpAddonsConfig::addonConfig(
                     'nav_border_color' => array(
                         'type' => 'color',
                         'title' => JText::_('COM_SPPAGEBUILDER_TAB_NAV_BORDER_COLOR'),
-                        'std' => '#2AB9E7',
+                        'std' => '#e5e5e5',
                         'depends' => array(
                             array('style', '=', 'custom')
                         ),
@@ -272,7 +272,7 @@ SpAddonsConfig::addonConfig(
                         'depends' => array(
                             array('style', '=', 'custom')
                         ),
-                        'std' => '',
+                        'std' => '0px 0px 5px 0px',
                     ),
                     'nav_padding' => array(
                         'type' => 'padding',
@@ -281,7 +281,7 @@ SpAddonsConfig::addonConfig(
                         'depends' => array(
                             array('style', '=', 'custom')
                         ),
-                        'std' => '10px',
+                        'std' => '10px 10px 10px 10px',
                     ),
                     'nav_text_align' => array(
                         'type' => 'select',
@@ -309,14 +309,6 @@ SpAddonsConfig::addonConfig(
                             'left' => JText::_('COM_SPPAGEBUILDER_GLOBAL_LEFT'),
                         ),
                         'std' => 'left',
-                    ),
-                    'icon_color' => array(
-                        'type' => 'color',
-                        'title' => JText::_('COM_SPPAGEBUILDER_TAB_ICON_COLOR'),
-                        'std' => '#000',
-                        'depends' => array(
-                            array('style', '=', 'custom'),
-                        ),
                     ),
                     'icon_fontsize' => array(
                         'type' => 'slider',
@@ -434,7 +426,7 @@ SpAddonsConfig::addonConfig(
                     'content_border_color' => array(
                         'type' => 'color',
                         'title' => JText::_('COM_SPPAGEBUILDER_TAB_CONTENT_BORDER_COLOR'),
-                        'std' => '#2AB9E7',
+                        'std' => '#e5e5e5',
                         'depends' => array(
                             array('style', '=', 'custom')
                         ),

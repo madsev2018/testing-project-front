@@ -2,7 +2,7 @@
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2017 JoomShaper
+ * @copyright Copyright (c) 2010 - 2018 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 
@@ -32,6 +32,10 @@ class SppagebuilderAddonOptin_form extends SppagebuilderAddons{
 		$alignment = (isset($this->addon->settings->alignment) && $this->addon->settings->alignment) ? $this->addon->settings->alignment : '';
 
 		// Addon Options
+		$show_checkbox      = (isset($this->addon->settings->show_checkbox)) ? $this->addon->settings->show_checkbox : 0;
+		$recaptcha      	= (isset($this->addon->settings->recaptcha)) ? $this->addon->settings->recaptcha : 0;
+		$checkbox_title     = (isset($this->addon->settings->checkbox_title) && $this->addon->settings->checkbox_title) ? $this->addon->settings->checkbox_title : '';
+		
 		$platform = (isset($this->addon->settings->platform) && $this->addon->settings->platform) ? $this->addon->settings->platform : 'mailchimp';
 		$hide_name = (isset($this->addon->settings->hide_name)) ? $this->addon->settings->hide_name : 0;
 
@@ -81,12 +85,18 @@ class SppagebuilderAddonOptin_form extends SppagebuilderAddons{
 				$output  .= '<p>' . JTEXT::_('COM_SPPAGEBUILDER_ADDON_OPTIN_FORM_EMPTY_API') . ' ' . $platform . '.</p>';
 			$output  .= '</div>';
 			return $output;
-		} elseif($platform == 'acymailing' && !include_once( rtrim(JPATH_ADMINISTRATOR,'/') . '/components/com_acymailing/helpers/helper.php')){
-			// if acymailing isn't installed
-			$output  .= '<div class="sppb-addon sppb-addon-optin-forms sppb-alert sppb-alert-warning">';
-				$output  .= '<p>' . JTEXT::_('COM_SPPAGEBUILDER_ADDON_OPTIN_PLATFORM_ACYMAILING_NOT_INSTALLED') . '</p>';
-			$output  .= '</div>';
-			return $output;
+		} elseif($platform == 'acymailing'){
+			$acymailing_helper = rtrim(JPATH_ADMINISTRATOR,'/') . '/components/com_acymailing/helpers/helper.php';
+			if(!file_exists($acymailing_helper)) {
+				// if acymailing isn't installed
+				$output  .= '<div class="sppb-addon sppb-addon-optin-forms sppb-alert sppb-alert-warning">';
+					$output  .= '<p>' . JTEXT::_('COM_SPPAGEBUILDER_ADDON_OPTIN_PLATFORM_ACYMAILING_NOT_INSTALLED') . '</p>';
+				$output  .= '</div>';
+
+				return $output;
+			} else {
+				require_once $acymailing_helper;
+			}
 		}
 
 		$info_wrap = '';
@@ -171,12 +181,32 @@ class SppagebuilderAddonOptin_form extends SppagebuilderAddons{
 					if (!$hide_name) {
 						$output .= '<div class="sppb-form-group name-wrap">';
 							$output .= '<input type="text" name="fname" class="sppb-form-control" placeholder="'. JText::_('COM_SPPAGEBUILDER_ADDON_AJAX_CONTACT_NAME') .'" required="required">';
-						$output .= '</div>';
+						$output .= '</div>'; //.sppb-form-group
 					}
 
 					$output .= '<div class="sppb-form-group email-wrap">';
 						$output .= '<input type="email" name="email" class="sppb-form-control" placeholder="'. JText::_('COM_SPPAGEBUILDER_ADDON_AJAX_CONTACT_EMAIL') .'" required="required">';
-					$output .= '</div>';
+					$output .= '</div>'; //.sppb-form-group
+
+					if ($recaptcha) {
+						JPluginHelper::importPlugin('captcha', 'recaptcha');
+						$dispatcher = JDispatcher::getInstance();
+						$dispatcher->trigger('onInit', 'dynamic_recaptcha_' . $this->addon->id);
+						$recaptcha = $dispatcher->trigger('onDisplay', array(null, 'dynamic_recaptcha_' . $this->addon->id, 'class="sppb-dynamic-recaptcha"'));
+
+						$output .= '<div class="sppb-form-group recaptcha-wrap">';
+							$output .= (isset($recaptcha[0])) ? $recaptcha[0] : '<p class="sppb-alert sppb-alert-warning">' . JText::_('COM_SPPAGEBUILDER_RECAPTCHA_NOT_INSTALLED') . '</p>';
+						$output .= '</div>'; //.sppb-form-group
+					}
+
+					if ($show_checkbox) {
+						$output .='<div class="sppb-form-group">';
+							$output .='<div class="sppb-form-check">';
+								$output .='<input class="sppb-form-check-input" type="checkbox" name="agreement" id="agreement" required="required">';
+								$output .='<label class="sppb-form-check-label" for="agreement">' . $checkbox_title  . '</label>';
+							$output .='</div>';
+						$output .='</div>';
+					}
 
 					$output .= '<input type="hidden" name="platform" value="'. $platform .'">';
 					$output .= '<input type="hidden" name="hidename" value="'. $hide_name .'">';
@@ -212,19 +242,19 @@ class SppagebuilderAddonOptin_form extends SppagebuilderAddons{
 			if( $input['name'] == 'email' ) {
 				$email = $input['value'];
 			}
-
 			if( $input['name'] == 'hidename' ) {
 				$hidename	= $input['value'];
 			}
-
 			if( $input['name'] == 'fname' ) {
 				$name	= $input['value'];
 			}
-
 			if( $input['name'] == 'platform' ) {
 				$platform		= $input['value'];
 			}
-
+			if ($input['name'] == 'g-recaptcha-response') {
+                $recaptcha = $input['value'];
+                $showcaptcha = true;
+            }
 			if( $input['name'] == 'pageid' ) {
 				$pageid		= $input['value'];
 			}
@@ -239,6 +269,16 @@ class SppagebuilderAddonOptin_form extends SppagebuilderAddons{
 
 		$output = array();
 		$output['status'] = false;
+
+		if (isset($showcaptcha) && $showcaptcha) {
+			JPluginHelper::importPlugin('captcha');
+			$dispatcher = JEventDispatcher::getInstance();
+			$res = $dispatcher->trigger('onCheckAnswer');
+			if (!$res[0]) {
+				$output['content'] = '<span class="sppb-text-danger">' . JText::_('COM_SPPAGEBUILDER_INVALID_CAPTCHA') . '</span>';
+				return json_encode($output);
+			}
+		} 
 
 		// valited email address
 		if ($email) {
@@ -260,30 +300,30 @@ class SppagebuilderAddonOptin_form extends SppagebuilderAddons{
 			$mclistid 		= (isset($addon_info->mailchimp_listid) && $addon_info->mailchimp_listid) ? $addon_info->mailchimp_listid : '';
 			$mcaction 		= (isset($addon_info->mailchimp_action) && $addon_info->mailchimp_action) ? $addon_info->mailchimp_action : '';
 
-	    $memberId = md5(strtolower($email));
-	    $dataCenter = substr($mcapi,strpos($mcapi,'-')+1);
-	    $url = 'https://' . $dataCenter . '.api.mailchimp.com/3.0/lists/'. $mclistid .'/members/' . $memberId;
-	    $json = json_encode([
-	        'email_address' => $email,
-	        'status'        => $mcaction, // "subscribed","unsubscribed","cleaned","pending"
-	        'merge_fields'  => [
-            'FNAME'     => $name,
-            'LNAME'     => ''
-	        ]
-	    ]);
+			$memberId = md5(strtolower($email));
+			$dataCenter = substr($mcapi,strpos($mcapi,'-')+1);
+			$url = 'https://' . $dataCenter . '.api.mailchimp.com/3.0/lists/'. $mclistid .'/members/' . $memberId;
+			$json = json_encode([
+				'email_address' => $email,
+				'status'        => $mcaction, // "subscribed","unsubscribed","cleaned","pending"
+				'merge_fields'  => [
+				'FNAME'     => $name,
+				'LNAME'     => ''
+				]
+			]);
 
-	    $ch = curl_init($url);
-	    curl_setopt($ch, CURLOPT_USERPWD, 'user:' . $mcapi);
-	    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-	    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
-	    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-	    curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
-	    $result = curl_exec($ch);
-	    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+	   		$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_USERPWD, 'user:' . $mcapi);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
+			$result = curl_exec($ch);
+			$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 			$err = curl_error($ch);
-	    curl_close($ch);
+			curl_close($ch);
 
 			//$response = json_decode($result)->status;
 			// if curl error
@@ -294,100 +334,100 @@ class SppagebuilderAddonOptin_form extends SppagebuilderAddons{
 			}
 
 			// store the status message based on response code
-	    if ($httpCode == 200) {
+			if ($httpCode == 200) {
 				if ($mcaction == 'pending') {
-						$output['content'] = JText::_('COM_SPPAGEBUILDER_ADDON_OPTIN_PLATFORM_EMAIL_PENDING');
+					$output['content'] = JText::_('COM_SPPAGEBUILDER_ADDON_OPTIN_PLATFORM_EMAIL_PENDING');
 				} else {
-						$output['content'] = JText::_('COM_SPPAGEBUILDER_ADDON_OPTIN_PLATFORM_EMAIL_CONFIRMED');
+					$output['content'] = JText::_('COM_SPPAGEBUILDER_ADDON_OPTIN_PLATFORM_EMAIL_CONFIRMED');
 				}
 				$output['status'] = true;
-	    } else {
-	        switch ($httpCode) {
-	            case 214: // if success
-	                $output['content'] = JText::_('COM_SPPAGEBUILDER_ADDON_OPTIN_PLATFORM_EMAIL_EXIST');
-									$output['status'] = false;
-	                break;
-	            default:
-	                $output['content'] = JText::_('COM_SPPAGEBUILDER_ADDON_OPTIN_PLATFORM_EMAIL_ERROR');
-									$output['status'] = false;
-	                break;
-	        } // if got response
-	    }
-		} elseif ($platform == 'sendgrid') {
-				//sendgrid get crecentials
-				$sgapi = (isset($addon_info->sendgrid_api) && $addon_info->sendgrid_api) ? $addon_info->sendgrid_api : '';
-
-				$input_data = json_encode(
-					array(
-						'email' => $email,
-						'first_name' => $name,
-						'last_name' => ''
-					)
-				);
-				$input_data = '['.$input_data. ']';
-				$access_api = array(
-					"authorization: Bearer " . $sgapi,
-					"cache-control: no-cache"
-				);
-
-				$curl = curl_init();
-				curl_setopt($curl,CURLOPT_URL, "https://api.sendgrid.com/v3/contactdb/recipients");
-				curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-				curl_setopt($curl, CURLOPT_ENCODING, '');
-				curl_setopt($curl, CURLOPT_MAXREDIRS, 10);
-				curl_setopt($curl, CURLOPT_TIMEOUT, 30);
-				curl_setopt($curl, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
-				curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, CURLOPT_SSL_VERIFYPEER);
-				curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
-				curl_setopt($curl, CURLOPT_POSTFIELDS, $input_data);
-				curl_setopt($curl, CURLOPT_HTTPHEADER, $access_api);
-
-				$result = curl_exec($curl);
-				$err = curl_error($curl);
-				curl_close($curl);
-				$result_decode = json_decode($result);
-				// if curl error
-				if ($err) {
-					$output['content'] = 'cURL error: ' . $err;
-					$output['status'] = false;
-					return json_encode($output);
-				}
-
-				if (isset($result_decode->error_count) && $result_decode->error_count == 0) {
-					if ($result_decode->updated_count) {
-						$output['status'] = true;
-						$output['content'] = JText::_('COM_SPPAGEBUILDER_ADDON_OPTIN_PLATFORM_EMAIL_UPDATED');
-					} else {
-						$output['status'] = true;
-						$output['content'] = JText::_('COM_SPPAGEBUILDER_ADDON_OPTIN_PLATFORM_EMAIL_CONFIRMED');
-					}
-				} else {
+			} else {
+				switch ($httpCode) {
+					case 214: // if success
+					$output['content'] = JText::_('COM_SPPAGEBUILDER_ADDON_OPTIN_PLATFORM_EMAIL_EXIST');
+						$output['status'] = false;
+					break;
+					default:
 					$output['content'] = JText::_('COM_SPPAGEBUILDER_ADDON_OPTIN_PLATFORM_EMAIL_ERROR');
-					$output['status'] = false;
-					return json_encode($output);
+						$output['status'] = false;
+					break;
+				} // if got response
+	    	}
+		} elseif ($platform == 'sendgrid') {
+			//sendgrid get crecentials
+			$sgapi = (isset($addon_info->sendgrid_api) && $addon_info->sendgrid_api) ? $addon_info->sendgrid_api : '';
+
+			$input_data = json_encode(
+				array(
+					'email' => $email,
+					'first_name' => $name,
+					'last_name' => ''
+				)
+			);
+			$input_data = '['.$input_data. ']';
+			$access_api = array(
+				"authorization: Bearer " . $sgapi,
+				"cache-control: no-cache"
+			);
+
+			$curl = curl_init();
+			curl_setopt($curl,CURLOPT_URL, "https://api.sendgrid.com/v3/contactdb/recipients");
+			curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($curl, CURLOPT_ENCODING, '');
+			curl_setopt($curl, CURLOPT_MAXREDIRS, 10);
+			curl_setopt($curl, CURLOPT_TIMEOUT, 30);
+			curl_setopt($curl, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+			curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, CURLOPT_SSL_VERIFYPEER);
+			curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($curl, CURLOPT_POSTFIELDS, $input_data);
+			curl_setopt($curl, CURLOPT_HTTPHEADER, $access_api);
+
+			$result = curl_exec($curl);
+			$err = curl_error($curl);
+			curl_close($curl);
+			$result_decode = json_decode($result);
+			// if curl error
+			if ($err) {
+				$output['content'] = 'cURL error: ' . $err;
+				$output['status'] = false;
+				return json_encode($output);
+			}
+
+			if (isset($result_decode->error_count) && $result_decode->error_count == 0) {
+				if ($result_decode->updated_count) {
+					$output['status'] = true;
+					$output['content'] = JText::_('COM_SPPAGEBUILDER_ADDON_OPTIN_PLATFORM_EMAIL_UPDATED');
+				} else {
+					$output['status'] = true;
+					$output['content'] = JText::_('COM_SPPAGEBUILDER_ADDON_OPTIN_PLATFORM_EMAIL_CONFIRMED');
 				}
+			} else {
+				$output['content'] = JText::_('COM_SPPAGEBUILDER_ADDON_OPTIN_PLATFORM_EMAIL_ERROR');
+				$output['status'] = false;
+				return json_encode($output);
+			}
 
 		} if ($platform == 'sendinblue') { // if sendinblue
 			//sendinBlue get crecentials
-			$sbapi 				= (isset($addon_info->sendinblue_api) && $addon_info->sendinblue_api) ? $addon_info->sendinblue_api : '';
+			$sbapi 			= (isset($addon_info->sendinblue_api) && $addon_info->sendinblue_api) ? $addon_info->sendinblue_api : '';
 			$sblistid 		= (isset($addon_info->sendinblue_listid) && $addon_info->sendinblue_listid) ? $addon_info->sendinblue_listid : '';
 
 			$data_input = array(
-					'email' => $email,
-	        'attributes' => array('NAME'=> $name),
-	        'listid' => array($sblistid)
-	    );
+				'email' => $email,
+				'attributes' => array('NAME'=> $name),
+				'listid' => array($sblistid)
+	    	);
 
 			$ch = curl_init('https://api.sendinblue.com/v2.0/user/createdituser');
 			$auth_header = 'api-key:' . $sbapi;
 			$content_header = "Content-Type:application/json";
 			$timeout = 30000; //default timeout: 30 secs
 			if ($timeout!='' && ($timeout <= 0 || $timeout > 60000)) {
-					throw new \Exception('value not allowed for timeout');
+				throw new \Exception('value not allowed for timeout');
 			}
 			if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-					// Windows only over-ride
-					curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+				// Windows only over-ride
+				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 			}
 			curl_setopt($ch, CURLOPT_HTTPHEADER, array($auth_header,$content_header));
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
@@ -478,9 +518,9 @@ class SppagebuilderAddonOptin_form extends SppagebuilderAddons{
 		} elseif ($platform == 'acymailing') { // if AcyMailing
 			// if acymailing isn't installed
 			if(!include_once( rtrim(JPATH_ADMINISTRATOR,'/') . '/components/com_acymailing/helpers/helper.php')){
-			 $output['status'] = false;
-			 $output['content'] = JText::_('COM_SPPAGEBUILDER_ADDON_OPTIN_PLATFORM_ACYMAILING_NOT_INSTALLED');
-			 return json_encode($output);
+				$output['status'] = false;
+				$output['content'] = JText::_('COM_SPPAGEBUILDER_ADDON_OPTIN_PLATFORM_ACYMAILING_NOT_INSTALLED');
+				return json_encode($output);
 			}
 
 			$acymailing_listids 	= (isset($addon_info->acymailing_listids) && $addon_info->acymailing_listids) ? $addon_info->acymailing_listids : '';
@@ -506,9 +546,9 @@ class SppagebuilderAddonOptin_form extends SppagebuilderAddons{
 			$new_subscription = array();
 			if(!empty($acymailing_listids)){
 				foreach($acymailing_listids as $listId){
-				 $newList = array();
-				 $newList['status'] = 1;
-				 $new_subscription[$listId] = $newList;
+					$newList = array();
+					$newList['status'] = 1;
+					$new_subscription[$listId] = $newList;
 				}
 			}
 			if(empty($new_subscription) || empty($subid) ) {
@@ -556,30 +596,30 @@ class SppagebuilderAddonOptin_form extends SppagebuilderAddons{
 		$db = JFactory::getDbo();
 		$query = $db->getQuery(true);
 		$query->select( array('a.*') );
-    $query->from($db->quoteName('#__sppagebuilder', 'a'));
-	  $query->where($db->quoteName('a.id') . " = " . $db->quote((int) $pageid));
-    $db->setQuery($query);
-    $result = $db->loadObject();
+    	$query->from($db->quoteName('#__sppagebuilder', 'a'));
+	  	$query->where($db->quoteName('a.id') . " = " . $db->quote((int) $pageid));
+		$db->setQuery($query);
+		$result = $db->loadObject();
 
 		return $result;
 
 	}
 
 	public static function getAddonSettingByPageInfo($pageContent,$addonId){
-			$addonInfo = false;
-			$pageContent = json_decode($pageContent);
+		$addonInfo = false;
+		$pageContent = json_decode($pageContent);
 
-			foreach ($pageContent as $key => $row) {
-				foreach ($row->columns as $key => $column) {
-					foreach ($column->addons as $key => $addon) {
-						if ($addon->id == $addonId) {
-							$addonInfo = $addon->settings;
-							break;
-						}
+		foreach ($pageContent as $key => $row) {
+			foreach ($row->columns as $key => $column) {
+				foreach ($column->addons as $key => $addon) {
+					if ($addon->id == $addonId) {
+						$addonInfo = $addon->settings;
+						break;
 					}
 				}
 			}
-			return $addonInfo;
+		}
+		return $addonInfo;
 	}
 
 	public function js() {
@@ -885,10 +925,10 @@ class SppagebuilderAddonOptin_form extends SppagebuilderAddons{
 						<div class="sppb-optin-form-details-wrap">
 					<# } #>
 						<# if(data.title) { #>
-							<{{ data.heading_selector || "h3" }} class="sppb-addon-title">{{ data.title }}</{{ data.heading_selector || "h3" }}>
+							<{{ data.heading_selector || "h3" }} class="sppb-addon-title sp-inline-editable-element" data-id={{data.id}} data-fieldName="title" contenteditable="true">{{ data.title }}</{{ data.heading_selector || "h3" }}>
 						<# } #>
 						<# if(data.content) { #>
-							<div class="sppb-optin-form-details">{{ data.content }}</div>
+							<div id="addon-text-{{data.id}}" class="sppb-optin-form-details sp-editable-content" data-id={{data.id}} data-fieldName="content">{{{ data.content }}}</div>
 						<# } #>
 					<# if(data.title || data.content){ #>
 						</div>
@@ -907,7 +947,22 @@ class SppagebuilderAddonOptin_form extends SppagebuilderAddons{
 						<div class="sppb-form-group email-wrap">
 							<input type="email" name="email" class="sppb-form-control" placeholder="{{ Joomla.JText._(\'COM_SPPAGEBUILDER_ADDON_AJAX_CONTACT_EMAIL\') }}" required="required">
 						</div>
-	
+						
+						<# if (data.recaptcha) { #>
+							<div class="sppb-form-group recaptcha-wrap">
+								<img src="components/com_sppagebuilder/assets/images/captcha.jpg" >
+							</div>
+						<# } #>
+						
+						<# if (data.show_checkbox) { #>
+							<div class="sppb-form-group">
+								<div class="sppb-form-check">
+									<input class="sppb-form-check-input" type="checkbox" name="agreement" id="agreement" required="required">
+									<label class="sppb-form-check-label" for="agreement">{{{ data.checkbox_title }}}</label>
+								</div>
+							</div>
+						<# } #>
+
 						<div class="button-wrap {{ data.button_position}}">
 							<button type="submit" id="btn-{{ data.id }}" class="sppb-btn {{ button_class }}"><i class="fa"></i> {{{ button_text }}}</button>
 						</div>

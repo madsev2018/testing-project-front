@@ -80,6 +80,12 @@ abstract class SppagebuilderHelperArticles
 			$query->order($db->quoteName('a.publish_up') . ' DESC');
 		} elseif($ordering == 'oldest') {
 			$query->order($db->quoteName('a.publish_up') . ' ASC');
+		} elseif($ordering == 'alphabet_asc') {
+			$query->order($db->quoteName('a.title') . ' ASC');
+		} elseif($ordering == 'alphabet_desc') {
+			$query->order($db->quoteName('a.title') . ' DESC');
+		} elseif($ordering == 'random') {
+			$query->order($query->Rand());
 		} else {
 			$query->order($db->quoteName('a.publish_up') . ' DESC');
 		}
@@ -93,7 +99,6 @@ abstract class SppagebuilderHelperArticles
 		$query->where($db->quoteName('a.access')." IN (" . implode( ',', $authorised ) . ")");
 		$query->order($db->quoteName('a.created') . ' DESC')
 		->setLimit($count);
-
 		$db->setQuery($query);
 		$items = $db->loadObjectList();
 

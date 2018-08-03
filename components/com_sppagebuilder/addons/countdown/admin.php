@@ -2,7 +2,7 @@
 /**
 * @package SP Page Builder
 * @author JoomShaper http://www.joomshaper.com
-* @copyright Copyright (c) 2010 - 2016 JoomShaper
+* @copyright Copyright (c) 2010 - 2018 JoomShaper
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
@@ -149,8 +149,8 @@ SpAddonsConfig::addonConfig(
 					'type'=>'text',
 					'title'=>JText::_('COM_SPPAGEBUILDER_ADDON_COUTNDOWN_DATE'),
 					'desc'=>JText::_('COM_SPPAGEBUILDER_ADDON_COUTNDOWN_DATE_DESC'),
-					'placeholder'=>'2018/05/25',
-					'std'=> '2018/05/25'
+					'placeholder'=>'2019/12/25',
+					'std'=> '2019/12/25'
 				),
 
 				'time'=>array(

@@ -2,7 +2,7 @@
 /**
 * @package SP Page Builder
 * @author JoomShaper http://www.joomshaper.com
-* @copyright Copyright (c) 2010 - 2016 JoomShaper
+* @copyright Copyright (c) 2010 - 2018 JoomShaper
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
@@ -124,7 +124,7 @@ SpAddonsConfig::addonConfig(
 						'title_color'=>array(
 							'type'=>'color',
 							'title'=>JText::_('COM_SPPAGEBUILDER_ADDON_CAROUSEL_ITEM_TITLE_COLOR'),
-							'std'=>'#fff',
+							'std'=>'#000',
 						),
 
 						'title_margin'=>array(
