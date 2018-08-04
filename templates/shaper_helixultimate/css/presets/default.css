@@ -909,7 +909,7 @@ ul.social-icons > li {
 }
 #sp-footer .sppb-link-list-wrap ul li:before, #sp-footer .sppb-addon-module ul li:before, #sp-footer .sppb-link-list-wrap .menu li:before, #sp-footer .sppb-addon-module .menu li:before {
   content: ".";
-  color: #7a6cea;
+  color: #0a4aaf;
   font-size: 18px;
   line-height: 20px;
   position: relative;
@@ -2487,14 +2487,14 @@ input[type="text"]:not(.form-control):focus, input[type="email"]:not(.form-contr
   position: relative;
 }
 .sp-megamenu-parent > li:hover a {
-  color: #7a6cea;
+  color: #0a4aaf;
 }
 .sp-megamenu-parent > li.sp-has-child > a:after, .sp-megamenu-parent > li.sp-has-child > span:after {
   font-family: "FontAwesome";
   content: " \f107";
 }
 .sp-megamenu-parent > li.active > a {
-  color: #7a6cea;
+  color: #0a4aaf;
 }
 .sp-megamenu-parent > li .sp-menu-badge {
   height: 20px;
@@ -2543,7 +2543,7 @@ input[type="text"]:not(.form-control):focus, input[type="email"]:not(.form-contr
   position: relative;
 }
 .sp-megamenu-parent .sp-mega-group li.menu_item > a:hover {
-  color: #7a6cea;
+  color: #0a4aaf;
 }
 .sp-megamenu-parent .sp-mega-group .sp-mega-group-child {
   list-style: none;
@@ -2620,10 +2620,10 @@ input[type="text"]:not(.form-control):focus, input[type="email"]:not(.form-contr
   font-weight: bold;
 }
 .sp-megamenu-parent .sp-dropdown li.sp-menu-item:hover > a, .sp-megamenu-parent .sp-dropdown li.sp-menu-item:hover span:not(.sp-menu-badge) {
-  color: #7a6cea;
+  color: #0a4aaf;
 }
 .sp-megamenu-parent .sp-dropdown li.sp-menu-item.active > a, .sp-megamenu-parent .sp-dropdown li.sp-menu-item.active span:not(.sp-menu-badge) {
-  color: #7a6cea;
+  color: #0a4aaf;
 }
 .sp-megamenu-parent .sp-dropdown-mega > .row {
   margin-top: 30px;
@@ -2844,7 +2844,7 @@ body.offcanvas-active {
 @media (max-width: 991px) { #offcanvas-toggler { display: block !important; } }
 
 #offcanvas-toggler:hover {
-  color: #7a6cea;
+  color: #0a4aaf;
 }
 #offcanvas-toggler > span:hover {
   color: #fff;
