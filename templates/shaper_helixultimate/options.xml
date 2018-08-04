@@ -248,7 +248,7 @@
 			<option value="mega">HELIX_ULTIMATE_MEGAMENU</option>
 			<option value="offcanvas">HELIX_ULTIMATE_OFFCANVAS</option>
 		</field>
-		<field name="dropdown_width" helixgroup="megamenu" type="number" label="HELIX_ULTIMATE_MEGAMENU_DROPDOWN_WIDTH" hint="240" showon="menu_type!:offcanvas" />
+		<field name="dropdown_width" helixgroup="megamenu" type="number" label="HELIX_ULTIMATE_MEGAMENU_DROPDOWN_WIDTH" hint="360" showon="menu_type!:offcanvas" />
 
 		<field name="menu_animation" helixgroup="megamenu" type="list" default="menu-fade" label="HELIX_ULTIMATE_MENU_DROPDOWN_ANIMATION" showon="menu_type!:offcanvas">
 			<option value="menu-animation-none">HELIX_ULTIMATE_NO_ANIMATION</option>

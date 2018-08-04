@@ -125,6 +125,22 @@ ul.social-icons > li {
 .body-wrapper #sp-header.style-2 .container, .body-wrapper #sp-top-bar.style-2 .container {
   max-width: 1360px;
 }
+.sp-submenu .menu{
+  list-style: none;
+}
+
+.sp-submenu .menu li{
+  display: inline-block;
+    position: relative;
+    padding: 0 0 21px;
+    margin: 0 20px -21px;
+    line-height: 60px;
+    
+}
+.sp-submenu .menu li a{
+  color:white;
+}
+
 @media (min-width: 320px) and (max-width: 991px) {
   .body-wrapper #sp-header.style-3 #sp-menu {
     text-align: right;

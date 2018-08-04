@@ -27,6 +27,7 @@
         <position>after-logo</position>
         <position>header</position>
         <position>menu</position>
+        <position>submenu</position>
         <position>search</position>
         <position>slide</position>
         <position>user1</position>

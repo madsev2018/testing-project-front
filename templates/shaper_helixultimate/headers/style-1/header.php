@@ -17,12 +17,17 @@ include_once $feature_folder_path.'logo.php';
 include_once $feature_folder_path.'menu.php';
 
 $output  = '';
-
-
+//------------------POSICION DE SUBMENU--------------------------------------
+$output .= '<div class="container" style="max-width: 1700px;"><div class="row sp-submenu style-1"><div class="col-lg-3"></div><div class="col-lg-7 submenu-container">';
+$output .= '<a id="user-menu" aria-label="Navigation" class="offcanvas-toggler-right" href="#"><i class="fa fa-user-circle-o" aria-hidden="true" title="Navigation"></i></a>';
+$output .= '<jdoc:include type="modules" name="submenu" style="sp_xhtml" />';
+$output .= '</div><div class="col-lg-3"></div></div></div>';
+//---------------------------------------------------------------------------
 $output .= '<header id="sp-header" class="style-1">';
 $output .= '<div class="header-box">';
 $output .= '<div class="container">';
 $output .= '<div class="container-inner">';
+
 $output .= '<div class="row">';
 
 $class1 = 'col-lg-3';

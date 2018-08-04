@@ -28,7 +28,6 @@ $results = $app->triggerEvent('onContentAfterDisplay', array($this->category->ex
 $afterDisplayContent = trim(implode("\n", $results));
 
 ?>
-CONTENIDOBUENO
 <div class="blog<?php echo $this->pageclass_sfx; ?>">
 	<?php if ($this->params->get('show_page_heading')) : ?>
 		<div class="page-header">
