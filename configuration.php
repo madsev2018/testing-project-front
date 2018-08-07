@@ -9,7 +9,7 @@ class JConfig {
 	public $captcha = '0';
 	public $list_limit = '20';
 	public $access = '1';
-	public $debug = '0';
+	public $debug = '1';
 	public $debug_lang = '0';
 	public $dbtype = 'mysqli';
 	public $host = '167.114.229.64';
@@ -19,8 +19,8 @@ class JConfig {
 	public $dbprefix = 'wise_';
 	public $live_site = '';
 	public $secret = 'WazTeisboI6X1CuK';
-	public $gzip = '0';
-	public $error_reporting = 'default';
+	public $gzip = '1';
+	public $error_reporting = 'development';
 	public $helpurl = 'https://help.joomla.org/proxy?keyref=Help{major}{minor}:{keyref}&lang={langcode}';
 	public $ftp_host = '';
 	public $ftp_port = '';
@@ -28,7 +28,7 @@ class JConfig {
 	public $ftp_pass = '';
 	public $ftp_root = '';
 	public $ftp_enable = '0';
-	public $offset = 'UTC';
+	public $offset = 'Europe/Madrid';
 	public $mailonline = '1';
 	public $mailer = 'mail';
 	public $mailfrom = 'antonio.izquierdo@dominion-global.com';
@@ -52,7 +52,7 @@ class JConfig {
 	public $robots = '';
 	public $sef = '1';
 	public $sef_rewrite = '1';
-	public $sef_suffix = '1';
+	public $sef_suffix = '0';
 	public $unicodeslugs = '1';
 	public $feed_limit = '10';
 	public $feed_email = 'none';
