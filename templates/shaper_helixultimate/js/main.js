@@ -195,17 +195,17 @@ $('.sp-megamenu-parent').slicknav({
     }     
 });
 var o=$('input[type=checkbox]');
-    if(o.length&&!$('body').hasClass('.com_config')){
-        o.each(function(count){
-            if($(this).parent().not('span.checkbox')){
-                if(!$(this).attr("id")){
-                    $(this).attr({id:'checkbox'+count}).wrap('<span class="checkbox"/>').after('<label class="checkbox_inner" for="checkbox'+count+'"/>')
-                }else{
-                    $(this).wrap('<span class="checkbox"/>').after('<label class="checkbox_inner" for="'+$(this).attr("id")+'"/>')
-                }
-            }
-        })
-    }
+//    if(o.length&&!$('body').hasClass('.com_config')){
+//        o.each(function(count){
+//            if($(this).parent().not('span.checkbox')){
+//                if(!$(this).attr("id")){
+//                    $(this).attr({id:'checkbox'+count}).wrap('<span class="checkbox"/>').after('<label class="checkbox_inner" for="checkbox'+count+'"/>')
+//                }else{
+//                    $(this).wrap('<span class="checkbox"/>').after('<label class="checkbox_inner" for="'+$(this).attr("id")+'"/>')
+//                }
+//            }
+//        })
+//    }
     var o=$('input[type=radio]');
     if(o.length&&!$('body').hasClass('.com_config')){
         o.each(function(i){

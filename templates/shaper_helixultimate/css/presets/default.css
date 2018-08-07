@@ -6216,15 +6216,23 @@ body .sppb-addon-ajax-contact.custom .sppb-form-control {
    Pure CSS Toggle Switch with :checked
    ---------------------------------------------------------- */
 .onoffswitch {
-    position: relative; width: 60px;
-    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select: none;
 }
 .onoffswitch-checkbox {
     display: none;
 }
 .onoffswitch-label {
-    display: block; overflow: hidden; cursor: pointer;
-    border: 2px solid #E3E3E3; border-radius: 0px;
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #E3E3E3;
+    border-radius: 0px;
+    margin: 0;
 }
 .onoffswitch-inner {
     display: block; width: 200%; margin-left: -100%;
@@ -6249,11 +6257,15 @@ body .sppb-addon-ajax-contact.custom .sppb-form-control {
     text-align: right;
 }
 .onoffswitch-switch {
-    display: block; width: 36px; margin: 0px;
+    display: block;
+    width: 50px;
+    margin: 0px;
     background: #A1A1A1;
-    position: absolute; top: 0; bottom: 0;
-    right: 24px;
-    transition: all 0.3s ease-in 0s; 
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 49px;
+    transition: all 0.3s ease-in 0s;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
     margin-left: 0;
@@ -6261,4 +6273,18 @@ body .sppb-addon-ajax-contact.custom .sppb-form-control {
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
     right: 0px; 
     background-color: #27A1CA; 
+}
+
+.mensual-span{
+  bottom: 10px;
+    position: relative;
+    right: 10px;
+    font-size: 30px;
+}
+
+.anual-span{
+  bottom: 10px;
+    position: relative;
+    left: 10px;
+    font-size: 30px;
 }
