@@ -69,6 +69,8 @@ class SppagebuilderAddonFeature extends SppagebuilderAddons {
 		    $title_fontsize = (isset($this->addon->settings->title_fontsize) && $this->addon->settings->title_fontsize) ? $this->addon->settings->title_fontsize : '';
 		    if($title_fontsize){
                 $title_fontsizeclass = 'style="font-size:'.$title_fontsize.'px!important;"';
+            }else{
+              $title_fontsizeclass='';
             }
 		    if($titlecolor){
 		        $titlecolorclass = 'style="color:'.$titlecolor.';"';
@@ -124,6 +126,7 @@ class SppagebuilderAddonFeature extends SppagebuilderAddons {
 
 	public function css() {
 		$addon_id = '#sppb-addon-' . $this->addon->id;
+        $heading_selector = (isset($this->addon->settings->heading_selector) && $this->addon->settings->heading_selector) ? $this->addon->settings->heading_selector : 'h3';
 		$icon_color	= (isset($this->addon->settings->icon_color) && $this->addon->settings->icon_color) ? $this->addon->settings->icon_color : '';
 		$icon_size = (isset($this->addon->settings->icon_size) && $this->addon->settings->icon_size) ? $this->addon->settings->icon_size : '';
 		$icon_border_color = (isset($this->addon->settings->icon_border_color) && $this->addon->settings->icon_border_color) ? $this->addon->settings->icon_border_color : '';
@@ -147,7 +150,7 @@ class SppagebuilderAddonFeature extends SppagebuilderAddons {
 		$icon_name = (isset($this->addon->settings->icon_name) && $this->addon->settings->icon_name) ? $this->addon->settings->icon_name : '';
 
 		$css = '';
-
+        $style='';
 		$text_style = '';
 		$text_style_sm = '';
 		$text_style_xs = '';

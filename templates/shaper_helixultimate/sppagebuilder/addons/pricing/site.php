@@ -105,7 +105,9 @@ class SppagebuilderAddonPricing extends SppagebuilderAddons {
 				$("'.$addon_id.'").addClass("featured");
 			});
 		';
-		}
+		}else{
+          $featured_class='';
+        }
 		return $featured_class;
 	}
 	public function css() {

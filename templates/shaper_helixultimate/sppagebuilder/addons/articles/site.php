@@ -15,7 +15,7 @@ class SppagebuilderAddonArticles extends SppagebuilderAddons{
 		$style = (isset($this->addon->settings->style) && $this->addon->settings->style) ? $this->addon->settings->style : 'panel-default';
 		$title = (isset($this->addon->settings->title) && $this->addon->settings->title) ? $this->addon->settings->title : '';
 		$heading_selector = (isset($this->addon->settings->heading_selector) && $this->addon->settings->heading_selector) ? $this->addon->settings->heading_selector : 'h3';
-
+        $all_articles_btn_class = '';
 		// Addon options
 		$resource 			= (isset($this->addon->settings->resource) && $this->addon->settings->resource) ? $this->addon->settings->resource : 'article';
 		$bloglayout = (isset($this->addon->settings->blog_layout) && $this->addon->settings->blog_layout) ? $this->addon->settings->blog_layout : 'blog.php';
@@ -75,7 +75,7 @@ class SppagebuilderAddonArticles extends SppagebuilderAddons{
 		$isk2installed  = self::isComponentInstalled('com_k2');
 
 		$document 	= JFactory::getDocument();
-		$app =& JFactory::getApplication();
+		$app =JFactory::getApplication();
 		$template = $app->getTemplate();
 		if($used_masonry){
 			$path = JURI::base() .'templates/'.$template.'/sppagebuilder/addons/articles/js/masonry.pkgd.min.js';
