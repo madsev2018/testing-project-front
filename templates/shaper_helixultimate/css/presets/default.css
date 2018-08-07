@@ -6162,3 +6162,10 @@ body .sppb-addon-ajax-contact.custom .sppb-form-control {
   height: auto !important;
   max-width: 100%;
 }
+.element-invisible {
+    display: none!important;
+}
+
+.sp-module-border-none{
+  border: none!important;
+}
