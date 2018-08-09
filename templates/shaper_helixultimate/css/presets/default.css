@@ -6304,3 +6304,23 @@ body .sppb-addon-ajax-contact.custom .sppb-form-control {
 .article-details .page-header {
   display: none;
 }
+.icon-search {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-search:before {
+  content: "\f002";
+}
+form.form-search .btn {
+  padding: 13px 15px;
+  float: left;
+  font-size: 24px;
+}
+form.form-search #mod-finder-searchword121 {
+  float: left;
+  max-width: 236px;
+}
