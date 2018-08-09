@@ -3,11 +3,12 @@ body.offcanvas-active {
     overflow:hidden; 
 }
 #offcanvas-toggler {
-    display: block;
+    display: none;
     height: $header_height;
     line-height: $header_height;
     font-size: 20px;
     color: $menu_text_color;
+    @media (max-width: 991px) { display: block !important; }
     &:hover {
         color: $menu_text_active_color;
     }

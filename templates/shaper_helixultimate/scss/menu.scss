@@ -2,7 +2,7 @@
 .sp-megamenu-wrapper {
     width: auto;
     display: table;
-    margin: 0 auto;
+    float: right;
     @media (min-width: 320px) and (max-width: 991px) {
     float: none!important; 
     display: table!important;
@@ -24,7 +24,6 @@
     >li {
         display: inline-block;
         position: relative;
-        padding: 0 0 21px;
         margin: 0 20px -21px;
         line-height:$header_height;
         @media (min-width: 992px) and (max-width: 1199px) {

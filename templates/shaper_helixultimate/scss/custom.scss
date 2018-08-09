@@ -1,0 +1,130 @@
+.sp-submenu .menu{
+  list-style: none;
+  margin: 0;
+}
+
+.sp-submenu .menu li{
+  display: inline-block;
+  position: relative;
+  padding: 0 0 21px;
+  margin: 0 20px -21px;
+  line-height: 60px;
+}
+.sp-megamenu-parent > li:last-child{
+  margin: 0 0px 0 20px;
+}
+.sp-submenu .menu li a{
+  color:white;
+}
+
+#user-menu{
+  font-size: 35px;
+  display: inline-block;
+  color: white;
+  float:right;
+}
+
+.submenu-container .sp-module{
+  display: inline-block;
+  float: right;
+}
+
+.sp-copyright{
+  display: block;
+  text-align: center;
+}
+
+.element-invisible {
+  display: none!important;
+}
+
+.sp-module-border-none{
+  border: none!important;
+}
+
+/* -------------------------------------------------------------
+   Pure CSS Toggle Switch with :checked
+   ---------------------------------------------------------- */
+.onoffswitch {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+  display: none;
+}
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #E3E3E3;
+  border-radius: 0px;
+  margin: 0;
+}
+.onoffswitch-inner {
+  display: block; width: 200%; margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+  display: block; float: left; width: 50%; height: 36px; padding: 0; line-height: 32px;
+  font-size: 16px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+.onoffswitch-inner:before {
+  content: "";
+  padding-left: 10px;
+  background-color: #FFFFFF; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+  content: "";
+  padding-right: 10px;
+  background-color: #FFFFFF; color: #666666;
+  text-align: right;
+}
+.onoffswitch-switch {
+  display: block;
+  width: 50px;
+  margin: 0px;
+  background: #A1A1A1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 49px;
+  transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px;
+  background-color: #27A1CA;
+}
+.mensual-span {
+  bottom: 10px;
+  position: relative;
+  right: 10px;
+  font-size: 30px;
+}
+.anual-span {
+  bottom: 10px;
+  position: relative;
+  left: 10px;
+  font-size: 30px;
+}
+#sp-right .menu-social-blog ul {
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+}
+#sp-right .menu-social-blog ul > li {
+  float: left;
+  margin: 0px 15px;
+}
+#sp-right .menu-social-blog ul > li > a:before {
+  font-size: 40px;
+}
