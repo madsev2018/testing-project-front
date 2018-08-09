@@ -9,7 +9,7 @@ class JConfig {
 	public $captcha = '0';
 	public $list_limit = '20';
 	public $access = '1';
-	public $debug = '1';
+	public $debug = '0';
 	public $debug_lang = '0';
 	public $dbtype = 'mysqli';
 	public $host = '167.114.229.64';
@@ -20,7 +20,7 @@ class JConfig {
 	public $live_site = '';
 	public $secret = 'WazTeisboI6X1CuK';
 	public $gzip = '1';
-	public $error_reporting = 'development';
+	public $error_reporting = 'none';
 	public $helpurl = 'https://help.joomla.org/proxy?keyref=Help{major}{minor}:{keyref}&lang={langcode}';
 	public $ftp_host = '';
 	public $ftp_port = '';
@@ -42,7 +42,7 @@ class JConfig {
 	public $smtpport = '25';
 	public $caching = '0';
 	public $cache_handler = 'file';
-	public $cachetime = '15';
+	public $cachetime = '1';
 	public $cache_platformprefix = '0';
 	public $MetaDesc = '';
 	public $MetaKeys = '';
