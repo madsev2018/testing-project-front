@@ -6301,3 +6301,6 @@ body .sppb-addon-ajax-contact.custom .sppb-form-control {
 #sp-right .menu-social-blog ul > li > a:before {
   font-size: 40px;
 }
+.article-details .page-header {
+  display: none;
+}
