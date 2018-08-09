@@ -6288,3 +6288,18 @@ body .sppb-addon-ajax-contact.custom .sppb-form-control {
     left: 10px;
     font-size: 30px;
 }
+
+#sp-right .menu-social-blog ul {
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#sp-right .menu-social-blog ul > li {
+  float: left;
+  margin: 0px 15px;
+}
+
+#sp-right .menu-social-blog ul > li > a:before {
+  font-size: 40px;
+}
