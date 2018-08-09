@@ -68,4 +68,5 @@ atlassian*
 !/generated/.htaccess
 .DS_Store
 
-cache/
+/cache/*
+!/cache/index.html
