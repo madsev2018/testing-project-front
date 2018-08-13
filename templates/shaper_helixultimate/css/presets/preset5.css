@@ -3954,6 +3954,7 @@ input[type="radio"], input[type="checkbox"] {
 }
 input[type="file"], input[type="image"], input[type="submit"], input[type="reset"], input[type="button"], input[type="radio"], input[type="checkbox"] {
   width: auto;
+  position: relative;
 }
 select, input[type="file"] {
   height: 50px;
@@ -6315,9 +6316,9 @@ body .sppb-addon-ajax-contact.custom .sppb-form-control {
   content: "\f002";
 }
 form.form-search .btn {
-  padding: 13px 15px;
+  padding: 15px 17px;
   float: left;
-  font-size: 24px;
+  border-radius: 0;
 }
 form.form-search #mod-finder-searchword121 {
   float: left;
