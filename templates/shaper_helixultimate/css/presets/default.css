@@ -2791,6 +2791,35 @@ input[type="text"]:not(.form-control):focus, input[type="email"]:not(.form-contr
   text-transform: capitalize;
   font-size: 14px;
 }
+ul.menu li {
+  float: left;
+  display: inline;
+  position: relative;
+}
+ul.menu ul {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  top: 61px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background: #151515;
+  width: 270px;
+}
+ul.menu ul li {
+  display: block !important;
+}
+ul.menu li:hover ul {
+  display: none;
+}
+ul.menu li:hover ul {
+  display: block;
+}
+.slicknav_menu > ul > li .icon {
+  bottom: 15px;
+  top: inherit;
+}
 body.offcanvas-active {
   overflow: hidden;
 }
