@@ -3983,6 +3983,7 @@ input[type="radio"], input[type="checkbox"] {
 }
 input[type="file"], input[type="image"], input[type="submit"], input[type="reset"], input[type="button"], input[type="radio"], input[type="checkbox"] {
   width: auto;
+  position: relative;
 }
 select, input[type="file"] {
   height: 50px;
@@ -4240,7 +4241,6 @@ input.search-query {
   vertical-align: middle;
 }
 .form-search .radio input[type="radio"], .form-search .checkbox input[type="checkbox"], .form-inline .radio input[type="radio"], .form-inline .checkbox input[type="checkbox"] {
-  float: left;
   margin-right: 3px;
   margin-left: 0;
 }
@@ -6332,4 +6332,24 @@ body .sppb-addon-ajax-contact.custom .sppb-form-control {
 }
 .article-details .page-header {
   display: none;
+}
+.icon-search {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-search:before {
+  content: "\f002";
+}
+form.form-search .btn {
+  padding: 15px 17px;
+  float: left;
+  border-radius: 0;
+}
+form.form-search #mod-finder-searchword121 {
+  float: left;
+  max-width: 236px;
 }

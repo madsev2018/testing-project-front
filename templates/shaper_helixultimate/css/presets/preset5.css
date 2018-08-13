@@ -195,8 +195,8 @@ ul.social-icons > li {
   z-index: 99;
   background: #fff;
   border: 1px solid #eaeaea;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .header-box .logo {
   height: 60px;
@@ -2401,7 +2401,7 @@ input[type="text"]:not(.form-control):focus, input[type="email"]:not(.form-contr
 .sp-megamenu-wrapper {
   width: auto;
   display: table;
-  margin: 0 auto;
+  float: right;
 }
 @media (min-width: 320px) and (max-width: 991px) {
   .sp-megamenu-wrapper {
@@ -2426,7 +2426,6 @@ input[type="text"]:not(.form-control):focus, input[type="email"]:not(.form-contr
 .sp-megamenu-parent > li {
   display: inline-block;
   position: relative;
-  padding: 0 0 21px;
   margin: 0 20px -21px;
   line-height: 60px;
 }
@@ -2796,11 +2795,16 @@ body.offcanvas-active {
   overflow: hidden;
 }
 #offcanvas-toggler {
-  display: block;
+  display: none;
   height: 60px;
   line-height: 60px;
   font-size: 20px;
   color: #29293a;
+}
+@media (max-width: 991px) {
+  #offcanvas-toggler {
+    display: block !important;
+  }
 }
 #offcanvas-toggler:hover {
   color: #2a81e1;
@@ -3950,6 +3954,7 @@ input[type="radio"], input[type="checkbox"] {
 }
 input[type="file"], input[type="image"], input[type="submit"], input[type="reset"], input[type="button"], input[type="radio"], input[type="checkbox"] {
   width: auto;
+  position: relative;
 }
 select, input[type="file"] {
   height: 50px;
@@ -4207,7 +4212,6 @@ input.search-query {
   vertical-align: middle;
 }
 .form-search .radio input[type="radio"], .form-search .checkbox input[type="checkbox"], .form-inline .radio input[type="radio"], .form-inline .checkbox input[type="checkbox"] {
-  float: left;
   margin-right: 3px;
   margin-left: 0;
 }
@@ -6161,4 +6165,162 @@ body .sppb-addon-ajax-contact.custom .sppb-form-control {
   display: block;
   height: auto !important;
   max-width: 100%;
+}
+.sp-submenu .menu {
+  list-style: none;
+  margin: 0;
+}
+.sp-submenu .menu li {
+  display: inline-block;
+  position: relative;
+  padding: 0 0 21px;
+  margin: 0 20px -21px;
+  line-height: 60px;
+}
+.sp-megamenu-parent > li:last-child {
+  margin: 0 0px 0 20px;
+}
+.sp-submenu .menu li a {
+  color: white;
+}
+#user-menu {
+  font-size: 35px;
+  display: inline-block;
+  color: white;
+  float: right;
+}
+.submenu-container .sp-module {
+  display: inline-block;
+  float: right;
+}
+.sp-copyright {
+  display: block;
+  text-align: center;
+}
+.element-invisible {
+  display: none !important;
+}
+.sp-module-border-none {
+  border: none !important;
+}
+/* -------------------------------------------------------------
+ Pure CSS Toggle Switch with :checked
+ ---------------------------------------------------------- */
+.onoffswitch {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+  display: none;
+}
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #e3e3e3;
+  border-radius: 0px;
+  margin: 0;
+}
+.onoffswitch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 36px;
+  padding: 0;
+  line-height: 32px;
+  font-size: 16px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+.onoffswitch-inner:before {
+  content: "";
+  padding-left: 10px;
+  background-color: #fff;
+  color: #fff;
+}
+.onoffswitch-inner:after {
+  content: "";
+  padding-right: 10px;
+  background-color: #fff;
+  color: #666;
+  text-align: right;
+}
+.onoffswitch-switch {
+  display: block;
+  width: 50px;
+  margin: 0px;
+  background: #a1a1a1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 49px;
+  transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px;
+  background-color: #27a1ca;
+}
+.mensual-span {
+  bottom: 10px;
+  position: relative;
+  right: 10px;
+  font-size: 30px;
+}
+.anual-span {
+  bottom: 10px;
+  position: relative;
+  left: 10px;
+  font-size: 30px;
+}
+#sp-right .menu-social-blog ul {
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+}
+#sp-right .menu-social-blog ul > li {
+  float: left;
+  margin: 0px 15px;
+}
+#sp-right .menu-social-blog ul > li > a:before {
+  font-size: 40px;
+}
+.article-details .page-header {
+  display: none;
+}
+.icon-search {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-search:before {
+  content: "\f002";
+}
+form.form-search .btn {
+  padding: 15px 17px;
+  float: left;
+  border-radius: 0;
+}
+form.form-search #mod-finder-searchword121 {
+  float: left;
+  max-width: 236px;
 }

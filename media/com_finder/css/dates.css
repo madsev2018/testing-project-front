@@ -1,6 +1,6 @@
 #finder-filter-window {
 	margin: 10px 0 10px;
-	overflow: auto;
+	/*overflow: auto;*/
 	padding: 0;
 	width: 100%;
 }
