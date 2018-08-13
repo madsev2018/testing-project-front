@@ -104,9 +104,9 @@ if ($custom_js = $this->params->get('custom_js'))
 }
 
 ?>
-
+<?php $this->setGenerator('DominionDigital'); ?>
 <!doctype html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
