@@ -56,10 +56,10 @@ class JConfig {
 	public $unicodeslugs = '1';
 	public $feed_limit = '10';
 	public $feed_email = 'none';
-	public $log_path = '/var/www/wise-ecommerce-front/logs';
-	public $tmp_path = '/var/www/wise-ecommerce-front/tmp';
-//    public $log_path = '/home/newfront-pre/logs';
-//	public $tmp_path = '/home/newfront-pre/public_html/tmp';
+//	public $log_path = '/var/www/wise-ecommerce-front/logs';
+//	public $tmp_path = '/var/www/wise-ecommerce-front/tmp';
+    public $log_path = '/home/newfront-pre/logs';
+	public $tmp_path = '/home/newfront-pre/public_html/tmp';
 	public $lifetime = '15';
 	public $session_handler = 'database';
 	public $shared_session = '0';
