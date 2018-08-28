@@ -12,7 +12,7 @@ class JConfig {
 	public $debug = '0';
 	public $debug_lang = '0';
 	public $dbtype = 'mysqli';
-	public $host = '167.114.229.64';
+	public $host = '127.0.0.1';
 	public $user = 'newfront-pre';
 	public $password = 'pFwD9M9MdzMhPqHyqxRp';
 	public $db = 'newfront_pre';
