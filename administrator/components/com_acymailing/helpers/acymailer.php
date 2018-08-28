@@ -1,7 +1,7 @@
 <?php
 /**
  * @package	AcyMailing for Joomla!
- * @version	5.10.3
+ * @version	5.10.4
  * @author	acyba.com
  * @copyright	(C) 2009-2018 ACYBA S.A.R.L. All rights reserved.
  * @license	GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
@@ -527,6 +527,14 @@ class acymailerHelper extends acymailingPHPMailer{
 		$this->generateAllParams();
 		$keysparams = array_keys($this->parameters);
 		$this->Subject = str_replace($keysparams, $this->parameters, $this->Subject);
+
+		foreach ($this->parameters as $tag => $val){
+			if(strpos($tag, '{link') === false || strpos($val, '?') === false) continue;
+
+			$this->Body = str_replace($tag.'?', $val.'&', $this->Body);
+			if(!empty($this->AltBody)) $this->AltBody = str_replace($tag.'?', $val.'&', $this->AltBody);
+		}
+
 		$this->Body = str_replace($keysparams, $this->parameters, $this->Body);
 		if(!empty($this->AltBody)) $this->AltBody = str_replace($keysparams, $this->parameters, $this->AltBody);
 
@@ -639,7 +647,7 @@ class acymailerHelper extends acymailingPHPMailer{
 		$result = '<table style="border:1px solid;border-collapse:collapse;" border="1" cellpadding="10"><tr><td>Tag</td><td>Value</td></tr>';
 		foreach($this->parameters as $name => $value){
 			if(!is_string($value)) continue;
-			$result .= '<tr><td>'.$name.'</td><td>'.$value.'</td></tr>';
+			$result .= '<tr><td>{ '.trim($name, '{}').' }</td><td>'.$value.'</td></tr>';
 		}
 		$result .= '</table>';
 		$this->addParam('alltags', $result);

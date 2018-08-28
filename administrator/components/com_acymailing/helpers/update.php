@@ -1,7 +1,7 @@
 <?php
 /**
  * @package	AcyMailing for Joomla!
- * @version	5.10.3
+ * @version	5.10.4
  * @author	acyba.com
  * @copyright	(C) 2009-2018 ACYBA S.A.R.L. All rights reserved.
  * @license	GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
@@ -512,7 +512,7 @@ class acyupdateHelper{
 
 			$existingExtensions = acymailing_loadResultArray("SELECT CONCAT(`folder`,`element`) FROM #__extensions WHERE `folder` = 'acymailing' OR `element` LIKE '%acy%' OR `name` LIKE '%acy%'");
 		}
-		
+
 		$plugins = array();
 		$modules = array();
 		$extensioninfo = array(); //array('name','ordering','required table or published')
@@ -629,6 +629,15 @@ class acyupdateHelper{
 			}
 		}
 
+		$fixFile = ACYMAILING_ROOT.'plugins'.DS.'editors';
+		if (ACYMAILING_J16) {
+			$fixFile .= DS.'acyeditor';
+		}
+		$fixFile .= DS.'acyeditor'.DS.'.htaccess';
+		if (!file_exists($fixFile)) {
+			acymailing_writeFile($fixFile, 'AddCharset UTF-8 .js');
+		}
+
 		if(!empty($this->errors)) acymailing_enqueueMessage($this->errors, 'error');
 
 		if(!ACYMAILING_J16){
@@ -680,6 +689,8 @@ class acyupdateHelper{
 
 		$this->cleanPluginCache();
 
+		acymailing_deleteFolder(ACYMAILING_BACK.'extensions');
+
 		if(!empty($success)) acymailing_enqueueMessage($success, 'success');
 	}
 
@@ -688,7 +699,7 @@ class acyupdateHelper{
 
 		$allFiles = acymailing_getFiles($from);
 		foreach($allFiles as $oneFile){
-			if(file_exists($to.DS.'index.html') AND $oneFile == 'index.html') continue;
+			if(file_exists($to.DS.'index.html') && $oneFile == 'index.html') continue;
 			if(acymailing_copyFile($from.DS.$oneFile, $to.DS.$oneFile) !== true){
 				$this->errors[] = 'Could not copy the file from '.$from.DS.$oneFile.' to '.$to.DS.$oneFile;
 				$return = false;
@@ -736,7 +747,7 @@ class acyupdateHelper{
 			$config->save($newConfig);
 			return;
 		}
-		
+
 		$js = '
 			var xhr = new XMLHttpRequest();
 			xhr.open("GET", "' . acymailing_prepareAjaxURL('file') . '&task=installLanguages&languages=' . implode(',', $installedLanguages) . '");

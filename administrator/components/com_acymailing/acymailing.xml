@@ -2,7 +2,7 @@
 <extension type="component" version="3.0" method="upgrade">
 	<name>AcyMailing</name>
 	<creationDate>August 2018</creationDate>
-	<version>5.10.3</version>
+	<version>5.10.4</version>
 	<level>starter</level>
 	<author>Acyba</author>
 	<authorEmail>dev@acyba.com</authorEmail>

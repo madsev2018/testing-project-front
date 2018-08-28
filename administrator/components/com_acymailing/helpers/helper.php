@@ -1,7 +1,7 @@
 <?php
 /**
  * @package	AcyMailing for Joomla!
- * @version	5.10.3
+ * @version	5.10.4
  * @author	acyba.com
  * @copyright	(C) 2009-2018 ACYBA S.A.R.L. All rights reserved.
  * @license	GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
@@ -282,7 +282,7 @@ function acymailing_initJSStrings($includejs = 'header', $params = null){
 	if(empty($emailCaption)) $emailCaption = acymailing_translation('EMAILCAPTION');
 
 	$js = "	if(typeof acymailingModule == 'undefined'){
-				var acymailingModule = Array();
+				var acymailingModule = [];
 			}
 			
 			acymailingModule['emailRegex'] = /^".acymailing_getEmailRegex(true)."$/i;
@@ -1283,6 +1283,11 @@ function acymailing_gridSort($title, $order, $direction = 'asc', $selected = '',
 function acymailing_session(){
 	$sessionID = session_id();
 	if(empty($sessionID)) @session_start();
+}
+
+function acymailing_strtolower($text){
+	$function = function_exists('mb_strtolower') ? 'mb_strtolower' : 'strtolower';
+	return $function($text);
 }
 
 class acymailingController extends acymailingBridgeController{
