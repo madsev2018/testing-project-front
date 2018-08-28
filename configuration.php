@@ -20,7 +20,7 @@ class JConfig {
 	public $live_site = '';
 	public $secret = 'WazTeisboI6X1CuK';
 	public $gzip = '1';
-	public $error_reporting = 'none';
+	public $error_reporting = 'maximum';
 	public $helpurl = 'https://help.joomla.org/proxy?keyref=Help{major}{minor}:{keyref}&lang={langcode}';
 	public $ftp_host = '';
 	public $ftp_port = '';
@@ -49,15 +49,17 @@ class JConfig {
 	public $MetaTitle = '1';
 	public $MetaAuthor = '1';
 	public $MetaVersion = '0';
-	public $robots = '';
+	public $robots = 'noindex, nofollow';
 	public $sef = '1';
 	public $sef_rewrite = '1';
 	public $sef_suffix = '0';
 	public $unicodeslugs = '1';
 	public $feed_limit = '10';
 	public $feed_email = 'none';
-	public $log_path = '/var/www/wise-ecommerce-front/administrator/logs';
+	public $log_path = '/var/www/wise-ecommerce-front/logs';
 	public $tmp_path = '/var/www/wise-ecommerce-front/tmp';
+//    public $log_path = '/home/newfront-pre/logs';
+//	public $tmp_path = '/home/newfront-pre/public_html/tmp';
 	public $lifetime = '15';
 	public $session_handler = 'database';
 	public $shared_session = '0';

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package	AcyMailing for Joomla!
- * @version	5.10.3
+ * @version	5.10.4
  * @author	acyba.com
  * @copyright	(C) 2009-2018 ACYBA S.A.R.L. All rights reserved.
  * @license	GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
@@ -45,7 +45,7 @@ class SubscriberViewSubscriber extends acymailingView{
 		$selectedStatus = acymailing_getUserVar($paramBase."filter_status", 'filter_status', 0, 'int');
 		$selectedStatusList = acymailing_getUserVar($paramBase."filter_statuslist", 'filter_statuslist', 0, 'int');
 		$pageInfo->search = acymailing_getUserVar($paramBase.".search", 'search', '', 'string');
-		$pageInfo->search = strtolower(trim($pageInfo->search));
+		$pageInfo->search = acymailing_strtolower(trim($pageInfo->search));
 
 		$pageInfo->limit = new stdClass();
 		$pageInfo->limit->value = acymailing_getUserVar($paramBase.'.list_limit', 'limit', acymailing_getCMSConfig('list_limit'), 'int');

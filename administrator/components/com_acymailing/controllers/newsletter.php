@@ -1,7 +1,7 @@
 <?php
 /**
  * @package	AcyMailing for Joomla!
- * @version	5.10.3
+ * @version	5.10.4
  * @author	acyba.com
  * @copyright	(C) 2009-2018 ACYBA S.A.R.L. All rights reserved.
  * @license	GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
@@ -92,9 +92,11 @@ class NewsletterController extends acymailingController{
 		$num = $class->delete($cids);
 
 		acymailing_arrayToInteger($cids);
-		acymailing_query('DELETE FROM `#__acymailing_listmail` WHERE `mailid` IN ('.implode(',', $cids).')');
 
-		acymailing_enqueueMessage(acymailing_translation_sprintf('SUCC_DELETE_ELEMENTS', $num), 'message');
+		if(!empty($cids)){
+			acymailing_query('DELETE FROM `#__acymailing_listmail` WHERE `mailid` IN ('.implode(',', $cids).')');
+			acymailing_enqueueMessage(acymailing_translation_sprintf('SUCC_DELETE_ELEMENTS', $num), 'message');
+		}
 
 		return $this->listing();
 	}

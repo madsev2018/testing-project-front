@@ -1,7 +1,7 @@
 <?php
 /**
  * @package	AcyMailing for Joomla!
- * @version	5.10.3
+ * @version	5.10.4
  * @author	acyba.com
  * @copyright	(C) 2009-2018 ACYBA S.A.R.L. All rights reserved.
  * @license	GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
@@ -531,7 +531,7 @@ class acypluginsHelper{
 
 	function getStandardDisplay($format){
 		if(empty($format->tag->format)) $format->tag->format = 'TOP_LEFT';
-		if(!in_array($format->tag->format, array('TOP_LEFT', 'TOP_RIGHT', 'TITLE_IMG', 'TITLE_IMG_RIGHT', 'CENTER_IMG', 'TOP_IMG', 'COL_LEFT', 'COL_RIGHT'))) return 'Wrong format suppied: '.$format->tag->format;
+		if(!in_array($format->tag->format, array('TOP_LEFT', 'TOP_RIGHT', 'TITLE_IMG', 'TITLE_IMG_RIGHT', 'CENTER_IMG', 'TOP_IMG', 'COL_LEFT', 'COL_RIGHT'))) return 'Wrong format supplied: '.$format->tag->format;
 
 		$invertValues = array('TOP_LEFT' => 'TOP_RIGHT', 'TITLE_IMG' => 'TITLE_IMG_RIGHT', 'COL_LEFT' => 'COL_RIGHT', 'TOP_RIGHT' => 'TOP_LEFT', 'TITLE_IMG_RIGHT' => 'TITLE_IMG', 'COL_RIGHT' => 'COL_LEFT');
 		if(!empty($format->tag->invert) && !empty($invertValues[$format->tag->format])) $format->tag->format = $invertValues[$format->tag->format];

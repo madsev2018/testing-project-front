@@ -1693,7 +1693,7 @@ class acymailingPHPMailer
      */
     public function smtpClose()
     {
-        if (is_a($this->smtp, 'SMTP')) {
+        if (is_a($this->smtp, 'acymailingSMTP')) {
             if ($this->smtp->connected()) {
                 $this->smtp->quit();
                 $this->smtp->close();
