@@ -32,6 +32,30 @@
     </fieldset>
     <fieldset name="advanced" label="Advanced" addfieldpath="/administrator/components/com_convertforms/models/forms/fields">
         
+        <field name="APIStart" type="nr_block" 
+            start="1"
+            description="COM_CONVERTFORMS_API_DESC"
+            label="COM_CONVERTFORMS_API_ENABLE"
+        />
+        <field name="api" type="radio"
+            default="0" 
+            class="btn-group btn-group-yesno" 
+            label="COM_CONVERTFORMS_API_ENABLE"
+            description="COM_CONVERTFORMS_API_DESC">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field name="api_key" type="NR_Password"
+            class="btn-group btn-group-yesno"
+            label="COM_CONVERTFORMS_API_KEY"
+            description="COM_CONVERTFORMS_API_KEY_DESC"
+            filter="alnum"
+            showon="api:1"
+        />
+        <field name="APIEnd" type="nr_block" 
+            end="1"
+        />
+        
         <field name="recaptchaStart" type="nr_block" 
             start="1"
             description="NR_RECAPTCHA_DESC"

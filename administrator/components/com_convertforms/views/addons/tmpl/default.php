@@ -2,7 +2,7 @@
 
 /**
  * @package         Convert Forms
- * @version         2.0.8 Free
+ * @version         2.0.8 Pro
  * 
  * @author          Tassos Marinos <info@tassos.gr>
  * @link            http://www.tassos.gr
@@ -20,6 +20,17 @@ JHtml::_('bootstrap.popover');
         <?php echo $this->sidebar; ?>
     </div>
     <div id="j-main-container">
+        
+        <?php if (!NRFramework\Functions::getDownloadKey()) { ?>
+            <div class="alert alert-danger">
+                <h3><?php echo JText::_("NR_DOWNLOAD_KEY_MISSING") ?></h3>
+                <p><?php echo JText::sprintf("COM_CONVERTFORMS_ADDONS_MISSING_KEY"); ?>
+
+                <a style="position:relative; top:-2px; left:5px;" class="btn btn-small btn-success" href="<?php echo JURI::base() ?>index.php?option=com_plugins&view=plugins&filter_search=novarain">
+                    <?php echo JText::_("NR_DOWNLOAD_KEY_UPDATE")?>
+                </a>
+            </div>
+        <?php } ?>
         
         <div class="cf-addons-container">
             <h2>
@@ -45,11 +56,20 @@ JHtml::_('bootstrap.popover');
                                 <?php } else { ?>
 
                                     
+                                    <?php if ($item["extensionid"]) { ?>
+                                        <a class="cf-addon-btn btn btn-success" href="<?php echo $item["backendurl"] ?>">
+                                            <span class="icon-checkmark"></span>
+                                            Installed
+                                        </a>
+                                    <?php } ?>
+
+                                    <?php if (isset($item["docalias"])) { ?>
+                                        <a class="cf-addon-btn btn" href="http://www.tassos.gr/joomla-extensions/convert-forms//docs/<?php echo $item["docalias"]; ?>" target="_blank">
+                                            <?php echo JText::_("NR_DOCUMENTATION"); ?>
+                                        </a>
+                                    <?php } ?>
+                                   
                                     
-                                    <a href="<?php echo $item["url"] ?>" class="btn btn-danger" target="_blank">
-                                        <span class="icon icon-lock"></span>
-                                        <?php echo JText::_("NR_UPGRADE_TO_PRO"); ?>
-                                    </a>
                                     
 
                                 <?php } ?>

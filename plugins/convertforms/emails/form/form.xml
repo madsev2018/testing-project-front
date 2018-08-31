@@ -2,11 +2,6 @@
 <form>
     <fieldset name="emails" label="COM_CONVERTFORMS_EMAILS" tab="behavior" addfieldpath="plugins/convertforms/emails/form/fields">
         
-        <field name="emails-free-note" type="note"
-            class="alert alert-error"
-            description="COM_CONVERTFORMS_EMAILS_FREE_NOTE"
-        />
-        
         <field name="sendnotifications" type="radio" 
             label="COM_CONVERTFORMS_EMAILS_DESC"
             class="btn-group"
@@ -15,16 +10,13 @@
             <option value="0">JNO</option>
         </field>
         
+        
         <field name="emails" type="cfsubform"
             formsource="/plugins/convertforms/emails/form/fields.xml"
             hiddenLabel="true"
             multiple="true"
-            max="1"
-            buttons=" "
             showon="sendnotifications:1"
-            default='{ "emails0": {} }'
         />
-        
         
     </fieldset>
 </form>

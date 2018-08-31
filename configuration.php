@@ -4,7 +4,7 @@ class JConfig {
 	public $offline_message = 'Este sitio está cerrado por tareas de mantenimiento.<br />Por favor, inténtelo nuevamente más tarde.';
 	public $display_offline_message = '1';
 	public $offline_image = '';
-	public $sitename = 'WiseConversion Tools';
+	public $sitename = 'Leadera Solutions';
 	public $editor = 'tinymce';
 	public $captcha = '0';
 	public $list_limit = '20';
@@ -12,8 +12,7 @@ class JConfig {
 	public $debug = '0';
 	public $debug_lang = '0';
 	public $host = '127.0.0.1';
-	public $dbtype = 'mysql';
-	//public $host = '167.114.229.64';
+	public $dbtype = 'mysqli';
 	public $user = 'newfront-pre';
 	public $password = 'pFwD9M9MdzMhPqHyqxRp';
 	public $db = 'newfront_pre';
@@ -21,7 +20,7 @@ class JConfig {
 	public $live_site = '';
 	public $secret = 'WazTeisboI6X1CuK';
 	public $gzip = '1';
-	public $error_reporting = 'maximum';
+	public $error_reporting = 'none';
 	public $helpurl = 'https://help.joomla.org/proxy?keyref=Help{major}{minor}:{keyref}&lang={langcode}';
 	public $ftp_host = '';
 	public $ftp_port = '';
@@ -41,10 +40,10 @@ class JConfig {
 	public $smtphost = 'smtp.gmail.com';
 	public $smtpsecure = 'ssl';
 	public $smtpport = '465';
-	public $caching = '1';
+	public $caching = '0';
 	public $cache_handler = 'file';
 	public $cachetime = '300';
-	public $cache_platformprefix = '1';
+	public $cache_platformprefix = '0';
 	public $MetaDesc = '';
 	public $MetaKeys = '';
 	public $MetaTitle = '1';

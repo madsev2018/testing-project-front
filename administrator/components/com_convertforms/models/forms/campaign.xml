@@ -20,11 +20,12 @@
             <option value="-2">JTRASHED</option>
         </field>
         
-        
-        <field name="service_pro" type="nr_pro"
-            label="COM_CONVERTFORMS_CAMPAIGN_SYNC"
+        <field name="service" type="cfservices"
+            label="COM_CONVERTFORMS_CHOOSE_SERVICE"
             description="COM_CONVERTFORMS_CAMPAIGN_SYNC_DESC"
-        />
+            class="chzn-color-state">
+        </field>
+        
         
         <field name="id" type="hidden"
             label="JGLOBAL_FIELD_ID_LABEL"

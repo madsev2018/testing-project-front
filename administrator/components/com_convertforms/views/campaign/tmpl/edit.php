@@ -3,7 +3,7 @@
 
 /**
  * @package         Convert Forms
- * @version         2.0.8 Free
+ * @version         2.0.8 Pro
  * 
  * @author          Tassos Marinos <info@tassos.gr>
  * @link            http://www.tassos.gr
@@ -71,9 +71,20 @@ JHtml::_('formbehavior.chosen', 'select');
                     </div>
 
                     
-
+                    <div class="control-group">
+                        <div class="control-label">
+                            <?php echo $this->form->getLabel("service"); ?>
+                        </div>
+                        <div class="controls">
+                            <?php echo $this->form->getInput("service"); ?>
+                            <a href="<?php echo JURI::base() ?>index.php?option=com_convertforms&view=addons" class="btn btn-info btn-small">
+                                <span class="icon-cogs"></span>
+                                <?php echo JText::_("COM_CONVERTFORMS_INSTALL_ADDONS"); ?>
+                            </a>
+                        </div>
+                    </div>
                     
-                    <?php echo $this->form->renderField("service_pro"); ?>
+
                     
                 </div>
                 <?php if ($this->item->service) { ?>

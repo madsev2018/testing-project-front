@@ -192,17 +192,14 @@ ul.social-icons {
 #sp-header div#sp-menu {
   @media (min-width: 320px) and (max-width: 991px) {
     //text-align:center;
-    width: 60px!important;
-    padding:0px;
+    width: 70% !important;
     float: left;
      max-width: 100%;
   }
 }
 #sp-header div#after-logo {
   @media (min-width: 731px) and (max-width: 991px) {
-    float: left;
-    width: 61%!important;
-     max-width: 100%;
+    display: none;
   }
   @media (min-width: 480px) and (max-width: 730px) {
     float: left;
@@ -224,8 +221,6 @@ ul.social-icons {
   z-index: 99;
   background: $header_bg_color;
   border:1px solid #eaeaea;
-  padding-top:10px;
-  padding-bottom:10px;
   .logo {
     height: $header_height;
     display: inline-flex;

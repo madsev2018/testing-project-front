@@ -2,7 +2,7 @@
 
 /**
  * @package         Convert Forms
- * @version         2.0.8 Free
+ * @version         2.0.8 Pro
  *
  * @author          Tassos Marinos <info@tassos.gr>
  * @link            http://www.tassos.gr
@@ -11,6 +11,6 @@
  */
 
 defined('_JEXEC') or die('Restricted Access');
-$NR_PRO = "0";
+$NR_PRO = "1";
 
 ?>

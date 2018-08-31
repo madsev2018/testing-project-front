@@ -1,6 +1,6 @@
 /**
  * @package         Convert Forms
- * @version         2.0.8 Free
+ * @version         2.0.8 Pro
  * 
  * @description     Fix Showon feature for fields in a subform field https://github.com/joomla/joomla-cms/pull/12511
  * 

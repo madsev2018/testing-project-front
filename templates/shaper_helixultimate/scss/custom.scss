@@ -3,12 +3,17 @@
   margin: 0;
 }
 
+.submenu-container{
+  height: 37px;
+}
+
 .sp-submenu .menu li{
   display: inline-block;
   position: relative;
-  padding: 0 0 21px;
-  margin: 0 20px -21px;
-  line-height: 60px;
+  padding: 0 0 10px;
+  margin: 0 10px -21px;
+  line-height: 36px;
+  font-size: 13px;
 }
 .sp-megamenu-parent > li:last-child{
   margin: 0 0px 0 20px;
@@ -18,10 +23,13 @@
 }
 
 #user-menu{
-  font-size: 35px;
+  font-size: 25px;
   display: inline-block;
   color: white;
   float:right;
+  @media (max-width: 991px) {
+       display: none !important;
+  }
 }
 
 .submenu-container .sp-module{
@@ -53,6 +61,10 @@
   -moz-user-select:none;
   -ms-user-select: none;
 }
+
+.anual-span,.mensual-span{
+  color:#08ae99 !important;
+}
 .onoffswitch-checkbox {
   display: none;
 }
@@ -60,7 +72,7 @@
   display: block;
   overflow: hidden;
   cursor: pointer;
-  border: 2px solid #E3E3E3;
+  border: 2px solid #08ae99;
   border-radius: 0px;
   margin: 0;
 }
@@ -83,14 +95,14 @@
 .onoffswitch-inner:after {
   content: "";
   padding-right: 10px;
-  background-color: #FFFFFF; color: #666666;
+  background-color: #FFFFFF; color: #08ae99;
   text-align: right;
 }
 .onoffswitch-switch {
   display: block;
   width: 50px;
   margin: 0px;
-  background: #A1A1A1;
+  background: #08ae99 !important;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -102,7 +114,7 @@
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
   right: 0px;
-  background-color: #27A1CA;
+  background-color: #08ae99 !important;
 }
 /* ------------------------------------------------------------------------- */
 .onoffswitch-2 {
@@ -120,7 +132,7 @@
   display: block;
   overflow: hidden;
   cursor: pointer;
-  border: 2px solid #E3E3E3;
+  border: 2px solid #08ae99;
   border-radius: 0px;
   margin: 0;
 }
@@ -150,7 +162,7 @@
   display: block;
   width: 50px;
   margin: 0px;
-  background: #A1A1A1;
+  background: #08ae99;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -162,7 +174,7 @@
 }
 .onoffswitch-2-checkbox:checked + .onoffswitch-2-label .onoffswitch-2-switch {
   right: 0px;
-  background-color: #27A1CA;
+  background-color: #08ae99;
 }
 .mensual-span {
   bottom: 10px;

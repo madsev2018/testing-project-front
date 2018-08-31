@@ -14,7 +14,7 @@
     <uninstall><sql><file driver="mysql" charset="utf8">sql/uninstall.convertforms.sql</file></sql></uninstall>
     <updateservers>
         <server type="extension" priority="1" name="Convert Forms">
-            http://static.tassos.gr/update/convertformsfree?type=.xml
+            http://static.tassos.gr/update/convertforms?type=.xml
         </server>
     </updateservers>
     <administration>
