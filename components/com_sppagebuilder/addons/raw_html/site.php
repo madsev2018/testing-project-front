@@ -18,7 +18,6 @@ class SppagebuilderAddonRaw_html extends SppagebuilderAddons{
 
 		//Options
 		$html = (isset($this->addon->settings->html) && $this->addon->settings->html) ? $this->addon->settings->html : '';
-
 		//Output
 		if($html) {
 			$output  = '<div class="sppb-addon sppb-addon-raw-html ' . $class . '">';

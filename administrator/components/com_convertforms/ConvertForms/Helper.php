@@ -510,18 +510,19 @@ class Helper
         }
 
         $run = true;
-
-        // Front-end media files
+	
+	// Front-end media files
         if ($frontend)
         {
             $params = self::getComponentParams();
-
+	    
             if ($params->get("loadjQuery", true))
             {
                 \JHtml::_('jquery.framework');
             }
 
             $mediaVersioning = $params->get("mediaversioning", true);
+	    \NRFramework\Functions::addMedia("jquery.min.js", "jui", $mediaVersioning);
             \NRFramework\Functions::addMedia("convertforms.js", "com_convertforms", $mediaVersioning);
 
             if ($params->get("loadCSS", true))
