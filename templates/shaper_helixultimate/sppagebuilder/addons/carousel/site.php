@@ -1,420 +1,429 @@
 <?php
+
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
  * @copyright Copyright (c) 2010 - 2016 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
-*/
+ */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined('_JEXEC') or die('restricted aceess');
 
 class SppagebuilderAddonCarousel extends SppagebuilderAddons {
 
-	public function render() {
+  public function render() {
 
-		$class = (isset($this->addon->settings->class) && $this->addon->settings->class) ? ' ' . $this->addon->settings->class : '';
+    $class = (isset($this->addon->settings->class) && $this->addon->settings->class) ? ' ' . $this->addon->settings->class : '';
 
-		//Addons option
-		$autoplay = (isset($this->addon->settings->autoplay) && $this->addon->settings->autoplay) ? ' data-sppb-ride="sppb-carousel"' : 0;
-		$controllers = (isset($this->addon->settings->controllers) && $this->addon->settings->controllers) ? $this->addon->settings->controllers : 0;
-		$arrows = (isset($this->addon->settings->arrows) && $this->addon->settings->arrows) ? $this->addon->settings->arrows : 0;
-		$alignment = (isset($this->addon->settings->alignment) && $this->addon->settings->alignment) ? $this->addon->settings->alignment : 0;
-		$interval = (isset($this->addon->settings->interval) && $this->addon->settings->interval) ? ((int) $this->addon->settings->interval * 1000) : 5000;
-		$carousel_autoplay = ($autoplay) ? ' data-sppb-ride="sppb-carousel"':'';
+    //Addons option
+    $autoplay = (isset($this->addon->settings->autoplay) && $this->addon->settings->autoplay) ? ' data-sppb-ride="sppb-carousel"' : 0;
+    $controllers = (isset($this->addon->settings->controllers) && $this->addon->settings->controllers) ? $this->addon->settings->controllers : 0;
+    $arrows = (isset($this->addon->settings->arrows) && $this->addon->settings->arrows) ? $this->addon->settings->arrows : 0;
+    $alignment = (isset($this->addon->settings->alignment) && $this->addon->settings->alignment) ? $this->addon->settings->alignment : 0;
+    $interval = (isset($this->addon->settings->interval) && $this->addon->settings->interval) ? ((int) $this->addon->settings->interval * 1000) : 5000;
+    $carousel_autoplay = ($autoplay) ? ' data-sppb-ride="sppb-carousel"' : '';
 
-		$output  = '<div id="sppb-carousel-'. $this->addon->id .'" data-interval="'.$interval.'" class="sppb-carousel sppb-slide' . $class . '"'. $carousel_autoplay .'>';
+    $output = '<div id="sppb-carousel-' . $this->addon->id . '" data-interval="' . $interval . '" class="sppb-carousel sppb-slide' . $class . '"' . $carousel_autoplay . '>';
 
-		if($controllers) {
-			$output .= '<ol class="sppb-carousel-indicators">';
-				foreach ($this->addon->settings->sp_carousel_item as $key1 => $value) {
-					$output .= '<li data-sppb-target="#sppb-carousel-'. $this->addon->id .'" '. (($key1 == 0) ? ' class="active"': '' ) .'  data-sppb-slide-to="'. $key1 .'"></li>' . "\n";
-				}
-			$output .= '</ol>';
-		}
+    if ($controllers) {
+      $output .= '<ol class="sppb-carousel-indicators">';
+      foreach ($this->addon->settings->sp_carousel_item as $key1 => $value) {
+        $output .= '<li data-sppb-target="#sppb-carousel-' . $this->addon->id . '" ' . (($key1 == 0) ? ' class="active"' : '' ) . '  data-sppb-slide-to="' . $key1 . '"></li>' . "\n";
+      }
+      $output .= '</ol>';
+    }
 
-		$output .= '<div class="sppb-carousel-inner ' . $alignment . '">';
+    $output .= '<div class="sppb-carousel-inner ' . $alignment . '">';
 
-		if(isset($this->addon->settings->sp_carousel_item) && count((array) $this->addon->settings->sp_carousel_item)){
-			foreach ($this->addon->settings->sp_carousel_item as $key => $value) {
-				$button_url = (isset($value->button_url) && $value->button_url) ? $value->button_url : '';
-				$button_2_url = (isset($value->button_2_url) && $value->button_2_url) ? $value->button_2_url : '';
-	
-				$output   .= '<div class="sppb-item sppb-item-'. $this->addon->id . $key . ' ' . ((isset($value->bg) && $value->bg) ? ' sppb-item-has-bg' : '') . (($key == 0) ? ' active' : '') .'">';
-				$output  .= (isset($value->bg) && $value->bg) ? '<img src="' . $value->bg . '" alt="' . $value->title . '">' : '';
-	
-				$output  .= '<div class="sppb-carousel-item-inner">';
-				$output  .= '<div class="sppb-carousel-caption">';
-				$output  .= '<div class="sppb-carousel-text">';
-	
-				if((isset($value->title) && $value->title) || (isset($value->content) && $value->content) ) {
-					$output  .= (isset($value->title) && $value->title) ? '<h2>' . $value->title . '</h2>' : '';
-					$output  .= '<div class="sppb-carousel-content">' . $value->content . '</div>';
-					if(isset($value->button_text) && $value->button_text) {
-						$button_class = (isset($value->button_type) && $value->button_type) ? ' sppb-btn-' . $value->button_type : ' sppb-btn-default';
-						$button_class .= (isset($value->button_size) && $value->button_size) ? ' sppb-btn-' . $value->button_size : '';
-						$button_class .= (isset($value->button_shape) && $value->button_shape) ? ' sppb-btn-' . $value->button_shape: ' sppb-btn-rounded';
-						$button_class .= (isset($value->button_appearance) && $value->button_appearance) ? ' sppb-btn-' . $value->button_appearance : '';
-						$button_class .= (isset($value->button_block) && $value->button_block) ? ' ' . $value->button_block : '';
-						$button_icon = (isset($value->button_icon) && $value->button_icon) ? $value->button_icon : '';
-						$button_icon_position = (isset($value->button_icon_position) && $value->button_icon_position) ? $value->button_icon_position: 'left';
-						$button_target = (isset($value->button_target) && $value->button_target) ? $value->button_target : '_self';
-	
-						if($button_icon_position == 'left') {
-							$value->button_text = ($button_icon) ? '<i class="fa ' . $button_icon . '"></i> ' . $value->button_text : $value->button_text;
-						} else {
-							$value->button_text = ($button_icon) ? $value->button_text . ' <i class="fa ' . $button_icon . '"></i>' : $value->button_text;
-						}
-	
-						$output  .= '<a href="' . $button_url . '" target="' . $button_target . '" id="btn-'. ($this->addon->id + $key) .'" class="sppb-btn'. $button_class .'">' . $value->button_text . '</a>';
-					}
-                    if(isset($value->button_2_text) && $value->button_2_text) {
-						$button_2_class = (isset($value->button_2_type) && $value->button_2_type) ? ' sppb-btn-' . $value->button_2_type : ' sppb-btn-default';
-						$button_2_class .= (isset($value->button_2_size) && $value->button_2_size) ? ' sppb-btn-' . $value->button_2_size : '';
-						$button_2_class .= (isset($value->button_2_shape) && $value->button_2_shape) ? ' sppb-btn-' . $value->button_2_shape: ' sppb-btn-rounded';
-						$button_2_class .= (isset($value->button_2_appearance) && $value->button_2_appearance) ? ' sppb-btn-' . $value->button_2_appearance : '';
-						$button_2_class .= (isset($value->button_2_block) && $value->button_2_block) ? ' ' . $value->button_2_block : '';
-						$button_2_icon = (isset($value->button_2_icon) && $value->button_2_icon) ? $value->button_2_icon : '';
-						$button_2_icon_position = (isset($value->button_2_icon_position) && $value->button_2_icon_position) ? $value->button_2_icon_position: 'left';
-						$button_2_target = (isset($value->button_2_target) && $value->button_2_target) ? $value->button_2_target : '_self';
-	
-						if($button_2_icon_position == 'left') {
-							$value->button_2_text = ($button_2_icon) ? '<i class="fa ' . $button_2_icon . '"></i> ' . $value->button_2_text : $value->button_2_text;
-						} else {
-							$value->button_2_text = ($button_2_icon) ? $value->button_2_text . ' <i class="fa ' . $button_2_icon . '"></i>' : $value->button_2_text;
-						}
-	
-						$output  .= '<a style="margin-left: 10px;" href="' . $button_2_url . '" target="' . $button_2_target . '" id="btn-'. ($this->addon->id + $key) .'" class="sppb-btn'. $button_2_class .'">' . $value->button_2_text . '</a>';
-					}
-				}
-	
-				$output  .= '</div>';
-				$output  .= '</div>';
-	
-				$output  .= '</div>';
-				$output  .= '</div>';
-			}
-		}
+    if (isset($this->addon->settings->sp_carousel_item) && count((array) $this->addon->settings->sp_carousel_item)) {
+      foreach ($this->addon->settings->sp_carousel_item as $key => $value) {
+        $button_url = (isset($value->button_url) && $value->button_url) ? $value->button_url : '';
+
+        $output .= '<div class="sppb-item sppb-item-' . $this->addon->id . $key . ' ' . ((isset($value->bg) && $value->bg) ? ' sppb-item-has-bg' : '') . (($key == 0) ? ' active' : '') . '">';
+        $output .= (isset($value->bg) && $value->bg) ? '<img src="' . $value->bg . '" alt="' . $value->title . '">' : '';
+
+        $output .= '<div class="sppb-carousel-item-inner">';
+        $output .= '<div class="sppb-carousel-caption">';
+        $output .= '<div class="sppb-carousel-text">';
+
+        if ((isset($value->title) && $value->title) || (isset($value->content) && $value->content)) {
+          $output .= (isset($value->title) && $value->title) ? '<h2>' . $value->title . '</h2>' : '';
+          $output .= '<div class="sppb-carousel-content">' . $value->content . '</div>';
+          if (isset($value->button_text) && $value->button_text) {
+            $button_class = (isset($value->button_type) && $value->button_type) ? ' sppb-btn-' . $value->button_type : ' sppb-btn-default';
+            $button_class .= (isset($value->button_size) && $value->button_size) ? ' sppb-btn-' . $value->button_size : '';
+            $button_class .= (isset($value->button_shape) && $value->button_shape) ? ' sppb-btn-' . $value->button_shape : ' sppb-btn-rounded';
+            $button_class .= (isset($value->button_appearance) && $value->button_appearance) ? ' sppb-btn-' . $value->button_appearance : '';
+            $button_class .= (isset($value->button_block) && $value->button_block) ? ' ' . $value->button_block : '';
+            $button_icon = (isset($value->button_icon) && $value->button_icon) ? $value->button_icon : '';
+            $button_icon_position = (isset($value->button_icon_position) && $value->button_icon_position) ? $value->button_icon_position : 'left';
+            $button_target = (isset($value->button_target) && $value->button_target) ? $value->button_target : '_self';
+
+            if ($button_icon_position == 'left') {
+              $value->button_text = ($button_icon) ? '<i class="fa ' . $button_icon . '"></i> ' . $value->button_text : $value->button_text;
+            } else {
+              $value->button_text = ($button_icon) ? $value->button_text . ' <i class="fa ' . $button_icon . '"></i>' : $value->button_text;
+            }
+
+            $output .= '<a href="' . $button_url . '" target="' . $button_target . '" id="btn-' . ($this->addon->id + $key) . '" class="sppb-btn' . $button_class . '">' . $value->button_text . '</a>';
+          }
+          //Options
+          $id = (isset($value->id) && $value->id) ? $value->id : 0;
+          $module_type = (isset($value->module_type) && $value->module_type) ? $value->module_type : 'module';
+          $position = (isset($value->position) && $value->position) ? $value->position : '';
+          $module_selector = (isset($value->module_selector) && $value->module_selector) ? $value->module_selector : 'basic';
+          if ((($module_type == 'position') && !$position) || (($module_type == 'module') && !$id)) {
+            $output = $output;
+          } else {
+
+            $modules = self::getModules($module_type, $id, $position);
+
+            if (count((array) $modules)) {
+
+              foreach ($modules as $module) {
+                $file = $module->module;
+                $custom = substr($file, 0, 4) == 'mod_' ? 0 : 1;
+                $module->user = $custom;
+                $module->name = $custom ? $module->title : substr($file, 4);
+                $module->style = null;
+                $module->position = strtolower($module->position);
+                $clean[$module->id] = $module;
+
+                if ($module_type == 'position') {
+                  $output .= JModuleHelper::renderModule($module, array('style' => 'sp_xhtml'));
+                } else {
+                  $output .= JModuleHelper::renderModule($module, array('style' => 'none'));
+                }
+              }
+            }
+          }
+        }
+
+        $output .= '</div>';
+        $output .= '</div>';
+
+        $output .= '</div>';
+        $output .= '</div>';
+      }
+    }
 
 
-		$output	.= '</div>';
+    $output .= '</div>';
 
-		if($arrows) {
-			$output	.= '<a href="#sppb-carousel-'. $this->addon->id .'" class="sppb-carousel-arrow left sppb-carousel-control" data-slide="prev"><i class="fa linearicons-chevron-left"></i></a>';
-			$output	.= '<a href="#sppb-carousel-'. $this->addon->id .'" class="sppb-carousel-arrow right sppb-carousel-control" data-slide="next"><i class="fa linearicons-chevron-right"></i></a>';
-		}
+    if ($arrows) {
+      $output .= '<a href="#sppb-carousel-' . $this->addon->id . '" class="sppb-carousel-arrow left sppb-carousel-control" data-slide="prev"><i class="fa linearicons-chevron-left"></i></a>';
+      $output .= '<a href="#sppb-carousel-' . $this->addon->id . '" class="sppb-carousel-arrow right sppb-carousel-control" data-slide="next"><i class="fa linearicons-chevron-right"></i></a>';
+    }
 
-		$output .= '</div>';
+    $output .= '</div>';
 
-		return $output;
-	}
+    return $output;
+  }
 
-	public function css() {
-		$addon_id = '#sppb-addon-' . $this->addon->id;
-		$layout_path = JPATH_ROOT . '/components/com_sppagebuilder/layouts';
-		$css = '';
+  public function css() {
+    $addon_id = '#sppb-addon-' . $this->addon->id;
+    $layout_path = JPATH_ROOT . '/components/com_sppagebuilder/layouts';
+    $css = '';
 
-		// Buttons style
-		foreach ($this->addon->settings->sp_carousel_item as $key => $value) {
+    // Buttons style
+    foreach ($this->addon->settings->sp_carousel_item as $key => $value) {
 
-			if($value->button_text) {
-				$css_path = new JLayoutFile('addon.css.button', $layout_path);
-				$css .= $css_path->render(array('addon_id' => $addon_id, 'options' => $value, 'id' => 'btn-' . ($this->addon->id + $key) ));
-			}
+      if ($value->button_text) {
+        $css_path = new JLayoutFile('addon.css.button', $layout_path);
+        $css .= $css_path->render(array('addon_id' => $addon_id, 'options' => $value, 'id' => 'btn-' . ($this->addon->id + $key)));
+      }
 
-			$title_css = '';
-			$title_css .= (isset($value->title_fontsize) && $value->title_fontsize) ? 'font-size:' . $value->title_fontsize . 'px;' : '';
-			$title_css .= (isset($value->title_lineheight) && $value->title_lineheight) ? 'line-height:' . $value->title_lineheight . 'px;' : '';
-			$title_css .= (isset($value->title_color) && !empty($value->title_color)) ? 'color:' . $value->title_color . ';' : '';
+      $title_css = '';
+      $title_css .= (isset($value->title_fontsize) && $value->title_fontsize) ? 'font-size:' . $value->title_fontsize . 'px;' : '';
+      $title_css .= (isset($value->title_lineheight) && $value->title_lineheight) ? 'line-height:' . $value->title_lineheight . 'px;' : '';
+      $title_css .= (isset($value->title_color) && !empty($value->title_color)) ? 'color:' . $value->title_color . ';' : '';
 
-			if(isset($value->title_font_family) && $value->title_font_family) {
-				$font_path = new JLayoutFile('addon.css.fontfamily', $layout_path);
-				$font_path->render(array('font'=>$value->title_font_family));
-				$title_css .= 'font-family: ' . $value->title_font_family . ';';
-			}
+      if (isset($value->title_font_family) && $value->title_font_family) {
+        $font_path = new JLayoutFile('addon.css.fontfamily', $layout_path);
+        $font_path->render(array('font' => $value->title_font_family));
+        $title_css .= 'font-family: ' . $value->title_font_family . ';';
+      }
 
-			if(isset($value->title_padding) && $value->title_padding) {
-				if(trim($value->title_padding) != "") {
-					$title_padding_md = '';
-					$title_paddings_md = explode(' ', $value->title_padding);
-					foreach($title_paddings_md as $padding_md) {
-						if(empty(trim($padding_md))) {
-							$title_padding_md .= ' 0';
-						} else {
-							$title_padding_md .= ' '.$padding_md;
-						}
-					}
-					$title_css .= "padding: " . $title_padding_md . ";\n";
-				}
-			}
+      if (isset($value->title_padding) && $value->title_padding) {
+        if (trim($value->title_padding) != "") {
+          $title_padding_md = '';
+          $title_paddings_md = explode(' ', $value->title_padding);
+          foreach ($title_paddings_md as $padding_md) {
+            if (empty(trim($padding_md))) {
+              $title_padding_md .= ' 0';
+            } else {
+              $title_padding_md .= ' ' . $padding_md;
+            }
+          }
+          $title_css .= "padding: " . $title_padding_md . ";\n";
+        }
+      }
 
-			if(isset($value->title_margin) && $value->title_margin){
-				if(trim($value->title_margin) != "") {
-					$title_margin_md = '';
-					$title_margins_md = explode(' ', $value->title_margin);
-					foreach($title_margins_md as $margin_md) {
-						if(empty(trim($margin_md))) {
-							$title_margin_md .= ' 0';
-						} else {
-							$title_margin_md .= ' '.$margin_md;
-						}
-					}
-					$title_css .= "margin: " . $title_margin_md . ";\n";
-				}
-			}
+      if (isset($value->title_margin) && $value->title_margin) {
+        if (trim($value->title_margin) != "") {
+          $title_margin_md = '';
+          $title_margins_md = explode(' ', $value->title_margin);
+          foreach ($title_margins_md as $margin_md) {
+            if (empty(trim($margin_md))) {
+              $title_margin_md .= ' 0';
+            } else {
+              $title_margin_md .= ' ' . $margin_md;
+            }
+          }
+          $title_css .= "margin: " . $title_margin_md . ";\n";
+        }
+      }
 
-			if(!empty($title_css)){
-				$css .= $addon_id . ' .sppb-item-' . $this->addon->id . $key . ' .sppb-carousel-caption h2 {';
-					$css .= $title_css;
-				$css .= '}';
-			}
+      if (!empty($title_css)) {
+        $css .= $addon_id . ' .sppb-item-' . $this->addon->id . $key . ' .sppb-carousel-caption h2 {';
+        $css .= $title_css;
+        $css .= '}';
+      }
 
-			$content_css = '';
-			$content_css .= (isset($value->content_fontsize) && $value->content_fontsize) ? 'font-size:' . $value->content_fontsize . 'px;' : '';
-			$content_css .= (isset($value->content_lineheight) && $value->content_lineheight) ? 'line-height:' . $value->content_lineheight . 'px;' : '';
-			$content_css .= (isset($value->content_color) && $value->content_color) ? 'color:' . $value->content_color . ';' : '';
+      $content_css = '';
+      $content_css .= (isset($value->content_fontsize) && $value->content_fontsize) ? 'font-size:' . $value->content_fontsize . 'px;' : '';
+      $content_css .= (isset($value->content_lineheight) && $value->content_lineheight) ? 'line-height:' . $value->content_lineheight . 'px;' : '';
+      $content_css .= (isset($value->content_color) && $value->content_color) ? 'color:' . $value->content_color . ';' : '';
 
-			if(isset($value->content_font_family) && $value->content_font_family) {
-				$font_path = new JLayoutFile('addon.css.fontfamily', $layout_path);
-				$font_path->render(array('font'=>$value->content_font_family));
-				$content_css .= 'font-family: ' . $value->content_font_family . ';';
-			}
+      if (isset($value->content_font_family) && $value->content_font_family) {
+        $font_path = new JLayoutFile('addon.css.fontfamily', $layout_path);
+        $font_path->render(array('font' => $value->content_font_family));
+        $content_css .= 'font-family: ' . $value->content_font_family . ';';
+      }
 
-			if(isset($value->content_padding) && $value->content_padding){
-				if(trim($value->content_padding) != ""){
-					$content_padding_md = '';
-					$content_paddings_md = explode(' ', $value->content_padding);
-					foreach($content_paddings_md as $padding_md){
-						if(empty(trim($padding_md))){
-							$content_padding_md .= ' 0';
-						} else {
-							$content_padding_md .= ' '.$padding_md;
-						}
+      if (isset($value->content_padding) && $value->content_padding) {
+        if (trim($value->content_padding) != "") {
+          $content_padding_md = '';
+          $content_paddings_md = explode(' ', $value->content_padding);
+          foreach ($content_paddings_md as $padding_md) {
+            if (empty(trim($padding_md))) {
+              $content_padding_md .= ' 0';
+            } else {
+              $content_padding_md .= ' ' . $padding_md;
+            }
+          }
+          $content_css .= "padding: " . $content_padding_md . ";\n";
+        }
+      }
 
-					}
-					$content_css .= "padding: " . $content_padding_md . ";\n";
-				}
-			}
+      if (isset($value->content_margin) && $value->content_margin) {
+        if (trim($value->content_margin) != "") {
+          $content_margin_md = '';
+          $content_margins_md = explode(' ', $value->content_margin);
+          foreach ($content_margins_md as $margin_md) {
+            if (empty(trim($margin_md))) {
+              $content_margin_md .= ' 0';
+            } else {
+              $content_margin_md .= ' ' . $margin_md;
+            }
+          }
+          $content_css .= "margin: " . $content_margin_md . ";\n";
+        }
+      }
 
-			if(isset($value->content_margin) && $value->content_margin){
-				if(trim($value->content_margin) != ""){
-					$content_margin_md = '';
-					$content_margins_md = explode(' ', $value->content_margin);
-					foreach($content_margins_md as $margin_md){
-						if(empty(trim($margin_md))){
-							$content_margin_md .= ' 0';
-						} else {
-							$content_margin_md .= ' ' . $margin_md;
-						}
+      if (!empty($content_css)) {
+        $css .= $addon_id . ' .sppb-item-' . $this->addon->id . $key . ' .sppb-carousel-caption .sppb-carousel-content{';
+        $css .= $content_css;
+        $css .= '}';
+      }
 
-					}
-					$content_css .= "margin: " . $content_margin_md . ";\n";
-				}
-			}
+      $selector_css = new JLayoutFile('addon.css.selector', $layout_path);
+      $css .= $selector_css->render(
+              array(
+                  'options' => $value,
+                  'addon_id' => $addon_id,
+                  'selector' => '#sppb-item-' . ($this->addon->id . $key)
+              )
+      );
 
-			if(!empty($content_css)){
-				$css .= $addon_id . ' .sppb-item-' . $this->addon->id . $key . ' .sppb-carousel-caption .sppb-carousel-content{';
-					$css .= $content_css;
-				$css .= '}';
-			}
+      // echo $css;
+      // die();
+      // Tablet CSS
+      $tablet_css = '';
+      $title_css = '';
+      $title_css .= (isset($value->title_fontsize_sm) && $value->title_fontsize_sm) ? 'font-size:' . $value->title_fontsize_sm . 'px;' : '';
+      $title_css .= (isset($value->title_lineheight_sm) && $value->title_lineheight_sm) ? 'line-height:' . $value->title_lineheight_sm . 'px;' : '';
 
-			$selector_css = new JLayoutFile('addon.css.selector', $layout_path);
-			$css .= $selector_css->render(
-				array(
-					'options'=>$value,
-					'addon_id'=>$addon_id,
-					'selector'=>'#sppb-item-' . ($this->addon->id . $key)
-				)
-			);
+      if (isset($value->title_padding_sm) && $value->title_padding_sm) {
+        if (trim($value->title_padding_sm) != "") {
+          $title_padding_sm = '';
+          $title_paddings_sm = explode(' ', $value->title_padding_sm);
+          foreach ($title_paddings_sm as $padding_sm) {
+            if (empty(trim($padding_sm))) {
+              $title_padding_sm .= ' 0';
+            } else {
+              $title_padding_sm .= ' ' . $padding_sm;
+            }
+          }
+          $title_css .= "padding: " . $title_padding_sm . ";\n";
+        }
+      }
 
-			// echo $css;
-			// die();
+      if (isset($value->title_padding_sm) && $value->title_margin_sm) {
+        if (trim($value->title_margin_sm) != "") {
+          $title_margin_sm = '';
+          $title_margins_sm = explode(' ', $value->title_margin_sm);
+          foreach ($title_margins_sm as $margin_sm) {
+            if (empty(trim($margin_sm))) {
+              $title_margin_sm .= ' 0';
+            } else {
+              $title_margin_sm .= ' ' . $margin_sm;
+            }
+          }
+          $title_css .= "margin: " . $title_margin_sm . ";\n";
+        }
+      }
 
-			// Tablet CSS
-			$tablet_css = '';
-			$title_css = '';
-			$title_css .= (isset($value->title_fontsize_sm) && $value->title_fontsize_sm) ? 'font-size:' . $value->title_fontsize_sm . 'px;' : '';
-			$title_css .= (isset($value->title_lineheight_sm) && $value->title_lineheight_sm) ? 'line-height:' . $value->title_lineheight_sm . 'px;' : '';
+      if (!empty($title_css)) {
+        $tablet_css .= $addon_id . ' .sppb-item-' . $this->addon->id . $key . ' .sppb-carousel-caption h2 {';
+        $tablet_css .= $title_css;
+        $tablet_css .= '}';
+      }
 
-			if(isset($value->title_padding_sm) && $value->title_padding_sm){
-				if(trim($value->title_padding_sm) != "") {
-					$title_padding_sm = '';
-					$title_paddings_sm = explode(' ', $value->title_padding_sm);
-					foreach($title_paddings_sm as $padding_sm){
-						if(empty(trim($padding_sm))){
-							$title_padding_sm .= ' 0';
-						} else {
-							$title_padding_sm .= ' '.$padding_sm;
-						}
-					}
-					$title_css .= "padding: " . $title_padding_sm . ";\n";
-				}
-			}
+      $content_css = '';
+      $content_css .= (isset($value->content_fontsize_sm) && $value->content_fontsize_sm) ? 'font-size:' . $value->content_fontsize_sm . 'px;' : '';
+      $content_css .= (isset($value->content_lineheight_sm) && $value->content_lineheight_sm) ? 'line-height:' . $value->content_lineheight_sm . 'px;' : '';
 
-			if(isset($value->title_padding_sm) && $value->title_margin_sm){
-				if(trim($value->title_margin_sm) != "") {
-					$title_margin_sm = '';
-					$title_margins_sm = explode(' ', $value->title_margin_sm);
-					foreach($title_margins_sm as $margin_sm){
-						if(empty(trim($margin_sm))){
-							$title_margin_sm .= ' 0';
-						} else {
-							$title_margin_sm .= ' '.$margin_sm;
-						}
-					}
-					$title_css .= "margin: " . $title_margin_sm . ";\n";
-				}
-			}
+      if (isset($value->content_padding_sm) && $value->content_padding_sm) {
+        if (trim($value->content_padding_sm) != "") {
+          $content_padding_sm = '';
+          $content_paddings_sm = explode(' ', $value->content_padding_sm);
+          foreach ($content_paddings_sm as $padding_sm) {
+            if (empty(trim($padding_sm))) {
+              $content_padding_sm .= ' 0';
+            } else {
+              $content_padding_sm .= ' ' . $padding_sm;
+            }
+          }
+          $content_css .= "padding: " . $content_padding_sm . ";\n";
+        }
+      }
 
-			if(!empty($title_css)){
-				$tablet_css .= $addon_id . ' .sppb-item-' . $this->addon->id . $key . ' .sppb-carousel-caption h2 {';
-				$tablet_css .= $title_css;
-				$tablet_css .= '}';
-			}
+      if (isset($value->content_margin_sm) && $value->content_margin_sm) {
+        if (trim($value->content_margin_sm) != "") {
+          $content_margin_sm = '';
+          $content_margins_sm = explode(' ', $value->content_margin_sm);
+          foreach ($content_margins_sm as $margin_sm) {
+            if (empty(trim($margin_sm))) {
+              $content_margin_sm .= ' 0';
+            } else {
+              $content_margin_sm .= ' ' . $margin_sm;
+            }
+          }
+          $content_css .= "margin: " . $content_margin_sm . ";\n";
+        }
+      }
 
-			$content_css = '';
-			$content_css .= (isset($value->content_fontsize_sm) && $value->content_fontsize_sm) ? 'font-size:' . $value->content_fontsize_sm . 'px;' : '';
-			$content_css .= (isset($value->content_lineheight_sm) && $value->content_lineheight_sm) ? 'line-height:' . $value->content_lineheight_sm . 'px;' : '';
+      if (!empty($content_css)) {
+        $tablet_css .= $addon_id . ' .sppb-item-' . $this->addon->id . $key . ' .sppb-carousel-caption .sppb-carousel-content{';
+        $tablet_css .= $content_css;
+        $tablet_css .= '}';
+      }
 
-			if(isset($value->content_padding_sm) && $value->content_padding_sm){
-				if(trim($value->content_padding_sm) != ""){
-					$content_padding_sm = '';
-					$content_paddings_sm = explode(' ', $value->content_padding_sm);
-					foreach($content_paddings_sm as $padding_sm){
-						if(empty(trim($padding_sm))){
-							$content_padding_sm .= ' 0';
-						} else {
-							$content_padding_sm .= ' '.$padding_sm;
-						}
-					}
-					$content_css .= "padding: " . $content_padding_sm . ";\n";
-				}
-			}
+      if (!empty($tablet_css)) {
+        $css .= '@media (min-width: 768px) and (max-width: 991px) {';
+        $css .= $tablet_css;
+        $css .= '}';
+      }
 
-			if(isset($value->content_margin_sm) && $value->content_margin_sm){
-				if(trim($value->content_margin_sm) != ""){
-					$content_margin_sm = '';
-					$content_margins_sm = explode(' ', $value->content_margin_sm);
-					foreach($content_margins_sm as $margin_sm){
-						if(empty(trim($margin_sm))){
-							$content_margin_sm .= ' 0';
-						} else {
-							$content_margin_sm .= ' '.$margin_sm;
-						}
-					}
-					$content_css .= "margin: " . $content_margin_sm . ";\n";
-				}
-			}
+      // Mobile CSS
+      $mobile_css = '';
+      $title_css = '';
+      $title_css .= (isset($value->title_fontsize_xs) && $value->title_fontsize_xs) ? 'font-size:' . $value->title_fontsize_xs . 'px;' : '';
+      $title_css .= (isset($value->title_lineheight_xs) && $value->title_lineheight_xs) ? 'line-height:' . $value->title_lineheight_xs . 'px;' : '';
 
-			if(!empty($content_css)){
-				$tablet_css .= $addon_id . ' .sppb-item-' . $this->addon->id . $key . ' .sppb-carousel-caption .sppb-carousel-content{';
-					$tablet_css .= $content_css;
-				$tablet_css .= '}';
-			}
+      if (isset($value->title_padding_xs) && $value->title_padding_xs) {
+        if (trim($value->title_padding_xs) != "") {
+          $title_padding_xs = '';
+          $title_paddings_xs = explode(' ', $value->title_padding_xs);
+          foreach ($title_paddings_xs as $padding_xs) {
+            if (empty(trim($padding_xs))) {
+              $title_padding_xs .= ' 0';
+            } else {
+              $title_padding_xs .= ' ' . $padding_xs;
+            }
+          }
+          $title_css .= "padding: " . $title_padding_xs . ";\n";
+        }
+      }
 
-			if(!empty($tablet_css)){
-				$css .= '@media (min-width: 768px) and (max-width: 991px) {';
-					$css .= $tablet_css;
-				$css .= '}';
-			}
+      if (isset($value->title_margin_xs) && $value->title_margin_xs) {
+        if (trim($value->title_margin_xs) != "") {
+          $title_margin_xs = '';
+          $title_margins_xs = explode(' ', $value->title_margin_xs);
+          foreach ($title_margins_xs as $margin_xs) {
+            if (empty(trim($margin_xs))) {
+              $title_margin_xs .= ' 0';
+            } else {
+              $title_margin_xs .= ' ' . $margin_xs;
+            }
+          }
+          $title_css .= "margin: " . $title_margin_xs . ";\n";
+        }
+      }
 
-			// Mobile CSS
-			$mobile_css = '';
-			$title_css = '';
-			$title_css .= (isset($value->title_fontsize_xs) && $value->title_fontsize_xs) ? 'font-size:' . $value->title_fontsize_xs . 'px;' : '';
-			$title_css .= (isset($value->title_lineheight_xs) && $value->title_lineheight_xs) ? 'line-height:' . $value->title_lineheight_xs . 'px;' : '';
+      if (!empty($title_css)) {
+        $mobile_css .= $addon_id . ' .sppb-item-' . $this->addon->id . $key . ' .sppb-carousel-caption h2{';
+        $mobile_css .= $title_css;
+        $mobile_css .= '}';
+      }
 
-			if(isset($value->title_padding_xs) && $value->title_padding_xs){
-				if(trim($value->title_padding_xs) != "") {
-					$title_padding_xs = '';
-					$title_paddings_xs = explode(' ', $value->title_padding_xs);
-					foreach($title_paddings_xs as $padding_xs){
-						if(empty(trim($padding_xs))) {
-							$title_padding_xs .= ' 0';
-						} else {
-							$title_padding_xs .= ' '.$padding_xs;
-						}
-					}
-					$title_css .= "padding: " . $title_padding_xs . ";\n";
-				}
-			}
+      $content_css = '';
+      $content_css .= (isset($value->content_fontsize_xs) && $value->content_fontsize_xs) ? 'font-size:' . $value->content_fontsize_xs . 'px;' : '';
+      $content_css .= (isset($value->content_lineheight_xs) && $value->content_lineheight_xs) ? 'line-height:' . $value->content_lineheight_xs . 'px;' : '';
 
-			if(isset($value->title_margin_xs) && $value->title_margin_xs){
-				if(trim($value->title_margin_xs) != ""){
-					$title_margin_xs = '';
-					$title_margins_xs = explode(' ', $value->title_margin_xs);
-					foreach($title_margins_xs as $margin_xs){
-						if(empty(trim($margin_xs))){
-							$title_margin_xs .= ' 0';
-						} else {
-							$title_margin_xs .= ' '.$margin_xs;
-						}
-					}
-					$title_css .= "margin: " . $title_margin_xs . ";\n";
-				}
-			}
+      if (isset($value->content_padding_xs) && $value->content_padding_xs) {
+        if (trim($value->content_padding_xs) != "") {
+          $content_padding_xs = '';
+          $content_paddings_xs = explode(' ', $value->content_padding_xs);
+          foreach ($content_paddings_xs as $padding_xs) {
+            if (empty(trim($padding_xs))) {
+              $content_padding_xs .= ' 0';
+            } else {
+              $content_padding_xs .= ' ' . $padding_xs;
+            }
+          }
+          $content_css .= "padding: " . $content_padding_xs . ";\n";
+        }
+      }
 
-			if(!empty($title_css)){
-				$mobile_css .= $addon_id . ' .sppb-item-' . $this->addon->id . $key . ' .sppb-carousel-caption h2{';
-					$mobile_css .= $title_css;
-				$mobile_css .= '}';
-			}
+      if (isset($value->content_margin_xs) && $value->content_margin_xs) {
+        if (trim($value->content_margin_xs) != "") {
+          $content_margin_xs = '';
+          $content_margins_xs = explode(' ', $value->content_margin_xs);
+          foreach ($content_margins_xs as $margin_xs) {
+            if (empty(trim($margin_xs))) {
+              $content_margin_xs .= ' 0';
+            } else {
+              $content_margin_xs .= ' ' . $margin_xs;
+            }
+          }
+          $content_css .= "margin: " . $content_margin_xs . ";\n";
+        }
+      }
 
-			$content_css = '';
-			$content_css .= (isset($value->content_fontsize_xs) && $value->content_fontsize_xs) ? 'font-size:' . $value->content_fontsize_xs . 'px;' : '';
-			$content_css .= (isset($value->content_lineheight_xs) && $value->content_lineheight_xs) ? 'line-height:' . $value->content_lineheight_xs . 'px;' : '';
+      if (!empty($content_css)) {
+        $mobile_css .= $addon_id . ' .sppb-item-' . $this->addon->id . $key . ' .sppb-carousel-caption .sppb-carousel-content{';
+        $mobile_css .= $content_css;
+        $mobile_css .= '}';
+      }
 
-			if(isset($value->content_padding_xs) && $value->content_padding_xs){
-				if(trim($value->content_padding_xs) != ""){
-					$content_padding_xs = '';
-					$content_paddings_xs = explode(' ', $value->content_padding_xs);
-					foreach($content_paddings_xs as $padding_xs){
-						if(empty(trim($padding_xs))){
-							$content_padding_xs .= ' 0';
-						} else {
-							$content_padding_xs .= ' '.$padding_xs;
-						}
-					}
-					$content_css .= "padding: " . $content_padding_xs . ";\n";
-				}
-			}
+      if (!empty($mobile_css)) {
+        $css .= '@media (max-width: 767px) {';
+        $css .= $mobile_css;
+        $css .= '}';
+      }
+    }
 
-			if(isset($value->content_margin_xs) && $value->content_margin_xs){
-				if(trim($value->content_margin_xs) != ""){
-					$content_margin_xs = '';
-					$content_margins_xs = explode(' ', $value->content_margin_xs);
-					foreach($content_margins_xs as $margin_xs){
-						if(empty(trim($margin_xs))){
-							$content_margin_xs .= ' 0';
-						} else {
-							$content_margin_xs .= ' '.$margin_xs;
-						}
-					}
-					$content_css .= "margin: " . $content_margin_xs . ";\n";
-				}
-			}
+    $speed = (isset($this->addon->settings->speed) && $this->addon->settings->speed) ? $this->addon->settings->speed : 600;
 
-			if(!empty($content_css)){
-				$mobile_css .= $addon_id . ' .sppb-item-' . $this->addon->id . $key . ' .sppb-carousel-caption .sppb-carousel-content{';
-					$mobile_css .= $content_css;
-				$mobile_css .= '}';
-			}
+    $css .= $addon_id . ' .sppb-carousel-inner > .sppb-item{-webkit-transition-duration: ' . $speed . 'ms; transition-duration: ' . $speed . 'ms;}';
 
-			if(!empty($mobile_css)){
-				$css .= '@media (max-width: 767px) {';
-					$css .= $mobile_css;
-				$css .= '}';
-			}
-		}
+    return $css;
+  }
 
-		$speed = (isset($this->addon->settings->speed) && $this->addon->settings->speed) ? $this->addon->settings->speed : 600;
-
-		$css .= $addon_id.' .sppb-carousel-inner > .sppb-item{-webkit-transition-duration: '.$speed.'ms; transition-duration: '.$speed.'ms;}';
-
-		return $css;
-	}
-
-	public static function getTemplate(){
-		$output = '
+  public static function getTemplate() {
+    $output = '
 		<#
 		var interval = data.interval ? parseInt(data.interval) * 1000 : 5000;
 		var autoplay = data.autoplay ? \'data-sppb-ride="sppb-carousel"\' : "";
@@ -753,24 +762,6 @@ class SppagebuilderAddonCarousel extends SppagebuilderAddons {
 											#>
 											<a href=\'{{ carousel_item.button_url }}\' target="{{ carousel_item.button_target }}" id="btn-{{ data.id + "" + key}}" class="sppb-btn{{ btnClass }}">{{{ button_text }}}</a>
 										<# } #>
-                                        <# if(carousel_item.button_2_text) { #>
-											<#
-												var btnClass = "";
-												btnClass += carousel_item.button_2_type ? " sppb-btn-"+carousel_item.button_2_type : " sppb-btn-default" ;
-												btnClass += carousel_item.button_2_size ? " sppb-btn-"+carousel_item.button_2_size : "" ;
-												btnClass += carousel_item.button_2_shape ? " sppb-btn-"+carousel_item.button_2_shape : " sppb-btn-rounded" ;
-												btnClass += carousel_item.button_2_appearance ? " sppb-btn-"+carousel_item.button_2_appearance : "" ;
-												btnClass += carousel_item.button_2_block ? " "+carousel_item.button_2_block : "" ;
-												var button_2_text = carousel_item.button_2_text;
-
-												if(carousel_item.button_2_icon_position == "left"){
-													button_2_text = (carousel_item.button_2_icon) ? \'<i class="fa  \'+carousel_item.button_2_icon+\'"></i> \'+carousel_item.button_2_text : carousel_item.button_2_text ;
-												}else{
-													button_2_text = (carousel_item.button_2_icon) ? carousel_item.button_2_text+\' <i class="fa \'+carousel_item.button_2_icon+\'"></i>\' : carousel_item.button_2_text ;
-												}
-											#>
-											<a href=\'{{ carousel_item.button_2_url }}\' target="{{ carousel_item.button_2_target }}" id="btn-{{ data.id + "" + key}}" class="sppb-btn{{ btnClass }}">{{{ button_2_text }}}</a>
-										<# } #>
 									<# } #>
 								</div>
 							</div>
@@ -785,6 +776,47 @@ class SppagebuilderAddonCarousel extends SppagebuilderAddons {
 		</div>
 		';
 
-		return $output;
-	}
+    return $output;
+  }
+
+  // Get all modules
+  private static function getModules($module_type = 'module', $id = 0, $position = '') {
+    $app = JFactory::getApplication();
+    $user = JFactory::getUser();
+    $groups = implode(',', $user->getAuthorisedViewLevels());
+    $lang = JFactory::getLanguage()->getTag();
+    $clientId = (int) $app->getClientId();
+
+    $db = JFactory::getDbo();
+    $query = $db->getQuery(true);
+    $query->select('m.id, m.title, m.module, m.position, m.ordering, m.content, m.showtitle, m.params');
+    $query->from('#__modules AS m');
+    $query->where('m.published = 1');
+
+    if ($module_type == 'position') {
+      $query->where($db->quoteName('m.position') . ' = ' . $db->quote($position));
+      $query->order('m.ordering ASC');
+    } else {
+      $query->where('m.id = ' . $id);
+    }
+
+    $date = JFactory::getDate();
+    $now = $date->toSql();
+    $nullDate = $db->getNullDate();
+    $query->where('(m.publish_up = ' . $db->Quote($nullDate) . ' OR m.publish_up <= ' . $db->Quote($now) . ')');
+    $query->where('(m.publish_down = ' . $db->Quote($nullDate) . ' OR m.publish_down >= ' . $db->Quote($now) . ')');
+
+    $query->where('m.access IN (' . $groups . ')');
+    $query->where('m.client_id = ' . $clientId);
+
+    // Filter by language
+    if ($app->isSite() && $app->getLanguageFilter()) {
+      $query->where('m.language IN (' . $db->Quote($lang) . ',' . $db->Quote('*') . ')');
+    }
+
+    // Set the query
+    $db->setQuery($query);
+    return $db->loadObjectList();
+  }
+
 }
