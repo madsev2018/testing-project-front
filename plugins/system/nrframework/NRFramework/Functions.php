@@ -253,6 +253,7 @@ class Functions
 
     public static function getExtensionPath($extension = 'plg_system_nrframework', $basePath = JPATH_ADMINISTRATOR, $check_folder = '')
     {
+	$path='';
         if (!in_array($basePath, array('', JPATH_ADMINISTRATOR, JPATH_SITE)))
         {
             return $basePath;
@@ -278,6 +279,7 @@ class Functions
         }
 
         $check_folder = $check_folder ? '/' . $check_folder : '';
+
 
         if (is_dir($basePath . '/' . $path . $check_folder))
         {

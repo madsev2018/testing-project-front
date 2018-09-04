@@ -37,6 +37,7 @@ class SppagebuilderAddonCarousel extends SppagebuilderAddons {
 		if(isset($this->addon->settings->sp_carousel_item) && count((array) $this->addon->settings->sp_carousel_item)){
 			foreach ($this->addon->settings->sp_carousel_item as $key => $value) {
 				$button_url = (isset($value->button_url) && $value->button_url) ? $value->button_url : '';
+				$button_2_url = (isset($value->button_2_url) && $value->button_2_url) ? $value->button_2_url : '';
 	
 				$output   .= '<div class="sppb-item sppb-item-'. $this->addon->id . $key . ' ' . ((isset($value->bg) && $value->bg) ? ' sppb-item-has-bg' : '') . (($key == 0) ? ' active' : '') .'">';
 				$output  .= (isset($value->bg) && $value->bg) ? '<img src="' . $value->bg . '" alt="' . $value->title . '">' : '';
@@ -65,6 +66,24 @@ class SppagebuilderAddonCarousel extends SppagebuilderAddons {
 						}
 	
 						$output  .= '<a href="' . $button_url . '" target="' . $button_target . '" id="btn-'. ($this->addon->id + $key) .'" class="sppb-btn'. $button_class .'">' . $value->button_text . '</a>';
+					}
+                    if(isset($value->button_2_text) && $value->button_2_text) {
+						$button_2_class = (isset($value->button_2_type) && $value->button_2_type) ? ' sppb-btn-' . $value->button_2_type : ' sppb-btn-default';
+						$button_2_class .= (isset($value->button_2_size) && $value->button_2_size) ? ' sppb-btn-' . $value->button_2_size : '';
+						$button_2_class .= (isset($value->button_2_shape) && $value->button_2_shape) ? ' sppb-btn-' . $value->button_2_shape: ' sppb-btn-rounded';
+						$button_2_class .= (isset($value->button_2_appearance) && $value->button_2_appearance) ? ' sppb-btn-' . $value->button_2_appearance : '';
+						$button_2_class .= (isset($value->button_2_block) && $value->button_2_block) ? ' ' . $value->button_2_block : '';
+						$button_2_icon = (isset($value->button_2_icon) && $value->button_2_icon) ? $value->button_2_icon : '';
+						$button_2_icon_position = (isset($value->button_2_icon_position) && $value->button_2_icon_position) ? $value->button_2_icon_position: 'left';
+						$button_2_target = (isset($value->button_2_target) && $value->button_2_target) ? $value->button_2_target : '_self';
+	
+						if($button_2_icon_position == 'left') {
+							$value->button_2_text = ($button_2_icon) ? '<i class="fa ' . $button_2_icon . '"></i> ' . $value->button_2_text : $value->button_2_text;
+						} else {
+							$value->button_2_text = ($button_2_icon) ? $value->button_2_text . ' <i class="fa ' . $button_2_icon . '"></i>' : $value->button_2_text;
+						}
+	
+						$output  .= '<a style="margin-left: 10px;" href="' . $button_2_url . '" target="' . $button_2_target . '" id="btn-'. ($this->addon->id + $key) .'" class="sppb-btn'. $button_2_class .'">' . $value->button_2_text . '</a>';
 					}
 				}
 	
@@ -733,6 +752,24 @@ class SppagebuilderAddonCarousel extends SppagebuilderAddons {
 												}
 											#>
 											<a href=\'{{ carousel_item.button_url }}\' target="{{ carousel_item.button_target }}" id="btn-{{ data.id + "" + key}}" class="sppb-btn{{ btnClass }}">{{{ button_text }}}</a>
+										<# } #>
+                                        <# if(carousel_item.button_2_text) { #>
+											<#
+												var btnClass = "";
+												btnClass += carousel_item.button_2_type ? " sppb-btn-"+carousel_item.button_2_type : " sppb-btn-default" ;
+												btnClass += carousel_item.button_2_size ? " sppb-btn-"+carousel_item.button_2_size : "" ;
+												btnClass += carousel_item.button_2_shape ? " sppb-btn-"+carousel_item.button_2_shape : " sppb-btn-rounded" ;
+												btnClass += carousel_item.button_2_appearance ? " sppb-btn-"+carousel_item.button_2_appearance : "" ;
+												btnClass += carousel_item.button_2_block ? " "+carousel_item.button_2_block : "" ;
+												var button_2_text = carousel_item.button_2_text;
+
+												if(carousel_item.button_2_icon_position == "left"){
+													button_2_text = (carousel_item.button_2_icon) ? \'<i class="fa  \'+carousel_item.button_2_icon+\'"></i> \'+carousel_item.button_2_text : carousel_item.button_2_text ;
+												}else{
+													button_2_text = (carousel_item.button_2_icon) ? carousel_item.button_2_text+\' <i class="fa \'+carousel_item.button_2_icon+\'"></i>\' : carousel_item.button_2_text ;
+												}
+											#>
+											<a href=\'{{ carousel_item.button_2_url }}\' target="{{ carousel_item.button_2_target }}" id="btn-{{ data.id + "" + key}}" class="sppb-btn{{ btnClass }}">{{{ button_2_text }}}</a>
 										<# } #>
 									<# } #>
 								</div>

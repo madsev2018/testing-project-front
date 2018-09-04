@@ -6323,7 +6323,7 @@ body .sppb-addon-ajax-contact.custom .sppb-form-control {
   -ms-user-select: none;
 }
 .anual-2-span, .mensual-2-span {
-  color: #006cff !important;
+  color: #044f96 !important;
 }
 .onoffswitch-2-checkbox {
   display: none;
@@ -6332,7 +6332,7 @@ body .sppb-addon-ajax-contact.custom .sppb-form-control {
   display: block;
   overflow: hidden;
   cursor: pointer;
-  border: 2px solid #006cff;
+  border: 2px solid #044f96;
   border-radius: 0px;
   margin: 0;
 }
@@ -6374,7 +6374,7 @@ body .sppb-addon-ajax-contact.custom .sppb-form-control {
   display: block;
   width: 50px;
   margin: 0px;
-  background: #006cff;
+  background: #044f96;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -6386,7 +6386,7 @@ body .sppb-addon-ajax-contact.custom .sppb-form-control {
 }
 .onoffswitch-2-checkbox:checked + .onoffswitch-2-label .onoffswitch-2-switch {
   right: 0px;
-  background-color: #006cff;
+  background-color: #044f96;
 }
 /*-----------------------------------------------------------*/
 .mensual-span, .mensual-2-span {
