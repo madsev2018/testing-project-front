@@ -1344,9 +1344,8 @@ input[type="text"]:not(.form-control):focus, input[type="email"]:not(.form-contr
   font-weight: bold;
 }
 #sp-component .blog .article-list .article .article-introtext {
-  font-size: 18px;
-  line-height: 30px;
-  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
 }
 #sp-component .blog .article-list .article .readmore {
   text-transform: uppercase;
