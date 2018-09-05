@@ -1237,3 +1237,17 @@ legend + .control-group {
     background-repeat: no-repeat!important;
   }
 }
+
+/*--------------------FORM LANDINGS---------------------------*/
+.form-landing .hs-form-field .hs-error-msgs{
+ 	display: none !important;
+}
+.form-landing .hs-form-field {
+ 	margin: 15px 0px !important;
+    
+}
+.form-landing .hs-form-field input{
+ 	padding: 0px !important;
+    
+}
+/*------------------------------------------------------------*/
