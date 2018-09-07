@@ -1239,15 +1239,17 @@ legend + .control-group {
 }
 
 /*--------------------FORM LANDINGS---------------------------*/
-.form-landing .hs-form-field .hs-error-msgs{
- 	display: none !important;
-}
+
 .form-landing .hs-form-field {
- 	margin: 15px 0px !important;
-    
+    margin: 15px 0px;
 }
-.form-landing .hs-form-field input{
- 	padding: 0px !important;
-    
+
+.form-landing label,.form-landing input,.form-landing div,{
+  font-family: Montserrat !important;
 }
+
+.form-landing .actions{
+  margin-top: 20px;
+}
+
 /*------------------------------------------------------------*/

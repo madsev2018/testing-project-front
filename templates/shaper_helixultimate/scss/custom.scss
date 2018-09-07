@@ -192,6 +192,12 @@
   left: 10px;
   font-size: 30px;
 }
+
+@media (max-width: 1200px){
+  .mensual-span,.mensual-2-span,.anual-span,.anual-2-span {
+  	font-size: 20px;
+  }
+}
 #sp-right .menu-social-blog ul {
   display: table;
   margin-right: auto;
@@ -234,3 +240,74 @@ form.form-search #mod-finder-searchword121 {
 .tab-2-content{
   display:none;
 }
+
+/*-------------------------CAROUSEL CUSTOM----------------------------*/
+.sppb-carousel-indicators li{
+  width: 15px !important;
+  height: 15px !important;
+}
+.sppb-carousel-indicators .active{
+  width: 17px !important;
+  height: 17px !important;
+}
+
+@media (min-width: 320px) and (max-width: 991px) {
+  .sppb-carousel-indicators li{
+       display: none !important;
+    }
+}
+/*--------------------------------------------------------------------*/
+
+/*-------------------------CAROUSEL CUSTOM----------------------------*/
+.sppb-nav-modern>li{
+  margin-right: 3px !important;
+}
+
+@media (max-width: 768px){
+  .sppb-nav-modern>li{
+       width: 23.55% !important;
+    }
+}
+
+@media (max-width: 575px){
+  .sppb-addon-tab .sppb-nav-modern li a .sppb-tab-icon i{
+    font-size: 40px !important;
+  }
+  .sppb-addon-tab .sppb-nav-modern li a{
+    font-size: 13px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+}
+/*--------------------------------------------------------------------*/
+
+/*-------------------------layaout CUSTOM----------------------------*/
+@media (max-width: 576px){
+  .sppb-row-container {
+      max-width: 625px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1328px) {
+  .sppb-carousel-caption h2{
+       font-size: 45px !important;
+    }
+  .sppb-carousel-caption .sppb-carousel-content{
+    margin:0px 120px 60px 120px !important;
+  }
+  
+  #after-logo{
+    display:none !important;
+  }
+  #sp-menu, .submenu-container{
+    flex: 0 0 75% !important;
+    max-width: 75% !important;
+  }
+  .sp-megamenu-parent li a{
+    font-size:14px !important;
+  }
+  .sp-submenu>.col-lg-3:last-child {
+    display: none;
+	}
+}
+/*--------------------------------------------------------------------*/
