@@ -128,6 +128,6 @@ if ((int)$this->t['tagid'] > 0) {
 		echo '</div>';
 	}
 }
-echo '</div><div class="pd-cb">&nbsp;</div>';
-echo $this->t['afd'];
+//echo '</div><div class="pd-cb">&nbsp;</div>';
+//echo $this->t['afd'];
 ?>

@@ -1,12 +1,15 @@
-# Webalizer V2.23-08 Incremental Data - 09/05/2018 05:38:58
-2018 9 5 5 38 58
-26246 24778 28 563 50 13 2313410081 4678 94 1
-1 8 3354 1 5
+# Webalizer V2.23-08 Incremental Data - 09/08/2018 20:53:14
+2018 9 8 20 53 14
+56201 51856 40 839 87 19 4278921550 11889 206 1
+6 33 3354 1 8
 1813 1765 94538406 3 976 5
 395 395 5026896 1 357 1
 8101 7515 828250895 20 1250 42
 15869 15035 1385589804 18 2027 47
-68 68 4080 1 68 1
+7117 5924 381899184 16 2544 40
+11936 11282 784627702 4 2128 40
+6129 5671 482080144 4 1198 25
+4841 4269 316908519 6 1409 9
 0 0 0 0 0 0
 0 0 0 0 0 0
 0 0 0 0 0 0
@@ -30,55 +33,52 @@
 0 0 0 0 0 0
 0 0 0 0 0 0
 0 0 0 0 0 0
-0 0 0 0 0 0
-0 0 0 0 0 0
-0 0 0 0 0 0
-113 113 5010306 75
-72 72 4296 72
-71 71 4237 71
-72 72 4296 72
-72 72 4296 72
-68 68 4056 68
-59 59 3517 59
-60 60 3576 60
-303 281 21005572 99
-2051 1796 206853465 338
-3856 3703 404833426 498
-3919 3678 381801109 538
-2528 2362 210435156 372
-3793 3646 340768176 447
-219 214 6373818 162
-2722 2591 245541581 376
-1728 1629 130577092 394
-3152 2988 262873620 467
-113 94 4255142 63
-36 36 2124 36
-90 73 161351 75
-122 98 2190310 92
-567 559 47793638 88
-460 443 42905921 84
+137 137 5011746 99
+96 96 5736 96
+95 95 5677 95
+96 96 5736 96
+96 96 5736 96
+96 96 5736 96
+95 95 5677 95
+108 99 992949 98
+1204 1012 59384554 367
+4523 4022 297965487 851
+7578 7170 654446416 1210
+7486 6926 679985432 1390
+5891 5354 441710999 1417
+7719 7314 652299979 1212
+1254 1147 76595448 492
+6019 5573 480888579 1100
+4379 3969 273287244 1081
+6289 5806 459951196 1114
+1014 836 68578162 277
+72 72 4284 72
+123 106 163331 108
+756 689 36919007 207
+591 583 47795078 112
+484 467 42907361 108
 0
 0
 0
-24778
-0
+51856
 0
 0
 0
 0
 0
+14
 0
-7
+12
 0
-522
-615
+1574
+2091
 0
 0
 0
-67
+169
 0
-1
-98
+4
+229
 0
 0
 0
@@ -92,7 +92,7 @@
 0
 0
 0
-158
+252
 0
 0
 0
@@ -100,1195 +100,1780 @@
 0
 # -urls- 
 /politica-anti-spam
-0 1 12065008 350526 0 0
+0 7 0 393791 0 0
 /plugins/editors/acyeditor/acyeditor/ckeditor/skins/moono/icons.png
-1 1 0 10450 0 0
+1 2 0 20900 0 0
 /aviso-legal
-0 5 12065120 1832406 1 0
+0 8 0 1858379 1 0
 /media/com_convertforms/css/convertforms.sys.css
-0 5 0 25209 0 0
+0 44 0 344523 0 0
+/images/sampledata/parks/animals/220px_spottedquoll_2005_seanmcclean.jpg
+1 1 0 4380 0 0
 /templates/shaper_helixultimate/headers/style-1/thumb.jpg
-1 1 0 21097 0 0
+1 6 0 126582 0 0
 /images/addons/slider-1.jpg
-1 1 12072416 181195 0 0
+1 2 0 362390 0 0
+/images/projects/projects-6.jpg
+1 1 0 130047 0 0
 /media/media/js/mediafield.min.js
-0 4 0 18816 0 0
+0 31 0 145824 0 0
 /administrator/components/com_sppagebuilder/assets/css/pbfont.css
-0 24 0 54257 0 0
+0 52 0 110873 0 0
+/templates/shaper_helixultimate/css/template.css
+0 45 0 116809 0 0
 /images/sampledata/fruitshop/bananas_2.jpg
-1 1 0 17127 0 0
+1 2 0 34254 0 0
 /templates/shaper_helixultimate/sppagebuilder/addons/heading/assets/images/icon.png
-1 17 0 27168 0 0
+1 40 0 61128 0 0
+/media/jui/js/fielduser.min.js
+0 5 0 11755 0 0
+/images/home/Home5-video.jpg
+1 2 0 83622 0 0
 /media/jui/fonts/IcoMoon.woff
-0 57 0 1398320 0 0
+0 237 0 5872944 0 0
 /images/addons/slider-2.jpg
-1 2 0 153486 0 0
+1 3 0 230229 0 0
+/media/com_phocadownload/images/administrator/icon-box-pe.png
+1 1 0 10585 0 0
 /plugins/editors/acyeditor/acyeditor/ckeditor/plugins/templatemode/plugin.js
-0 1 0 6542 0 0
+0 2 0 13084 0 0
 /media/system/js/multiselect.js
-0 3 12069024 1293 0 0
+0 46 0 19826 0 0
+/images/projects/tmb-projects-1.jpg
+1 1 0 172101 0 0
 /images/blog/blog-thumb2.jpg
-1 71 0 2549864 0 0
+1 76 0 2737354 0 0
 /images/addons/img-1.jpg
-1 1 12071392 132843 0 0
+1 2 0 265686 0 0
+/media/editors/codemirror/mode/htmlmixed/htmlmixed.min.js
+0 44 0 127820 0 0
+/images/sampledata/parks/animals/800px_koala_ag1.jpg
+1 1 0 11163 0 0
+/images/pages/service2-img1.jpg
+1 1 0 38171 0 0
 /images/addons/slider-3.jpg
-1 1 12072544 50398 0 0
+1 2 0 100796 0 0
 /images/2018/09/04/leadera_optimize_2.jpg
-1 16 12064432 1221336 0 0
+1 87 0 8505040 0 0
 /media/system/js/modal-fields-uncompressed.js
 0 65 0 406835 0 0
 /media/com_phocadownload/images/administrator/icon-48-cats.png
-1 6 0 8088 0 0
+1 10 0 13480 0 0
 /media/editors/tinymce/plugins/nonbreaking/plugin.min.js
-0 11 18446744073709551615 7205 0 0
+0 14 0 9170 0 0
 /media/jui/js/jquery.ui.sortable.min.js
-0 10 0 244190 0 0
+0 62 0 1513978 0 0
 /plugins/system/helixultimate/assets/js/admin/blog-options.js
-0 1 0 8150 0 0
+0 2 0 16300 0 0
 /component/ajax/
-0 1659 0 98622 12 12
+0 2706 0 161442 15 31
 /media/com_phocadownload/images/white-space.png
 1 1 0 378 0 0
 /plugins/editors/acyeditor/acyeditor/ckeditor/plugins/addtag/icon-16-tag.png
-1 1 11967344 597 0 0
+1 2 0 1194 0 0
+/images/2018/08/02/logo_wiseconversion_tools_02.png
+1 8 0 156080 0 0
+/images/home/Home5-img5.jpg
+1 2 0 52374 0 0
 /blog
-0 123 0 42942370 1 3
+0 262 0 44415086 7 5
 /media/com_acymailing/images/icons/icon-16-edit.png
 1 1 0 623 0 0
+/administrator/components/com_jdownloads/assets/images/downloads48.png
+1 2 0 7246 0 0
+/media/media/js/mediamanager.min.js
+0 2 0 4204 0 0
+/images/home/img4.jpg
+1 2 0 48902 0 0
 /cache/com_templates/templates/shaper_helixultimate/e52dfae254cd58b6c6a0a3ea74bbf479.css
 0 2 0 806894 0 0
+/images/jdownloads/catimages/book.png
+1 1 0 2246 0 0
+/images/phocadownload/icono_ebooks_Leadera.png
+1 41 0 427609 0 0
+/images/2018/09/08/quienessomos_leadera_3.jpg
+1 16 20921104 312821 0 0
 /images/boxed-layout.jpg
-1 9 0 1715272 0 0
+1 11 0 1929681 0 0
+/images/jdownloads/screenshots/no_pic.gif
+1 1 0 11203 0 0
 /media/jui/js/jquery.min.js
-0 91 0 8841833 0 0
+0 498 0 48290011 0 0
 /images/logo_coming_soon.png
-1 2 0 3060 0 0
+1 4 0 6120 0 0
 /components/com_sppagebuilder/assets/js/sppagebuilder.js
-0 245 0 8851392 0 0
+0 745 0 27102816 0 0
+/images/blog/blog-img5.jpg
+1 2 0 270040 0 0
+/administrator/components/com_jdownloads/assets/images/tools48.png
+1 2 0 6890 0 0
+/component/mailto/
+0 2 0 2949 0 0
 /images/ico-balance.png
-1 51 0 135830 0 0
+1 82 0 213860 0 0
 /media/jui/images/ajax-loader.gif
-1 1 12066624 9933 0 0
+1 2 0 19866 0 0
 /media/editors/tinymce/plugins/autosave/plugin.min.js
-0 11 0 24057 0 0
+0 13 48 28431 0 0
 /components/com_sppagebuilder/addons/soundcloud/assets/images/icon.png
-1 4 0 4707 0 0
+1 11 2 14121 0 0
 /images/coming_soon_bg.jpg
-1 5 0 887352 0 0
+1 8 0 1331028 0 0
 /media/com_menus/js/admin-items-modal.js
-0 5 12063168 10680 0 0
+0 5 0 10680 0 0
 /components/com_sppagebuilder/assets/css/sppagebuilder.css
-0 245 0 25767434 0 0
+0 762 0 79005934 0 0
 /media/editors/tinymce/skins/lightgray/fonts/tinymce.woff
-0 12 0 192324 0 0
+0 27 0 419616 0 0
+/images/projects/projects-8.jpg
+1 1 0 200170 0 0
 /components/com_sppagebuilder/addons/tweet/assets/images/icon.png
-1 4 0 5790 0 0
+1 11 1126480105652161792 17370 0 0
+/media/media/js/popup-imagemanager.min.js
+0 1 0 3481 0 0
+/images/2018/09/06/_spmedia_thumbs/wiseconversion-tools-logo-04.png
+1 30 0 309776 0 0
 /media/editors/tinymce/plugins/searchreplace/plugin.min.js
-0 12 0 71423 0 0
+0 21 0 116874 0 0
+/images/home/Home3-bg3.jpg
+1 2 0 88882 0 0
+/images/wiseconversion-tools-logo-03.png
+1 331 0 10646356 0 0
 /images/sampledata/fruitshop/fruits.gif
-1 1 0 2057 0 0
+1 2 0 4114 0 0
 /media/com_phocadownload/css/administrator//phocadownloadoptions.css
-0 1 0 643 0 0
+0 2 0 1286 0 0
 /media/com_phocadownload/images/administrator/icon-box-pi.png
-1 4 0 42248 0 0
+1 6 0 63372 0 0
 /media/com_phocadownload/images/administrator/icon-box-pp.png
 1 2 0 22804 0 0
 /images/addons/gallery-img-9.jpg
-1 2 0 71354 0 0
+1 3 7163376947542189102 107031 0 0
 /plugins/system/helixultimate/assets/css/admin/blog-options.css
-0 1 0 1692 0 0
+0 2 3329908352409927680 3384 0 0
 /media/system/js/tabs-state-uncompressed.js
-0 415 0 3752845 0 0
+0 415 8027435675461432121 3752845 0 0
 /images/team/Team-2.jpg
-1 1 0 150878 0 0
+1 2 3473737861561855545 301756 0 0
 /media/jui/js/bootstrap.min.js
-0 17 0 495652 0 0
+0 197 3761962758177095680 5743732 0 0
+/images/pages/service2-img2.jpg
+1 1 8602278188327988577 68988 0 0
 /media/editors/tinymce/plugins/lists/plugin.min.js
-0 12 0 160952 0 0
+0 21 393224340993 263376 0 0
 /cache/com_templates/templates/shaper_helixultimate/051e4a0fb9b5a5d0e4e444494add5ffd.js
-0 18 0 12206646 0 0
+0 18 6001477 12206646 0 0
 /media/editors/tinymce/plugins/autolink/plugin.min.js
-0 12 0 22660 0 0
+0 21 8462384025001932594 37080 0 0
 /media/editors/tinymce/plugins/charmap/plugin.min.js
-0 12 0 90189 0 0
+0 21 7171939 147582 0 0
 /media/jui/js/chosen.jquery.js
-0 685 0 32712860 0 0
+0 685 25773249514255415 32712860 0 0
 /images/logo-3.png
-1 2 0 2149 0 0
+1 4 3328501184460043009 4298 0 0
+/images/pages/case-img-2.jpg
+1 1 7020671440528433454 21135 0 0
 /images/logo-footer3.png
-1 3 0 3948 0 0
+1 6 7002588541653120368 7896 0 0
 /images/sampledata/parks/parks.gif
-1 1 0 2069 0 0
+1 2 7277816997830721536 4138 0 0
 /media/editors/tinymce/plugins/media/plugin.min.js
-0 12 1536118982 180939 0 0
+0 21 0 296082 0 0
 /media/editors/tinymce/plugins/image/plugin.min.js
-0 13 3689061863665053236 98448 0 0
+0 44 3347150208414743137 319956 0 0
 /media/system/css/modal.css
-0 11 8462384025001931309 33143 0 0
+0 25 7277816997830721536 75325 0 0
 /images/addons/gallery/img-tmb-1.jpg
-1 1 87600488835919408 132843 0 0
+1 2 0 265686 0 0
+/media/editors/codemirror/lib/addons.min.css
+0 79 7957713625452457521 140146 0 0
 /templates/beez3/template_thumbnail.png
-1 3 3347150208414743137 65871 0 0
+1 20 0 439140 0 0
+/images/2018/09/06/_spmedia_thumbs/landing_leaderaservices.jpg
+1 28 0 873265 0 0
 /media/system/js/polyfill.xpath-uncompressed.js
-0 415 3761404184037371186 12458715 0 0
+0 415 0 12458715 0 0
 /images/addons/slider-4.jpg
-1 1 12072672 65265 0 0
+1 2 0 130530 0 0
 /media/system/js/fields/calendar.js
 0 12 0 516060 0 0
 /templates/shaper_helixultimate/sppagebuilder/addons/person/assets/images/icon.png
-1 4 7957713625452457521 6783 0 0
+1 11 0 20349 0 0
+/images/blog/blog-img3.jpg
+1 2 0 157286 0 0
 /images/pages/about-img2.jpg
-1 8 0 766928 0 0
+1 14 0 1246258 0 0
+/images/partners/partners-2.png
+1 1 0 4051 0 0
 /media/system/css/fields/calendar.css
-0 21 0 89859 0 0
+0 32 0 128370 0 0
 /administrator/modules/mod_sppagebuilder_icons/tmpl/images/page.png
-1 13 0 15433 0 0
+1 26 0 28060 0 0
 /templates/shaper_helixultimate/css/owl.transitions.css
-0 78 0 335700 0 0
+0 273 0 1199568 0 0
 /images/2018/09/04/cabecera_leadera_segment.jpg
-1 24 12063616 10561872 0 0
+1 95 0 47355793 0 0
+/images/2018/09/05/logo_dominion_digital.jpg
+1 3 0 3398 0 0
+/images/blog/estrategias_clave_disparar_ventas_Leaderablog_2.jpg
+1 20 0 1549416 0 0
 /templates/shaper_helixultimate/sppagebuilder/addons/carousel/assets/images/icon.png
-1 5 0 7048 0 0
+1 20 0 28192 0 0
+/images/projects/tmb-projects-9.jpg
+1 1 0 73853 0 0
 /media/com_phocadownload/images/administrator/icon-48-uploads.png
-1 6 1126480105652161792 13404 0 0
+1 10 0 22340 0 0
 /images/addons/gallery-img-6.jpg
-1 2 1548 46946 0 0
+1 3 0 70419 0 0
+/media/com_phocadownload/images/administrator/b-pc.png
+1 1 0 49291 0 0
+/images/jdownloads/updimages/green.png
+1 1 0 719 0 0
 /plugins/system/helixultimate/assets/js/admin/helix-ultimate.js
-0 1 0 7799 0 0
+0 6 0 38995 0 0
 /images/images/sliede-2.jpg
-1 22 0 5362161 0 0
+1 24 0 5872843 0 0
 /media/system/js/color-field-adv-init.js
 0 102 0 71910 0 0
 /media/com_acymailing/templates/newsletter-5/newsletter-5.png
-1 1 0 5048 0 0
+1 2 0 10096 0 0
+/images/convertforms/convertforms-05.png
+1 1 0 3417 0 0
 /administrator/templates/isis/css/template.css
-0 762 0 142793466 0 0
+0 941 0 176336813 0 0
+/images/addons/gallery/img-1.jpg
+1 1 0 132843 0 0
 /academy-resources-downloads
-0 18 0 5748674 0 0
+0 103 0 6422971 6 1
 /media/com_acymailing/images/dashboard/plane1.png
-1 1 0 1850 0 0
+1 2 0 3700 0 0
 /plugins/editors/acyeditor/acyeditor/ckeditor/ckeditor.js
-0 1 0 459672 0 0
+0 2 0 919344 0 0
 /media/editors/tinymce/tinymce.min.js
-0 62 0 24737330 0 0
+0 112 0 43391710 0 0
 /images/blog/blog-thumb3.jpg
-1 71 0 3747616 0 0
+1 81 0 4298736 0 0
 /media/com_convertforms/templates/diamond_sidebar.jpg
-1 1 3270573702973256448 25052 0 0
+1 3 0 75156 0 0
 /templates/shaper_helixultimate/template_thumbnail.png
-1 4 8752868413093537132 110716 0 0
+1 100 0 2767900 0 0
+/media/editors/codemirror/mode/clike/clike.min.js
+0 44 0 829180 0 0
 /media/com_convertforms/templates/ruby_sidebar.jpg
-1 1 3257850949388496754 25194 0 0
+1 3 0 75582 0 0
 /media/com_phocadownload/images/administrator/icon-box-prm.png
-1 3 7020671440528433454 33159 0 0
+1 3 0 33159 0 0
 /media/com_phocadownload/images/administrator/icon-12-multiple.png
-1 2 8320225963534868845 1242 0 0
+1 5 0 3105 0 0
 /productos-marketing-automation/leadera_segment
-0 36 3271148752100749155 17312529 2 0
+0 129 0 18657456 6 1
 /administrator/components/com_sppagebuilder/assets/img/joomla.png
-1 15 8319606671189093683 31990 0 0
+1 41 0 84545 0 0
 /media/jui/js/jquery-migrate.js
-0 747 72057594037927936 17552259 0 0
+0 747 0 17552259 0 0
 /media/com_phocadownload/images/administrator/logo.png
-1 7 7885630522610513011 41139 0 0
+1 11 0 64647 0 0
+/images/sampledata/parks/landscape/800px_ormiston_pound.jpg
+1 1 0 9029 0 0
+/images/2018/09/05/iStock-543665568.jpg
+1 2 0 1059966 0 0
 /media/media/css/popup-imagelist.css
-0 23 25763102637241399 108928 0 0
+0 24 0 113664 0 0
+/images/projects/projects-11.jpg
+1 1 0 132843 0 0
 /images/team/Team-4.jpg
-1 1 100665431294265 110194 0 0
+1 2 0 220388 0 0
+/images/projects/projects-2.jpg
+1 1 0 147202 0 0
 /images/images/sliede-3.jpg
-1 22 7310597220861961006 12443109 0 0
+1 24 0 13628167 0 0
 /cache/com_templates/templates/shaper_helixultimate/925e8de5a06f3d061b3a5b17e558d987.css
-0 55 3689061863665053236 17485596 0 0
+0 55 0 17485596 0 0
+/administrator/components/com_jdownloads/assets/images/publish_y.png
+1 1 0 462 0 0
+/images/pages/partners-3.jpg
+1 1 0 7531 0 0
 /cache/com_templates/templates/shaper_helixultimate/17f43469d9bde158ffa1bf68cc5f90f2.js
-0 2 12072944 356853 0 0
+0 152 0 29618799 0 0
 /media/com_phocadownload/images/administrator/icon-box-pdc.png
-1 1 3615884944489840640 10344 0 0
+1 2 0 20688 0 0
 /images/images/sliede-1.jpg
-1 9 3616445670492286262 2338752 0 0
+1 10 0 2338752 0 0
+/images/convertforms/convertforms-07.png
+1 1 0 5186 0 0
 /media/com_acymailing/images/editorback.png
-1 1 3258408400591217920 2483 0 0
+1 2 0 4966 0 0
 /cache/com_templates/templates/shaper_helixultimate/f284ef01c74222fb6f2d7f9843cb136e.css
-0 103 8032840007778447661 46496104 0 0
+0 103 0 46496104 0 0
+/images/convertforms/convertforms-09.png
+1 1 0 4634 0 0
 /media/com_acymailing/css/fonts/icomoon.ttf
-0 1 3329348907908214833 14140 0 0
+0 2 0 28280 0 0
+/media/com_finder/js/indexer.js
+0 1 0 3185 0 0
+/images/addons/gallery/img-2.jpg
+1 1 0 127216 0 0
 /media/editors/tinymce/plugins/wordcount/plugin.min.js
-0 11 0 132297 0 0
+0 13 0 156351 0 0
 /templates/shaper_helixultimate/template_preview.png
-1 4 0 711520 0 0
+1 100 0 17788000 0 0
+/images/addons/gallery/img-6.jpg
+1 1 0 148721 0 0
 /media/jui/js/fielduser.js
 0 26 0 106236 0 0
+/cache/com_templates/templates/shaper_helixultimate/013a2d85e0f6162e80a8177b265f402d.js
+0 1 0 246937 0 0
 /media/system/js/sendtestmail-uncompressed.js
 0 7 0 11221 0 0
 /images/logo-footer.png
-1 2 0 2165 0 0
+1 4 0 4330 0 0
 /plugins/editors/acyeditor/acyeditor/ckeditor/config.js
-0 1 0 1190 0 0
+0 2 0 2380 0 0
 /media/editors/tinymce/plugins/importcss/plugin.min.js
-0 11 0 30217 0 0
+0 13 0 35711 0 0
 /media/com_acymailing/images/emptyimg.png
-1 1 0 816 0 0
+1 2 0 1632 0 0
+/landings/leadera-optimize
+0 10 0 50383 0 0
 /templates/protostar/template_thumbnail.png
-1 3 0 24813 0 0
+1 20 0 165420 0 0
 /templates/beez3/template_preview.png
-1 3 0 355593 0 0
+1 20 0 2370620 0 0
+/images/home/Home4-img1.png
+1 2 0 341466 0 0
 /media/jui/js/jquery.ui.core.min.js
-0 10 0 212140 0 0
+0 62 0 1315268 0 0
 /images/addons/modals-img.png
-1 1 12070880 55034 0 0
+1 2 0 110068 0 0
 /media/com_acymailing/images/tooltip.png
 1 1 0 727 0 0
 /administrator/components/com_sppagebuilder/assets/fonts/fontawesome-webfont.woff2
-0 24 0 1774680 0 0
+0 52 0 3626520 0 0
 /components/com_sppagebuilder/addons/image/assets/images/icon.png
-1 9 0 13088 0 0
+1 32 0 45808 0 0
 /images/404_bg.jpg
-1 3 0 652588 0 0
+1 29 0 8809938 0 0
 /images/2018/09/04/banner_ebook_leadera.jpg
-1 21 12073856 238476 0 0
+1 108 0 1374744 0 0
 /images/team/Team-6.jpg
-1 1 0 103346 0 0
+1 2 0 206692 0 0
+/images/projects/projects-7.jpg
+1 1 0 153997 0 0
 /plugins/system/helixultimate/assets/js/admin/webfont.js
-0 1 0 4689 0 0
+0 6 0 23445 0 0
 /images/2018/09/03/slide1_leadera_segment.jpg
-1 80 0 14359688 0 0
+1 285 0 55855112 0 0
 /templates/shaper_helixultimate/sppagebuilder/addons/flip_box/assets/images/icon.png
-1 4 0 5865 0 0
+1 11 0 17595 0 0
+/images/blog/estrategias_clave_disparar_ventas_Leaderablog_1.jpg
+1 71 0 9848696 0 0
 /media/com_phocadownload/images/administrator/icon-48-downloads.png
-1 6 0 13164 0 0
+1 10 0 21940 0 0
 /media/com_phocadownload/images/administrator/icon-file.png
-1 1 0 408 0 0
+1 2 0 816 0 0
 /cache/com_templates/templates/shaper_helixultimate/3afbc2942ad0186a3c2c1f6f54983d9e.css
-0 44 0 16972913 0 0
+0 248 0 79771082 0 0
 /components/com_phocadownload/assets/plupload/plupload.js
-0 2 0 23896 0 0
+0 3 0 35844 0 0
 /media/editors/tinymce/plugins/code/plugin.min.js
-0 13 0 8652 0 0
+0 44 0 28840 0 0
 /media/editors/tinymce/js/tiny-close.js
 0 38 0 47234 0 0
 /media/com_acymailing/css/acyicon.css
-0 2 0 9612 0 0
+0 4 0 19224 0 0
+/images/projects/tmb-projects-6.jpg
+1 1 0 67884 0 0
+/administrator/components/com_jdownloads/assets/images/info48.png
+1 2 0 3816 0 0
 /components/com_sppagebuilder/addons/gallery/assets/images/icon.png
-1 4 0 4398 0 0
+1 11 0 13194 0 0
 /images/logo_bk.png
-1 2 0 2216 0 0
+1 4 0 4432 0 0
 /media/jui/js/jquery.minicolors.js
 0 104 0 4288544 0 0
+/templates/shaper_helixultimate/css/bootstrap.min.css
+0 30 0 4212630 0 0
+/media/com_content/js/admin-article-readmore.min.js
+0 2 0 1386 0 0
 /media/system/js/fields/calendar-locales/es.js
-0 21 0 12999 0 0
+0 32 0 18570 0 0
 /components/com_sppagebuilder/addons/icons_group/assets/images/icon.png
-1 4 0 5463 0 0
+1 11 0 16389 0 0
 /media/com_acymailing/images/editor/icon-16-editpicture.png
-1 1 0 1259 0 0
+1 2 0 2518 0 0
 /media/editors/tinymce/plugins/fullscreen/plugin.min.js
-0 13 0 20100 0 0
+0 44 0 65325 0 0
 /media/com_acymailing/js/sortable.js
-0 1 0 15567 0 0
+0 2 0 31134 0 0
 /templates/shaper_helixultimate/fonts/fontawesome-webfont.woff2
-0 245 0 18672720 0 0
+0 841 0 64582920 0 0
 /templates/shaper_helixultimate/sppagebuilder/addons/pie_progress/assets/images/icon.png
-1 4 0 6507 0 0
+1 11 0 19521 0 0
 /plugins/editors/acyeditor/acyeditor/ckeditor/plugins/acymediabrowser/plugin.js
-0 1 0 1286 0 0
+0 2 0 2572 0 0
+/politica-etica-y-conducta
+0 2 0 14237 0 0
 /images/logo-2.png
-1 2 0 2218 0 0
+1 4 0 4436 0 0
 /media/editors/tinymce/plugins/visualchars/plugin.min.js
-0 11 0 12958 0 0
+0 13 0 15314 0 0
+/images/jdownloads/updimages/orange.png
+1 1 0 728 0 0
 /media/com_phocadownload/images/administrator/icon-16-up.png
-1 2 0 1152 0 0
+1 3 0 1728 0 0
 /administrator/components/com_sppagebuilder/assets/fonts/sppagebuilder.ttf
-0 22 0 191688 0 0
+0 45 0 374248 0 0
+/cache/com_templates/templates/shaper_helixultimate/74f91ac1be3fc9b08a32402f7ec10951.js
+0 2 0 470926 0 0
+/blog/lead-nurturing
+0 4 0 40333 1 0
 /media/system/js/punycode-uncompressed.js
 0 223 0 3276316 0 0
 /administrator/components/com_sppagebuilder/assets/css/react-select.css
-0 21 0 141200 0 0
+0 46 0 289460 0 0
 /images/logo-footer5.png
-1 2 0 1974 0 0
+1 4 0 3948 0 0
+/images/addons/gallery/img-7.jpg
+1 1 0 144579 0 0
 /images/addons/img-4.jpg
-1 1 12071648 147202 0 0
+1 2 0 294404 0 0
 /media/system/js/subform-repeatable.js
-0 1 0 4235 0 0
+0 24 0 101640 0 0
 /cache/com_templates/templates/shaper_helixultimate/21506422c816c7d83806528528e80e05.js
-0 42 0 13191255 0 0
+0 523 0 156787488 0 0
+/images/home/Home5-img4.jpg
+1 2 0 40858 0 0
 /administrator/components/com_sppagebuilder/assets/js/csslint.js
-0 10 0 1117791 0 0
+0 32 0 3477572 0 0
 /images/addons/gallery/img-tmb-12.jpg
-1 1 0 217103 0 0
+1 2 0 434206 0 0
 /media/com_acymailing/js/acytoolbar.js
-0 1 0 2582 0 0
+0 2 0 5164 0 0
 /blog/categoria-blog1
 0 3 0 1821355 0 0
+/administrator/components/com_jdownloads/assets/images/logs48.png
+1 2 0 4874 0 0
+/images/cabecera_gdpr_Leadera.jpg
+1 12 0 211180 0 0
 /media/com_convertforms/js/convertforms.sys.js
-0 5 0 29946 0 0
+0 44 0 409262 0 0
+/images/sampledata/parks/landscape/120px_pinnacles_western_australia.jpg
+1 1 0 1315 0 0
 /media/com_phocadownload/images/administrator/icon-box-psef.png
-1 2 0 21294 0 0
+1 3 0 31941 0 0
+/images/jdownloads/fileimages/zip.png
+1 1 0 1902 0 0
+/images/2018/09/07/services_lead.jpg
+1 8 0 938231 0 0
 /administrator/modules/mod_sppagebuilder_icons/tmpl/css/pagebuilder-style.css
-0 14 0 17988 0 0
+0 27 0 31479 0 0
+/images/2018/09/08/_spmedia_thumbs/quienessomos_leadera_2.jpg
+1 7 0 492616 0 0
+/images/pages/partners-img-1.jpg
+1 1 0 53953 0 0
 /media/system/js/permissions.js
-0 11 0 20867 0 0
+0 39 0 73983 0 0
 /media/com_phocadownload/images/administrator/icon-48-logs.png
-1 6 0 22572 0 0
+1 10 0 37620 0 0
 /media/plg_system_nrframework/css/smarttagsbox.css
-0 2 0 3900 0 0
+0 25 0 46800 0 0
+/images/2018/09/05/iStock-543665568_small.jpg
+1 1 0 17578 0 0
 /plugins/editors/acyeditor/acyeditor/images/edit_text.png
-1 1 0 1169 0 0
+1 2 0 2338 0 0
+/images/2018/09/05/Leadera_Optimize_2_large.jpg
+1 1 0 366668 0 0
+/images/home/Home5-img3.jpg
+1 2 0 25180 0 0
 /media/plg_system_nrframework/css/fields.css
-0 5 0 6585 0 0
+0 44 0 89995 0 0
+/images/jdownloads/updimages/sephia.png
+1 1 0 711 0 0
 /plugins/system/helixultimate/assets/js/admin/details.js
-0 1 0 329 0 0
+0 7 0 2303 0 0
+/images/projects/tmb-projects-10.jpg
+1 1 0 149141 0 0
 /blog/35-cognitive-computing
-0 2 12067648 1669994 0 0
+0 2 0 1669994 0 0
 /media/jui/js/jquery.searchtools.js
 0 219 0 2364543 0 0
 /images/addons/img-3.jpg
-1 1 12071904 365583 0 0
+1 2 0 731166 0 0
+/component/users/
+0 79 0 575241 2 2
+/images/2018/09/05/Leadera_Optimize_2_medium.jpg
+1 1 0 125768 0 0
+/images/home/Home3-img1.jpg
+1 2 0 90806 0 0
 /media/system/js/core-uncompressed.js
 0 1041 0 27081615 0 0
 /media/jui/js/treeselectmenu.jquery.min.js
-0 9 12069680 23706 0 0
+0 17 0 44778 0 0
+/images/blog/Cognitive_computing_ayuda_tu_compania_Leaderablog_2.jpg
+1 16 0 1797268 0 0
+/images/pages/partners-1.jpg
+1 1 0 8203 0 0
 /media/com_phocadownload/images/administrator/icon-48-styles.png
-1 6 0 18510 0 0
+1 10 0 30850 0 0
 /templates/shaper_helixultimate/css/owl.carousel.css
-0 78 0 626250 0 0
+0 274 0 2246150 0 0
+/images/pages/services2-img-5.jpg
+1 1 0 52206 0 0
 /media/jui/js/bootstrap.js
 0 747 0 47451681 0 0
 /media/com_acymailing/css/acymessages.css
-0 1 0 1073 0 0
+0 2 0 2146 0 0
 /images/addons/gallery/img-tmb-11.jpg
-1 1 0 157783 0 0
+1 2 0 315566 0 0
+/images/pages/partners-2.jpg
+1 1 0 6915 0 0
 /media/plg_quickicon_extensionupdate/js/extensionupdatecheck.js
-0 25 0 43350 0 0
+0 39 0 67626 0 0
+/images/2018/09/05/Leadera_Optimize_2.jpg
+1 6 0 326136 0 0
 /images/blog/blog-thumb6.jpg
-1 22 0 1513358 0 0
+1 24 0 1650936 0 0
+/images/blog/blog-img7.jpg
+1 2 0 1482374 0 0
+/images/2018/09/06/landing_leaderaservices.jpg
+1 22 0 1711190 0 0
+/images/projects/tmb-projects-5.jpg
+1 1 0 71727 0 0
 /templates/shaper_helixultimate/sppagebuilder/addons/accordion/assets/images/icon.png
-1 4 0 780 0 0
+1 10 0 1820 0 0
 /media/com_phocadownload/images/administrator/icon-12-disapprove.png
-1 2 0 1364 0 0
+1 5 0 3410 0 0
+/blog/cognitive-computing
+0 2 0 20529 0 0
+/images/jdownloads/updimages/blue.png
+1 1 0 763 0 0
 /components/com_sppagebuilder/addons/button_group/assets/images/icon.png
-1 4 0 3834 0 0
+1 11 0 11502 0 0
+/images/partners/partners-1.png
+1 1 0 6393 0 0
 /media/editors/codemirror/lib/addons.js
 0 5 0 531800 0 0
 /images/2018/09/04/_spmedia_thumbs/services_leadera_opt1.jpg
-1 15 109 633294 0 0
+1 44 0 2638725 0 0
 /templates/shaper_helixultimate/sppagebuilder/addons/image_content/assets/images/icon.png
-1 7 0 9984 0 0
+1 14 0 18304 0 0
 /templates/shaper_helixultimate/sppagebuilder/addons/testimonial/assets/images/icon.png
-1 5 0 1040 0 0
+1 20 0 4160 0 0
 /images/addons/gallery/img-tmb-2.jpg
-1 1 0 127216 0 0
+1 2 0 254432 0 0
+/administrator/components/com_jdownloads/assets/images/file_blue.gif
+1 1 0 126 0 0
+/images/home/Home5-bg2.jpg
+1 2 0 340938 0 0
+/administrator/components/com_jdownloads/assets/images/licenses48.png
+1 2 0 11798 0 0
 /media/editors/tinymce/plugins/template/plugin.min.js
-0 11 0 49720 0 0
+0 13 0 58760 0 0
 /media/com_acymailing/js/acymailing.js
-0 1 0 20688 0 0
+0 2 0 41376 0 0
 /components/com_sppagebuilder/assets/css/magnific-popup.css
-0 245 0 1432640 0 0
+0 745 0 4386720 0 0
 /images/2018/09/04/_spmedia_thumbs/leadera_optimize_1.jpg
-1 20 0 771776 0 0
+1 49 0 3293019 0 0
 /plugins/system/helixultimate/assets/css/font-awesome.min.css
-0 6 0 186000 0 0
+0 11 0 279000 0 0
 /cache/com_templates/templates/shaper_helixultimate/6cb00dc590ce8e2b81525f68e71a7428.js
 0 3 0 1056951 0 0
+/images/projects/tmb-projects-8.jpg
+1 1 0 122049 0 0
+/images/2018/09/06/_spmedia_thumbs/slide3_leadera_sevices.jpg
+1 28 0 926697 0 0
+/images/2018/09/08/_spmedia_thumbs/whoisit.jpg
+1 11 20919632 299436 0 0
 /images/logo.png
-1 245 0 1616560 0 0
+1 797 0 5297240 0 0
+/templates/shaper_helixultimate/css/bootstrap.min.css.map
+0 7 0 1302 0 0
+/images/pages/services-partner-3.png
+1 1 0 9129 0 0
 /media/com_acymailing/images/editor/icon-16-sortable.png
-1 1 0 1132 0 0
+1 2 0 2264 0 0
+/images/convertforms/convertforms-04.png
+1 1 0 3057 0 0
+/images/projects/tmb-projects-4.jpg
+1 1 0 78509 0 0
 /administrator/components/com_sppagebuilder/assets/css/common.css
-0 15 0 142142 0 0
+0 42 0 385814 0 0
 /media/com_acymailing/templates/css/template_1.css
-0 2 0 4194 0 0
+0 4 0 8388 0 0
+/media/com_phocadownload/images/icon-document-16.png
+1 2 20918400 1364 0 0
+/favicon.ico
+0 6 0 1116 0 0
 /media/jui/js/bootstrap-tooltip-extended.js
 0 313 0 1847326 0 0
 /media/system/js/punycode.js
-0 11 0 31108 0 0
+0 137 0 387436 0 0
+/plugins/editors/acyeditor/acyeditor/ckeditor/plugins/icons.png
+1 1 0 10450 0 0
+/images/convertforms/convertforms-18.png
+1 1 0 8156 0 0
+/images/pages/case-img-3.jpg
+1 1 0 52751 0 0
 /images/2018/09/03/_spmedia_thumbs/slide1_leadera_segment.jpg
-1 11 0 536167 0 0
+1 37 0 2261405 0 0
 /media/editors/tinymce/plugins/emoticons/plugin.min.js
-0 11 0 10021 0 0
+0 14 0 12754 0 0
+/blog/marketing-automation/34-marketing-automation-estrategias-clave-para-disparar-la-venta
+0 20 0 263166 1 0
 /media/editors/tinymce/skins/lightgray/skin.min.css
-0 13 0 458784 0 0
+0 44 0 1529280 0 0
+/templates/shaper_helixultimate/css/presets/preset1.css
+0 30 0 5186220 0 0
 /media/com_phocadownload/images/administrator/icon-box-pd.png
-1 1 0 10690 0 0
+1 3 0 32070 0 0
 /media/editors/tinymce/plugins/anchor/plugin.min.js
-0 11 0 13068 0 0
+0 13 0 15444 0 0
 /images/images/sliede-4.jpg
-1 1 0 0 0 0
+1 3 0 143438 0 0
 /media/system/js/polyfill.xpath.js
-0 11 0 323895 0 0
+0 137 0 4033965 0 0
+/images/addons/gallery/img-4.jpg
+1 1 0 147202 0 0
 /cache/com_templates/templates/shaper_helixultimate/a242c38ebc0e196cf08305f52f0eb8be.js
-0 1 12066752 370067 0 0
+0 1 0 370067 0 0
 /media/mod_languages/images/es_es.gif
-1 42 0 6760 0 0
+1 138 0 22308 0 0
+/images/blog/blog-img8.jpg
+1 2 0 289298 0 0
 /images/addons/gallery-img-3.jpg
-1 2 0 62948 0 0
+1 3 0 94422 0 0
+/media/editors/tinymce/js/tiny-close.min.js
+0 5 0 3460 0 0
+/images/sampledata/parks/landscape/250px_cradle_mountain_seen_from_barn_bluff.jpg
+1 1 0 4826 0 0
 /images/addons/flip-box-img-1.png
-1 1 12070432 88118 0 0
+1 2 0 176236 0 0
 /media/editors/tinymce/plugins/advlist/plugin.min.js
-0 12 0 23001 0 0
+0 21 0 37638 0 0
+/administrator/components/com_jdownloads/assets/images/layouts48.png
+1 2 0 3218 0 0
 /media/system/js/tabs-state.js
-0 11 0 28215 0 0
+0 137 0 351405 0 0
 /media/editors/tinymce/plugins/codesample/css/prism.css
-0 11 0 25179 0 0
+0 14 0 32046 0 0
+/images/pages/about-bg-img2.jpg
+1 1 0 214409 0 0
 /media/editors/tinymce/js/tinymce.js
 0 40 0 167160 0 0
+/images/2018/09/05/iStock-543665568_thumbnail.jpg
+1 6 0 201576 0 0
 /components/com_sppagebuilder/addons/carouselpro/assets/images/icon.png
-1 4 0 5037 0 0
+1 8 0 10074 0 0
 /media/system/js/moduleorder.js
-0 52 0 108888 0 0
+0 61 0 127734 0 0
 /plugins/system/sppagebuilder/assets/js/init.js
-0 1 12066480 1827 0 0
+0 2 0 3654 0 0
 /media/jui/js/ajax-chosen.js
 0 44 0 197032 0 0
+/images/projects/tmb-projects-11.jpg
+1 1 0 66251 0 0
 /images/addons/gallery/img-tmb-9.jpg
-1 1 0 153997 0 0
+1 2 0 307994 0 0
+/images/home/Home5-bg1.jpg
+1 2 0 190238 0 0
+/images/projects/tmb-projects-3.jpg
+1 1 0 82907 0 0
 /images/phocadownload/libro1.jpg
-1 5 0 287679 0 0
+1 25 0 1821967 0 0
 /media/com_phocadownload/images/administrator/icon-box-ppdf.png
 1 1 0 10606 0 0
+/images/blog/blog-img1.jpg
+1 2 0 254430 0 0
 /media/editors/codemirror/lib/addons.css
 0 5 0 10460 0 0
 /media/editors/tinymce/plugins/hr/plugin.min.js
-0 11 0 3542 0 0
+0 14 0 4508 0 0
+/images/2018/09/06/wiseconversion-tools-logo-04.png
+1 56 0 351849 0 0
+/cache/com_templates/templates/shaper_helixultimate/b719cd821f2fa725603b6d4d49dbfcd1.js
+0 3 0 797025 0 0
+/administrator/components/com_jdownloads/assets/images/config48.png
+1 2 0 3292 0 0
+/images/pages/services-partner-2.png
+1 1 0 7051 0 0
 /media/com_acymailing/js/jquery/jquery-1.9.1.min.js
-0 1 0 92859 0 0
+0 2 0 185718 0 0
 /components/com_phocadownload/assets/plupload/plupload.html5.js
-0 2 0 35892 0 0
+0 3 0 53838 0 0
 /images/2018/09/04/services_leadera_opt1.jpg
-1 11 12044992 4194267 0 0
+1 12 0 4194267 0 0
 /images/logo-5.png
-1 2 0 2128 0 0
+1 4 0 4256 0 0
 /media/com_phocadownload/images/administrator/icon-box-pcm.png
-1 3 0 31971 0 0
+1 5 0 53285 0 0
 /images/addons/gallery-img-2.jpg
-1 2 0 72002 0 0
+1 3 0 108003 0 0
 /components/com_sppagebuilder/assets/js/jquery.mb.vimeo_player.min.js
-0 245 0 8069974 0 0
+0 745 0 24710127 0 0
+/images/sampledata/parks/landscape/120px_rainforest_bluemountainsnsw.jpg
+1 1 0 4506 0 0
+/images/convertforms/convertforms-13.png
+1 1 0 6772 0 0
+/images/pages/partners-img-list-1.jpg
+1 1 0 12159 0 0
 /images/images/sliede-6.jpg
-1 1 0 0 0 0
+1 3 0 156188 0 0
 /images/2018/08/02/_spmedia_thumbs/logo_wiseconversion_tools_02.png
-1 12 0 4719 0 0
+1 33 0 12441 0 0
+/images/2018/09/01/istock-892272762.png
+1 2 0 1761680 0 0
 /media/media/js/popup-imagemanager.js
 0 16 0 124048 0 0
 /media/system/js/mootools-more.js
-0 1 0 236825 0 0
+0 19 0 4499675 0 0
 /components/com_sppagebuilder/addons/navigation/assets/images/icon.png
-1 4 0 1071 0 0
+1 11 0 3213 0 0
 /media/editors/tinymce/plugins/save/plugin.min.js
-0 11 0 12650 0 0
+0 13 0 14950 0 0
+/images/convertforms/convertforms-03.png
+1 1 0 2448 0 0
 /media/com_convertforms/templates/ruby_bar.jpg
-1 1 0 21922 0 0
+1 3 0 65766 0 0
+/images/projects/projects-1.jpg
+1 1 0 365583 0 0
+/images/convertforms/convertforms-10.png
+1 1 0 3005 0 0
+/images/2018/09/08/cabecera_servicios_leadera.jpg
+1 14 20920192 97731 0 0
 /media/com_phocadownload/images/administrator/icon-48-lics.png
-1 6 0 23766 0 0
+1 10 0 39610 0 0
+/images/addons/gallery/img-8.jpg
+1 1 0 130047 0 0
 /media/cms/css/debug.css
 0 745 0 2445835 0 0
+/media/com_acymailing/images/spinner2.gif
+1 1 0 3304 0 0
 /templates/shaper_helixultimate/headers/style-2/thumb.jpg
-1 1 0 33671 0 0
+1 6 0 202026 0 0
+/media/editors/codemirror/mode/javascript/javascript.min.js
+0 44 0 696564 0 0
 /images/addons/img-10.jpg
-1 39 0 7606460 0 0
+1 44 0 8607310 0 0
 /images/cabecera_blog.jpg
-1 74 12065616 7151256 0 0
+1 151 0 15210608 0 0
 /media/editors/tinymce/plugins/insertdatetime/plugin.min.js
-0 11 0 21681 0 0
+0 13 0 25623 0 0
 /media/jui/js/jquery.autocomplete.min.js
-0 41 12070112 531442 0 0
+0 121 0 1568402 0 0
 /images/2018/09/03/_spmedia_thumbs/slide3_leadera_sevices.jpg
-1 9 0 343698 0 0
+1 18 0 630113 0 0
+/images/blog/blog-img6.jpg
+1 2 0 202080 0 0
 /administrator/components/com_sppagebuilder/assets/img/logo-white.svg
-0 16 0 148185 0 0
+0 39 0 345765 0 0
+/images/addons/gallery/img-9.jpg
+1 1 0 153997 0 0
 /images/addons/gallery-img-4.jpg
-1 2 0 121106 0 0
+1 3 0 181659 0 0
 /media/editors/codemirror/lib/codemirror.css
 0 5 0 42710 0 0
 /media/system/js/modal-uncompressed.js
 0 10 0 134410 0 0
+/media/editors/codemirror/mode/php/php.min.js
+0 44 0 613580 0 0
 /components/com_phocadownload/assets/overlib/overlib_mini.js
-0 17 0 626824 0 0
+0 71 0 2433552 0 0
 /plugins/editors/acyeditor/acyeditor/css/acyeditor_template.css
-0 1 0 664 0 0
+0 2 0 1328 0 0
+/blog/inteligencia-artificial/36-inteligencia-artificial-aplicada-a-los-servicios-tic
+0 2 0 27448 0 0
+/media/system/js/caption.js
+0 1 0 491 0 0
+/images/home/Home5-img1.jpg
+1 2 0 30304 0 0
 /plugins/system/helixultimate/assets/js/admin/media.js
-0 1 12061472 10848 0 0
+0 6 0 54240 0 0
 /components/com_sppagebuilder/addons/social_share/assets/images/icon.png
-1 8 0 17920 0 0
+1 16 0 33280 0 0
 /images/logo-footer2.png
-1 2 0 2163 0 0
+1 4 0 4326 0 0
 /images/sampledata/fruitshop/tamarind.jpg
-1 1 0 31463 0 0
+1 2 0 62926 0 0
 /media/system/js/fields/calendar-locales/date/gregorian/date-helper.min.js
-0 10 0 48920 0 0
+0 20 0 92948 0 0
 /cache/com_templates/templates/shaper_helixultimate/56c0a507731d1007dad52ed9773638b0.css
-0 43 0 20714910 0 0
+0 537 0 248098157 0 0
 /media/system/js/core.js
-0 75 0 577350 0 0
+0 686 0 5280828 0 0
 /media/com_acymailing/images/editor/icon-16-show.png
-1 1 0 323 0 0
+1 2 0 646 0 0
 /components/com_sppagebuilder/addons/optin_form/assets/images/icon.png
-1 5 0 10836 0 0
+1 20 0 43344 0 0
 /components/com_sppagebuilder/addons/countdown/assets/images/icon.png
-1 4 0 9237 0 0
+1 11 0 27711 0 0
 /media/com_acymailing/js/colorpicker/css/colorpicker.css
-0 1 0 4693 0 0
+0 2 0 9386 0 0
+/images/pages/about-video-img1.png
+1 1 0 315122 0 0
+/images/projects/projects-10.jpg
+1 1 0 217103 0 0
 /images/home/Home5-bg3.jpg
-1 76 0 27751534 0 0
+1 270 0 100338825 0 0
 /media/com_phocadownload/images/administrator/icon-box-pgb.png
-1 1 0 10614 0 0
+1 2 0 21228 0 0
 /administrator/
-0 1773 0 683951487 43 44
+0 5357 0 730344463 64 101
 /media/com_acymailing/css/backend_default.css
-0 1 0 57303 0 0
+0 2 0 114606 0 0
 /plugins/editors/acyeditor/acyeditor/css/acyeditor.css
-0 1 0 6020 0 0
+0 2 0 12040 0 0
 /media/com_convertforms/js/cookie.js
-0 2 0 7354 0 0
+0 25 0 88248 0 0
 /cache/com_templates/templates/shaper_helixultimate/5193c006063cbd9afa93d32f650de17f.js
 0 115 0 36361787 0 0
 /components/com_sppagebuilder/addons/module/assets/images/icon.png
-1 11 0 25620 0 0
+1 27 0 61488 0 0
+/images/2018/09/08/_spmedia_thumbs/quienessomos_leadera_1.jpg
+1 9 0 679890 0 0
+/images/pages/careers-img-1.jpg
+1 1 0 52877 0 0
 /media/media/images/con_info.png
-1 2 12043968 1232 0 0
+1 3 0 1232 0 0
 /media/com_acymailing/templates/technology_resp/thumb.jpg
-1 1 0 5034 0 0
+1 2 0 10068 0 0
+/images/2018/09/08/quienessomos_leadera_1.jpg
+1 25 20920496 1143288 0 0
+/images/home/Home3-bg1.jpg
+1 2 0 304142 0 0
 /media/com_phocadownload/images/mime/16/icon-document.png
-1 16 0 8560 0 0
+1 33 0 17120 0 0
+/administrator/components/com_jdownloads/assets/css/style.css
+0 2 0 11984 0 0
 /phpinfo.php
 0 5 0 447129 0 0
 /component/finder/
-0 1 0 186 0 0
+0 3 0 636 0 0
 /images/2018/09/04/services_leadera_opt.jpg
-1 17 12044688 4404244 0 0
+1 36 0 10163640 0 0
 /images/addons/img-6.jpg
-1 2 0 297442 0 0
+1 3 0 446163 0 0
 /components/com_phocadownload/assets/plupload/jquery.plupload.queue/css/jquery.plupload.queue.css
-0 2 0 8768 0 0
+0 3 0 13152 0 0
 /media/system/images/modal/closebox.png
-1 1 0 1050 0 0
+1 3 0 3150 0 0
+/blog/cognitive-computing/37-cognitive-computing-qué-es-y-cómo-puede-ayudar-a-tu-compañía
+0 9 0 115470 0 0
 /images/addons/gallery/img-tmb-3.jpg
-1 1 0 365583 0 0
+1 2 0 731166 0 0
+/administrator/components/com_jdownloads/assets/images/tooltip_blue.gif
+1 1 0 125 0 0
 /images/logo-footer4.png
-1 2 0 2081 0 0
+1 4 0 4162 0 0
 /media/com_phocadownload/images/administrator/icon-48-info.png
-1 6 0 14580 0 0
+1 10 0 24300 0 0
 /media/editors/tinymce/plugins/visualblocks/plugin.min.js
-0 11 0 12683 0 0
+0 13 0 14989 0 0
 /components/com_sppagebuilder/addons/alert/assets/images/icon.png
-1 4 0 5472 0 0
+1 11 0 16416 0 0
 /cache/com_templates/templates/shaper_helixultimate/0241e7c8d925c6c62f6aeaa0ae43f410.js
-0 42 12070256 9273585 0 0
+0 167 0 30761160 0 0
 /images/sampledata/parks/banner_cradle.jpg
-1 33 0 926145 0 0
+1 34 0 954210 0 0
 /cache/com_templates/templates/shaper_helixultimate/55aa31a21514f3095b8fca60179e446a.css
 0 115 0 45779951 0 0
+/images/convertforms/convertforms-01.png
+1 1 0 2497 0 0
 /media/jui/js/jquery.minicolors.min.js
-0 3 0 46341 0 0
+0 30 0 463410 0 0
+/images/addons/gallery/img-5.jpg
+1 1 0 150625 0 0
 /components/com_sppagebuilder/addons/video/assets/images/icon.png
-1 4 0 4881 0 0
+1 11 0 14643 0 0
 /media/jui/js/jquery.ui.core.js
 0 341 0 15271344 0 0
+/images/blog/IA_aplicada_servicios_Leaderablog_1.jpg
+1 220 0 37344523 0 0
 /media/system/js/mootools-core.js
-0 1 0 83893 0 0
+0 41 0 3439613 0 0
 /administrator/templates/isis/js/template.js
-0 738 0 8850834 0 0
+0 916 0 10985588 0 0
+/administrator/components/com_jdownloads/assets/images/warning.png
+1 1 0 3006 0 0
 /images/addons/gallery/img-tmb-7.jpg
-1 1 0 144579 0 0
+1 2 0 289158 0 0
 /media/com_acymailing/images/icons/drag.png
-1 1 0 323 0 0
+1 2 0 646 0 0
 /components/com_sppagebuilder/addons/instagram_gallery/assets/images/icon.png
-1 4 0 9801 0 0
+1 11 0 29403 0 0
 /media/com_phocadownload/images/administrator/icon-48-stat.png
-1 6 0 7140 0 0
+1 10 0 11900 0 0
 /media/com_phocadownload/images/administrator/line.png
 1 2 0 3194 0 0
 /cache/com_templates/templates/shaper_helixultimate/eb2e600bef2ab2f9a5d78028ca39782f.js
 0 100 0 34818707 0 0
+/images/2018/09/05/iStock-543665568_large.jpg
+1 1 0 569703 0 0
+/images/jdownloads/updimages/red.png
+1 1 0 718 0 0
 /plugins/system/helixultimate/assets/images/helix-logo.svg
-0 1 0 7136 0 0
+0 6 0 42816 0 0
+/política-privacidad
+0 8 0 72263 1 0
 /administrator/components/com_sppagebuilder/assets/css/sppagebuilder.css
-0 24 0 4771419 0 0
+0 52 0 9750291 0 0
 /media/com_phocadownload/images/administrator/icon-box-pg.png
-1 3 0 32289 0 0
+1 4 0 43052 0 0
 /images/2018/09/03/_spmedia_thumbs/slide2_leadera_optimize.jpg
-1 9 0 842148 0 0
+1 35 0 3470000 0 0
 /images/blog/blog-thumb7.jpg
-1 1 12065744 72992 0 0
+1 3 0 218976 0 0
 /media/editors/tinymce/plugins/paste/plugin.min.js
-0 12 0 200376 0 0
+0 21 0 327888 0 0
+/images/2018/09/05/dominon_negativo_rgb.png
+1 526 0 2371684 0 0
 /images/addons/gallery/img-tmb-4.jpg
-1 1 0 147202 0 0
+1 2 0 294404 0 0
+/images/pages/services2-img-4.jpg
+1 1 0 14844 0 0
 /cache/com_templates/templates/shaper_helixultimate/64ddd8725ec76cad3b04c16ba8a2e93e.css
-0 2 12073120 585911 0 0
+0 156 0 48089619 0 0
 /media/com_finder/css/finder.css
-0 94 0 234624 0 0
+0 177 0 441792 0 0
 /productos-marketing-automation/leadera_optimize
-0 41 0 21347846 6 1
+0 97 0 22223191 9 1
 /media/com_phocadownload/images/administrator/icon-16-upload.png
-1 2 0 1774 0 0
+1 3 0 2661 0 0
 /plugins/editors/acyeditor/acyeditor/ckeditor/lang/es.js
-0 1 0 12181 0 0
+0 2 0 24362 0 0
 /politica-cookies
-0 2 12064048 811669 0 0
+0 6 0 852183 0 0
 /media/media/js/mediamanager.js
-0 4 12043568 17084 0 0
+0 4 0 17084 0 0
 /cache/com_templates/templates/shaper_helixultimate/cf0917ce62e8d24f4e26995568c0cccf.js
 0 1 0 372364 0 0
 /images/addons/gallery/img-tmb-6.jpg
-1 1 0 148721 0 0
+1 2 0 297442 0 0
 /administrator/components/com_sppagebuilder/assets/js/utilities.js
-0 12 0 2596 0 0
+0 36 0 7552 0 0
 /media/com_convertforms/css/convertforms.editor.sys.css
-0 2 0 20424 0 0
+0 25 0 245088 0 0
 /images/addons/price-bg.jpg
-1 1 12072288 35023 0 0
+1 2 0 70046 0 0
 /components/com_phocadownload/assets/plupload/jquery.plupload.queue/jquery.plupload.queue.js
-0 2 0 24270 0 0
+0 3 0 36405 0 0
 /images/addons/gallery/img-tmb-5.jpg
-1 1 0 150625 0 0
+1 2 0 301250 0 0
+/images/home/Home3-bg2.jpg
+1 2 0 60344 0 0
+/images/projects/tmb-projects-7.jpg
+1 1 0 84631 0 0
 /images/home/Home4-bg1.jpg
-1 61 0 10764900 0 0
+1 62 0 10764900 0 0
+/images/jdownloads/screenshots/thumbnails/no_pic.gif
+1 1 0 3604 0 0
 /images/team/Team-1.jpg
-1 1 0 100411 0 0
+1 2 0 200822 0 0
+/media/system/js/tabs.js
+0 1 0 2554 0 0
 /media/com_acymailing/js/jquery/jquery-ui.min.js
-0 1 0 90394 0 0
+0 2 0 180788 0 0
 /media/system/js/color-field-adv-init.min.js
-0 1 12069408 578 0 0
+0 6 0 3468 0 0
 /images/addons/gallery/img-tmb-8.jpg
-1 1 0 130047 0 0
+1 2 0 260094 0 0
+/images/convertforms/convertforms-20.png
+1 1 0 9676 0 0
 /components/com_sppagebuilder/assets/js/jquery.parallax.js
-0 245 0 215864 0 0
+0 746 0 661864 0 0
 /images/pages/service-bg1.jpg
-1 2 0 109469 0 0
+1 10 0 766283 0 0
 /images/ico-craft.png
-1 51 0 165346 0 0
+1 82 0 260332 0 0
 /images/2018/08/02/dominion.png
-1 249 0 875268 0 0
+1 273 0 953544 0 0
 /images/sampledata/fruitshop/apple.jpg
-1 1 0 15637 0 0
+1 2 0 31274 0 0
 /administrator/components/com_sppagebuilder/assets/css/font-awesome.min.css
-0 24 0 712103 0 0
+0 52 0 1455167 0 0
 /media/mod_sampledata/js/sampledata-process.js
-0 14 0 32220 0 0
+0 27 0 56385 0 0
 /media/jui/js/jquery.searchtools.min.js
-0 8 0 60640 0 0
+0 91 0 689780 0 0
+/images/pages/services-partner-4.png
+1 1 0 8784 0 0
 /images/ico_dominion-32x32.png
-1 9 0 4936 0 0
+1 72 0 42573 0 0
 /media/com_convertforms/templates/diamond_bar.jpg
-1 1 0 14755 0 0
+1 3 0 44265 0 0
+/images/home/img2.jpg
+1 2 0 52170 0 0
 /images/2018/09/03/_spmedia_thumbs/istock-888306812.jpg
 1 1 0 76922 0 0
+/images/2018/09/05/Leadera_Optimize_2_small.jpg
+1 1 0 21805 0 0
 /media/system/js/permissions-uncompressed.js
 0 134 0 468464 0 0
+/images/convertforms/convertforms-06.png
+1 1 0 3433 0 0
 /media/com_acymailing/css/acytooltip.css
-0 1 0 862 0 0
+0 2 0 1724 0 0
+/images/home/Home2-img2.jpg
+1 2 0 188424 0 0
+/media/editors/codemirror/mode/xml/xml.min.js
+0 44 0 256344 0 0
 /images/logo_mvl.png
-1 2 0 2839 0 0
+1 4 0 5678 0 0
+/images/home/Home4-bg2.jpg
+1 2 0 234588 0 0
 /images/2018/09/03/istock-888306812.jpg
 1 2 0 252886 0 0
 /media/com_acymailing/images/dashboard/step_list.png
-1 1 0 2441 0 0
+1 2 0 4882 0 0
+/images/blog/Cognitive_computing_ayuda_tu_compania_Leaderablog_1.jpg
+1 213 0 60430393 0 0
 /media/com_acymailing/js/acyeditor.js
-0 1 0 83747 0 0
+0 2 0 167494 0 0
 /images/addons/gallery-img-7.jpg
-1 2 0 110102 0 0
+1 3 0 165153 0 0
 /media/system/js/fields/calendar-locales/date/gregorian/date-helper.js
 0 12 0 159792 0 0
+/media/com_phocadownload/images/mime/16/icon-pdf.png
+1 28 0 22372 0 0
 /plugins/editors/acyeditor/acyeditor/images/edit_picture.png
-1 1 0 1079 0 0
+1 2 0 2158 0 0
 /images/2018/09/04/cabecera_leadera_optimize.jpg
-1 19 12044384 3680910 0 0
+1 44 0 9324972 0 0
 /media/com_acymailing/templates/newsletter-4/newsletter-4.png
-1 1 0 3172 0 0
+1 2 0 6344 0 0
 /administrator/templates/isis/images/joomla.png
-1 9 0 104860 0 0
+1 19 0 194740 0 0
 /images/addons/gallery-img-1.jpg
-1 2 0 119668 0 0
+1 3 0 179502 0 0
 /components/com_sppagebuilder/addons/text_block/assets/images/icon.png
-1 12 0 17116 0 0
+1 27 0 37344 0 0
+/templates/shaper_helixultimate/css/font-awesome.min.css
+0 30 0 2647560 0 0
 /components/com_sppagebuilder/addons/blocknumber/assets/images/icon.png
-1 4 0 4569 0 0
+1 11 0 13707 0 0
 /media/jui/js/cms-uncompressed.js
 0 26 0 186680 0 0
 /plugins/system/helixultimate/assets/fonts/fontawesome-webfont.woff2
-0 7 0 540120 0 0
+0 11 0 771600 0 0
+/images/convertforms/convertforms-14.png
+1 1 0 5068 0 0
 /administrator/components/com_sppagebuilder/assets/js/actions.js
-0 10 0 24264 0 0
+0 32 0 75488 0 0
 /media/system/js/sendtestmail.js
-0 3 0 3036 0 0
+0 5 0 5060 0 0
 /components/com_sppagebuilder/addons/gmap/assets/images/icon.png
-1 4 0 6345 0 0
+1 11 0 19035 0 0
+/images/partners/partners-4.png
+1 1 0 4696 0 0
+/images/convertforms/convertforms-08.png
+1 1 0 5177 0 0
 /media/com_acymailing/images/editor/icon-16-delete.png
-1 1 0 1147 0 0
+1 2 0 2294 0 0
 /components/com_sppagebuilder/assets/js/jquery.mb.YTPlayer.min.js
-0 245 0 14550250 0 0
+0 745 0 44552625 0 0
+/blog/34-marketing-automation-estrategias-clave-para-disparar-la-venta
+0 2 0 27996 0 0
 /media/system/js/multiselect-uncompressed.js
 0 196 0 266560 0 0
 /media/jui/js/jquery.js
 0 747 0 219192210 0 0
 /images/pages/about_img.jpg
-1 7 0 317877 0 0
+1 14 0 544932 0 0
 /images/2018/09/03/istock-892272762.png
-1 12 0 5285040 0 0
+1 13 0 6165880 0 0
+/cache/com_templates/templates/shaper_helixultimate/640effd8d7ac3d9676d42b7dcb80a939.js
+0 13 0 1724821 0 0
+/images/pages/services-partner-1.png
+1 1 0 7477 0 0
 /images/addons/img-11.jpg
-1 3 12071520 473349 0 0
+1 4 0 473349 0 0
+/images/pages/case-img-4.png
+1 1 0 28116 0 0
 /media/editors/tinymce/skins/lightgray/content.min.css
-0 14 0 41886 0 0
+0 108 0 331866 0 0
 /media/com_phocadownload/images/administrator/icon-16-upload-multiple.png
-1 2 0 1642 0 0
+1 3 0 2463 0 0
 /components/com_sppagebuilder/addons/button/assets/images/icon.png
-1 10 0 15192 0 0
+1 30 0 43888 0 0
 /media/com_acymailing/images/dashboard/step_newsletter.png
-1 1 0 2860 0 0
+1 2 0 5720 0 0
+/administrator/components/com_jdownloads/assets/images/groups48.png
+1 2 0 3278 0 0
 /media/system/js/helpsite.js
-0 12 0 12804 0 0
+0 14 0 14938 0 0
 /media/jui/css/bootstrap-tooltip-extended.css
-0 318 0 214332 0 0
+0 456 0 307344 0 0
 /media/com_acymailing/images/editor/icon-16-edittext.png
-1 1 0 1260 0 0
+1 2 0 2520 0 0
+/images/error_page.jpg
+1 10 0 3227100 0 0
+/images/partners/partners-5.png
+1 1 0 5699 0 0
 /media/com_phocadownload/images/administrator/icon-box-pm.png
-1 3 0 31743 0 0
+1 4 0 42324 0 0
 /images/addons/img-8.jpg
-1 1 12071008 130047 0 0
+1 2 0 260094 0 0
 /images/Cabecera_princing_Leadera.jpg
-1 30 12065344 1328332 0 0
+1 63 0 3448828 0 0
 /media/editors/tinymce/skins/lightgray/fonts/tinymce-small.woff
-0 13 0 112560 0 0
+0 35 0 300160 0 0
 /media/editors/tinymce/themes/modern/theme.min.js
-0 13 0 157812 0 0
+0 44 0 512889 0 0
 /media/editors/codemirror/mode/css/css.js
 0 3 0 113259 0 0
+/media/com_phocadownload/images/administrator/icon-12-reset.png
+1 1 0 640 0 0
 /templates/shaper_helixultimate/sppagebuilder/addons/animated_number/assets/images/icon.png
-1 5 0 7348 0 0
+1 21 0 31229 0 0
 /cache/com_templates/templates/shaper_helixultimate/bbb6c1782cf01d43cefe036fdf090dcf.css
 0 19 0 7141768 0 0
 /media/jui/js/jquery.ui.sortable.js
 0 341 0 13795155 0 0
 /media/jui/js/jquery-migrate.min.js
-0 17 0 170952 0 0
+0 197 0 1981032 0 0
+/images/convertforms/convertforms-19.png
+1 1 0 8158 0 0
+/media/editors/codemirror/lib/codemirror.min.js
+0 79 0 13279505 0 0
 /media/com_acymailing/images/checkbox.png
 1 1 0 1428 0 0
+/images/sampledata/parks/landscape/727px_rainforest_bluemountainsnsw.jpg
+1 1 0 10813 0 0
+/images/home/Home4-img2.png
+1 2 0 462602 0 0
 /media/jui/js/jquery.autocomplete.js
 0 53 0 1818271 0 0
 /media/com_acymailing/css/acypopup.css
-0 1 0 1484 0 0
+0 2 0 2968 0 0
+/images/sampledata/parks/animals/800px_wobbegong.jpg
+1 1 0 17040 0 0
 /images/pages/team-bg-tstimonials.jpg
-1 6 12063040 635478 0 0
+1 11 0 1165043 0 0
 /components/com_sppagebuilder/addons/audio/assets/images/icon.png
-1 4 0 5736 0 0
+1 11 0 17208 0 0
+/media/com_phocadownload/images/administrator/icon-box-pt.png
+1 1 0 10340 0 0
 /images/addons/flip-box-img-2.png
-1 1 12070752 103567 0 0
+1 2 0 207134 0 0
 /media/media/css/mediaelementplayer.css
-0 4 12043312 100192 0 0
+0 6 0 150288 0 0
 /administrator/components/com_sppagebuilder/assets/css/tinymce.css
-0 5 0 184 0 0
+0 19 0 736 0 0
+/images/home/Home2-img1.jpg
+1 2 0 195724 0 0
+/components/com_sppagebuilder/assets/fonts/fontawesome-webfont.woff2
+0 1 0 77160 0 0
+/images/cabecera_academy_Leadera_Solutions.jpg
+1 67 0 6816701 0 0
+/images/convertforms/convertforms-15.png
+1 1 0 4989 0 0
 /media/editors/tinymce/plugins/print/plugin.min.js
-0 11 0 3223 0 0
+0 14 0 4102 0 0
 /images/phocadownload/libro 2.jpg
-1 1 0 927685 0 0
+1 3 0 2783055 0 0
+/media/editors/tinymce/js/tinymce.min.js
+0 5 0 12400 0 0
 /media/system/js/modal.js
-0 1 0 10127 0 0
+0 15 0 151905 0 0
 /images/2018/09/04/_spmedia_thumbs/banner_leadera_optimize_video.jpg
-1 4 0 175260 0 0
+1 33 0 1285240 0 0
 /images/addons/img-7.jpg
-1 2 0 289158 0 0
+1 3 0 433737 0 0
 /images/2018/09/03/whoisit.jpg
-1 62 0 5503316 0 0
+1 251 0 24129924 0 0
+/images/sampledata/parks/landscape/800px_pinnacles_western_australia.jpg
+1 1 0 15411 0 0
 /media/com_phocadownload/css/administrator/phocadownload.css
-0 10 0 115120 0 0
+0 14 0 161168 0 0
 /media/com_convertforms/js/convertforms.js
-0 82 0 171017 0 0
+0 319 0 677405 0 0
 /media/com_convertforms/templates/diamond_inline_3.jpg
-1 1 0 27680 0 0
+1 3 0 83040 0 0
+/images/sampledata/parks/animals/800px_phyllopteryx_taeniolatus1.jpg
+1 1 0 12388 0 0
 /builder/addons-list-2/lightbox-gallery
 0 1 0 376329 0 0
+/cache/com_templates/templates/shaper_helixultimate/9e724b26e57aa396bf3578bb315e2114.css
+0 5 0 1604306 0 0
 /components/com_sppagebuilder/addons/raw_html/assets/images/icon.png
-1 10 0 18000 0 0
+1 25 0 44000 0 0
+/images/2018/09/08/_spmedia_thumbs/quienessomos_leadera_3.jpg
+1 6 0 226308 0 0
 /images/addons/gallery-img-8.jpg
-1 2 0 72798 0 0
+1 3 0 109197 0 0
 /media/com_acymailing/images/editor/icon-16-initareas.png
-1 1 0 1207 0 0
+1 2 0 2414 0 0
+/templates/shaper_helixultimate/js/system/frontediting.js
+0 15 0 70470 0 0
 /images/2018/09/04/leadera_optimize_1.jpg
-1 16 12064736 1452998 0 0
+1 87 0 10698730 0 0
 /images/team/Team-3.jpg
-1 1 0 78417 0 0
+1 2 0 156834 0 0
 /media/com_content/js/admin-articles-modal.js
-0 4 12063312 8900 0 0
+0 4 0 8900 0 0
 /media/com_convertforms/templates/diamond_inline_2.jpg
-1 1 0 29907 0 0
+1 3 0 89721 0 0
 /media/com_content/js/admin-article-readmore.js
-0 4 12066336 4608 0 0
+0 4 0 4608 0 0
 /media/jui/img/jquery.minicolors.png
-1 8 0 546040 0 0
+1 33 0 2184160 0 0
 /images/addons/image-content-2.jpg
-1 1 12071264 105913 0 0
+1 2 0 211826 0 0
 /administrator/templates/isis/images/logo.png
-1 55 0 246132 0 0
+1 233 0 1054188 0 0
 /templates/shaper_helixultimate/sppagebuilder/addons/pricing/assets/images/icon.png
-1 11 0 19350 0 0
+1 30 0 50310 0 0
 /templates/shaper_helixultimate/sppagebuilder/addons/articles/assets/images/icon.png
-1 5 0 5596 0 0
+1 21 0 23783 0 0
 /precios
-0 74 0 40367227 4 2
+0 138 0 41333407 5 2
 /media/system/js/combobox.js
-0 9 12069552 32049 0 0
+0 18 0 64098 0 0
 /media/com_phocadownload/images/up.png
-1 17 0 14059 0 0
+1 72 0 57063 0 0
 /media/com_phocadownload/images/administrator/icon-48-rafile.png
-1 6 0 15552 0 0
+1 10 0 25920 0 0
 /components/com_sppagebuilder/addons/tab/assets/images/icon.png
-1 5 0 6204 0 0
+1 18 0 21714 0 0
 /media/jui/css/icomoon.css
-0 4 0 47256 0 0
+0 8 0 94512 0 0
+/images/cabecera_privacy_policy_Leadera.jpg
+1 22 0 274500 0 0
 /images/blog/blog-thumb5.jpg
-1 22 0 1765676 0 0
+1 27 0 2166966 0 0
 /components/com_sppagebuilder/addons/progress_bar/assets/images/icon.png
-1 4 0 4233 0 0
+1 13 0 14110 0 0
 /media/editors/codemirror/lib/codemirror.js
 0 5 0 1867245 0 0
+/images/convertforms/convertforms-12.png
+1 1 0 4838 0 0
 /media/editors/tinymce/plugins/contextmenu/plugin.min.js
-0 12 0 12441 0 0
+0 21 0 20358 0 0
+/images/addons/gallery/img-12.jpg
+1 1 0 217103 0 0
 /plugins/system/helixultimate/assets/js/admin/menu.generator.js
-0 6 0 68298 0 0
+0 10 0 102447 0 0
+/images/2018/09/07/_spmedia_thumbs/services_lead.jpg
+1 11 0 792444 0 0
+/landings/leadera-services
+0 88 0 363875 9 1
 /media/jui/img/alpha.png
-1 2 12043840 876 0 0
+1 3 0 1314 0 0
+/administrator/components/com_jdownloads/assets/images/tick.png
+1 1 0 563 0 0
 /servicios
-0 9 0 4149804 1 0
+0 60 0 4705532 1 0
 /media/com_acymailing/images/editor/icon-16-mediabrowser.png
-1 1 0 491 0 0
+1 2 0 982 0 0
 /cache/com_templates/templates/shaper_helixultimate/543c9b79396a2500bc10c59195b399a3.js
-0 2 0 492806 0 0
+0 60 0 14044971 0 0
 /media/com_convertforms/templates/ruby_inline.jpg
-1 1 0 24869 0 0
+1 3 0 74607 0 0
 /plugins/system/helixultimate/assets/images/favicon.ico
-0 1 12062672 2019 0 0
+0 3 0 6057 0 0
 /administrator/components/com_convertforms/models/forms/fields/choices.css
-0 2 0 2006 0 0
+0 25 0 24072 0 0
 /media/system/js/mootools-core-uncompressed.js
 0 57 0 8596284 0 0
+/templates/shaper_helixultimate/css/frontend-edit.css
+0 15 0 47565 0 0
+/administrator/components/com_jdownloads/assets/images/publish_x.png
+1 1 0 495 0 0
 /images/2018/09/04/_spmedia_thumbs/banner_blog_leadera_services.jpg
-1 17 0 480907 0 0
+1 46 0 1282479 0 0
 /media/jui/js/bootstrap-tooltip-extended.min.js
-0 5 0 12410 0 0
+0 143 0 354926 0 0
+/images/sampledata/parks/landscape/800px_cradle_mountain_seen_from_barn_bluff.jpg
+1 1 0 10654 0 0
 /media/media/js/mediaelement-and-player.js
-0 4 12043696 674544 0 0
+0 6 0 1011816 0 0
 /images/cabecera_quienes_somos_Leadera.jpg
-1 21 12042832 1309998 0 0
+1 46 0 4606298 0 0
 /images/blog/blog-thumb4.jpg
-1 71 0 4712128 0 0
+1 76 0 5058608 0 0
 /
-0 146 0 63708771 21 4
+0 619 0 71862433 65 19
+/cache/com_templates/templates/shaper_helixultimate/ae9a5b30e5636629676cd9f93b2a3d32.js
+0 9 0 2031669 0 0
 /media/system/js/fields/calendar.min.js
-0 10 0 251520 0 0
+0 20 0 477888 0 0
 /media/com_acymailing/js/colorpicker/js/colorpicker.js
-0 1 0 22295 0 0
+0 2 0 44590 0 0
 /components/com_sppagebuilder/addons/flickr/assets/images/icon.png
-1 4 0 4602 0 0
+1 11 0 13806 0 0
 /blog/9-seo-what-it-is-and-why-using-it-for-your-website-is-a-good-idea
 0 2 0 1557204 0 0
 /media/editors/tinymce/plugins/codesample/plugin.min.js
-0 11 0 223652 0 0
+0 13 0 264316 0 0
 /images/addons/image-content-1.jpg
-1 1 12071136 82587 0 0
+1 2 0 165174 0 0
+/images/blog/blog-thumb8.jpg
+1 2 0 196150 0 0
+/images/sampledata/parks/animals/180px_wobbegong.jpg
+1 1 0 4576 0 0
 /blog/marketing-automation
-0 2 12067904 901343 0 0
+0 9 0 974276 0 0
 /images/2018/09/03/slide2_leadera_optimize.jpg
-1 68 0 29989464 0 0
+1 272 0 129940146 0 0
+/images/convertforms/convertforms-11.png
+1 1 0 5394 0 0
 /create-account
-0 5 0 713196 0 0
+0 22 0 837360 1 2
+/images/home/img5.jpg
+1 2 0 59838 0 0
+/images/projects/projects-9.jpg
+1 1 0 157783 0 0
 /images/2018/09/04/_spmedia_thumbs/banner_ebook_leadera.jpg
-1 6 0 132627 0 0
+1 35 0 972598 0 0
 /images/images/sliede-5.jpg
-1 1 0 0 0 0
+1 3 0 177556 0 0
+/administrator/components/com_jdownloads/assets/images/categories48.png
+1 2 0 3836 0 0
+/images/2018/09/05/Leadera_Optimize_2_thumbnail.jpg
+1 10 0 260996 0 0
+/images/blog/Lead_nurturing_poderosa_atraccion_clientes_Leaderablog_2.jpg
+1 13 0 789309 0 0
 /media/com_phocadownload/images/administrator/icon-box-pfv.png
-1 1 0 10578 0 0
+1 2 0 21156 0 0
+/images/home/Home5-img6.png
+1 2 0 1458174 0 0
 /media/com_phocadownload/images/administrator/icon-16-folder-small.png
-1 2 0 790 0 0
+1 3 0 1185 0 0
 /media/com_phocadownload/images/administrator/icon-12-approve.png
-1 3 0 2106 0 0
+1 6 0 4212 0 0
 /templates/shaper_helixultimate/favicon.ico
-0 261 0 296700 0 0
+0 1028 0 1177600 0 0
 /templates/system/css/editor.css
-0 13 0 15574 0 0
+0 95 0 113810 0 0
 /media/editors/tinymce/plugins/preview/plugin.min.js
-0 12 0 17622 0 0
+0 21 0 28836 0 0
 /media/plg_quickicon_joomlaupdate/js/jupdatecheck.js
-0 25 0 52700 0 0
+0 39 0 82212 0 0
 /images/2018/09/04/_spmedia_thumbs/leadera_optimize_2.jpg
-1 19 0 760938 0 0
+1 48 0 3150530 0 0
 /plugins/system/helixultimate/assets/css/admin/helix-ultimate.css
-0 1 0 61194 0 0
+0 6 0 367164 0 0
+/images/projects/tmb-projects-2.jpg
+1 1 0 93137 0 0
+/cache/com_templates/templates/shaper_helixultimate/d6b72916f745d24d33944e3df683237d.css
+0 69 0 24265386 0 0
 /cache/com_templates/templates/shaper_helixultimate/7324e1a9ab04b351f609a28f49dd66c4.js
 0 51 0 13514466 0 0
 /administrator/components/com_convertforms/models/forms/fields/choices.js
-0 2 0 8596 0 0
+0 25 0 103152 0 0
+/images/blog/blog-thumb1.jpg
+1 2 0 180176 0 0
+/administrator/components/com_jdownloads/assets/images/jd_arrow_down.png
+1 1 0 223 0 0
 /media/jui/css/chosen-sprite.png
-1 1 12062416 538 0 0
+1 6 0 3228 0 0
 /media/jui/js/treeselectmenu.jquery.js
 0 43 0 150758 0 0
 /templates/shaper_helixultimate/css/slide-animate.css
-0 78 0 5159700 0 0
+0 273 0 18437328 0 0
+/images/home/Home4-bg3.jpg
+1 2 0 712894 0 0
 /components/com_sppagebuilder/addons/divider/assets/images/icon.png
-1 8 0 11851 0 0
+1 17 0 23702 0 0
+/images/sampledata/parks/animals/200px_phyllopteryx_taeniolatus1.jpg
+1 1 0 5067 0 0
+/images/addons/gallery/img-11.jpg
+1 1 0 157783 0 0
 /media/com_acymailing/images/dashboard/step_contacts.png
-1 1 0 3762 0 0
+1 2 0 7524 0 0
 /images/home/Home1-img1.png
-1 28 0 12903410 0 0
+1 30 0 13895980 0 0
 /images/home/Home1-bg1.jpg
-1 76 0 5473540 0 0
+1 270 0 19792104 0 0
 /media/jui/js/cms.js
-0 3 0 5709 0 0
+0 36 0 68508 0 0
 /media/com_acymailing/css/acymenu.css
-0 1 0 9690 0 0
+0 2 0 19380 0 0
 /media/editors/tinymce/plugins/link/plugin.min.js
-0 13 0 83928 0 0
+0 44 0 272766 0 0
 /images/2018/09/04/_spmedia_thumbs/cabecera_leadera_optimize.jpg
-1 16 0 364620 0 0
+1 45 0 1750176 0 0
 /builder/addons-list-2/modals
 0 1 0 361509 0 0
+/images/blog/Lead_nurturing_poderosa_atraccion_clientes_Leaderablog_1.jpg
+1 218 0 32951556 0 0
 /media/jui/js/jquery-noconflict.js
-0 752 0 15792 0 0
+0 932 0 19572 0 0
 /politica-privacidad
-0 4 12062928 1658146 0 0
+0 11 0 1723988 0 0
+/media/editors/codemirror/mode/css/css.min.js
+0 79 0 1962992 0 0
 /media/editors/tinymce/plugins/table/plugin.min.js
-0 11 0 518386 0 0
+0 13 0 612638 0 0
+/cache/com_templates/templates/shaper_helixultimate/b5501d6d2c01d13f2c5dd09a39b6c5b0.js
+0 66 0 32479884 0 0
+/images/jdownloads/updimages/green2.png
+1 1 0 725 0 0
+/images/2018/09/05/iStock-543665568_medium.jpg
+1 1 0 154681 0 0
 /images/addons/gallery-img-5.jpg
-1 2 0 58478 0 0
+1 3 0 87717 0 0
 /media/editors/tinymce/plugins/colorpicker/plugin.min.js
-0 12 0 14664 0 0
+0 36 0 42770 0 0
+/images/sampledata/parks/animals/180px_koala_ag1.jpg
+1 1 0 4047 0 0
 /media/com_phocadownload/images/administrator/icon-48-tags.png
-1 6 0 12492 0 0
+1 10 0 20820 0 0
+/phocadownload/Estrategias_clave_de_Lead_Management_para_cerrar_ventas_con_exito.pdf
+0 1 0 36517 0 0
+/images/cabecera_cookies_Leadera.jpg
+1 15 0 243051 0 0
 /plugins/editors/acyeditor/acyeditor/ckeditor/skins/moono/editor.css
-0 1 0 36350 0 0
+0 2 0 72700 0 0
 /images/pages/services-img-6.jpg
-1 1 0 41424 0 0
+1 2 0 82848 0 0
 /media/plg_system_nrframework/js/smarttagsbox.js
-0 2 0 12460 0 0
+0 25 0 149520 0 0
 /media/com_phocadownload/images/administrator/logo-phoca.png
-1 7 0 171066 0 0
+1 11 0 268818 0 0
 /administrator/components/com_sppagebuilder/assets/img/disable-pattern.png
-1 3 0 3382 0 0
+1 15 0 18601 0 0
 /media/com_acymailing/templates/newsletter-6/newsletter-6.png
-1 1 0 4023 0 0
+1 2 0 8046 0 0
 /media/com_convertforms/templates/ruby_inline_2.jpg
-1 1 0 32994 0 0
+1 3 0 98982 0 0
 /templates/protostar/template_preview.png
-1 3 0 375540 0 0
+1 20 0 2503600 0 0
+/images/convertforms/convertforms-21.png
+1 1 0 9234 0 0
 /images/2018/09/03/slide3_leadera_sevices.jpg
-1 63 0 4943734 0 0
+1 142 0 11659750 0 0
+/media/editors/codemirror/lib/codemirror.min.css
+0 79 0 460728 0 0
+/images/convertforms/convertforms-17.png
+1 1 0 11534 0 0
 /media/editors/tinymce/plugins/directionality/plugin.min.js
-0 11 0 7986 0 0
+0 14 0 10164 0 0
 /media/com_convertforms/templates/diamond_inline.jpg
-1 1 0 31294 0 0
+1 3 0 93882 0 0
+/images/partners/partners-6.png
+1 1 0 3866 0 0
 /templates/shaper_helixultimate/headers/style-3/thumb.jpg
-1 1 0 32507 0 0
+1 6 0 195042 0 0
+/media/editors/codemirror/lib/addons.min.js
+0 79 0 4569913 0 0
+/create-account/profile
+0 2 0 20182 0 0
 /components/com_sppagebuilder/addons/empty_space/assets/images/icon.png
-1 8 0 10101 0 0
+1 27 0 33189 0 0
 /plugins/system/helixultimate/assets/css/admin/menu.generator.css
-0 6 0 105672 0 0
+0 10 0 158508 0 0
 /images/2018/09/03/_spmedia_thumbs/istock-892272762.png
-1 14 0 737478 0 0
+1 40 0 3072825 0 0
 /media/media/images/dots.gif
 1 2 0 302 0 0
 /templates/shaper_helixultimate/sppagebuilder/addons/feature/assets/images/icon.png
-1 11 0 20150 0 0
+1 30 0 52390 0 0
+/images/pages/partners-4.jpg
+1 1 0 7042 0 0
+/images/addons/gallery/img-3.jpg
+1 1 0 365583 0 0
 /media/jui/js/ajax-chosen.min.js
-0 1 12069280 2821 0 0
+0 4 0 11284 0 0
 /images/addons/gallery/img-tmb-10.jpg
-1 1 0 200170 0 0
+1 2 0 400340 0 0
 /administrator/components/com_sppagebuilder/assets/js/engine.js
-0 21 0 27643900 0 0
+0 48 0 56671325 0 0
 /images/addons/img-2.jpg
-1 1 12072032 127216 0 0
+1 2 0 254432 0 0
+/images/cabecera_anti_spam_Leadera.jpg
+1 17 0 368553 0 0
 /media/com_convertforms/css/convertforms.css
-0 86 0 735804 0 0
+0 348 0 3024972 0 0
 /components/com_sppagebuilder/addons/ajax_contact/assets/images/icon.png
-1 4 0 4821 0 0
+1 11 0 14463 0 0
 /phocadownloadpap/userupload/libro1.jpg
 1 1 0 95893 0 0
 /components/com_sppagebuilder/addons/icon/assets/images/icon.png
-1 7 0 10014 0 0
+1 20 0 28373 0 0
+/images/jdownloads/updimages/grey.png
+1 1 0 733 0 0
+/images/jdownloads/catimages/folder.png
+1 1 0 1744 0 0
+/images/sampledata/parks/landscape/180px_ormiston_pound.jpg
+1 1 0 988 0 0
 /templates/shaper_helixultimate/sppagebuilder/addons/testimonialpro/assets/images/icon.png
-1 4 0 5541 0 0
+1 13 0 18470 0 0
+/images/2018/09/08/_spmedia_thumbs/cabecera_servicios_leadera.jpg
+1 10 0 262460 0 0
 /images/breadcrumbs.jpg
-1 12 0 990990 0 0
+1 23 0 1891890 0 0
 /media/com_acymailing/images/dashboard/step_sendprocess.png
-1 1 0 4325 0 0
+1 2 0 8650 0 0
+/images/2018/09/08/whoisit.jpg
+1 31 20919776 1703008 0 0
 /media/jui/css/jquery.minicolors.css
-0 107 0 728349 0 0
+0 134 0 912138 0 0
 /media/system/js/validate-uncompressed.js
 0 223 0 1681420 0 0
 /administrator/templates/isis/favicon.ico
-0 13 0 26247 0 0
+0 33 0 66627 0 0
 /robots.txt
-0 2 0 0 0 0
+0 5 0 0 0 0
+/images/pages/service2-img-3.jpg
+1 1 0 33944 0 0
 /plugins/editors/acyeditor/acyeditor/ckeditor/plugins/addtag/plugin.js
-0 1 0 645 0 0
+0 2 0 1290 0 0
 /media/media/js/mediafield.js
 0 130 0 971880 0 0
+/administrator/components/com_jdownloads/assets/images/files48.png
+1 2 0 3736 0 0
 /plugins/system/helixultimate/assets/js/admin/modal.js
-0 6 0 23754 0 0
+0 11 0 35631 0 0
 /media/system/js/combobox-uncompressed.js
 0 43 0 293690 0 0
 /images/blog/blog-img2.jpg
-1 2 0 52806 0 0
+1 4 0 105612 0 0
+/images/cabecera_aviso_legal_Leadera.jpg
+1 14 0 591651 0 0
 /media/com_acymailing/images/dashboard/plane2.png
-1 1 0 1851 0 0
+1 2 0 3702 0 0
 /templates/shaper_helixultimate/fonts/Linearicons.woff
-0 245 0 97893840 0 0
+0 815 0 328065720 0 0
 /media/system/js/mootools-more-uncompressed.js
 0 55 0 19187465 0 0
 /media/jui/js/sortablelist.js
-0 157 0 1509712 0 0
+0 185 0 1778960 0 0
 /media/jui/css/jquery.searchtools.css
-0 228 0 463752 0 0
+0 311 0 632574 0 0
 /media/jui/css/sortablelist.css
-0 157 0 463307 0 0
+0 185 0 545935 0 0
 /images/logo-4.png
-1 2 0 2124 0 0
+1 4 0 4248 0 0
 /images/2018/09/04/_spmedia_thumbs/cabecera_leadera_segment.jpg
-1 23 0 1150897 0 0
+1 52 0 3774341 0 0
 /media/com_phocadownload/images/administrator/icon-box-pf.png
-1 3 0 31782 0 0
+1 6 0 63564 0 0
+/images/home/img3.jpg
+1 2 0 50702 0 0
+/images/blog/IA_aplicada_servicios_Leaderablog_2.jpg
+1 11 0 588356 0 0
 /images/2018/09/04/banner_leadera_optimize_video.jpg
-1 12 12074160 370161 0 0
+1 132 0 4071771 0 0
 /images/addons/img-5.jpg
-1 1 12072160 150625 0 0
+1 2 0 301250 0 0
 /media/com_phocadownload/images/administrator/icon-48-files.png
-1 6 0 19404 0 0
+1 10 0 32340 0 0
 /images/team/Team-5.jpg
-1 1 0 93493 0 0
+1 2 0 186986 0 0
 /media/jui/css/chosen.css
-0 740 0 9076840 0 0
+0 960 0 11775360 0 0
 /media/system/js/keepalive-uncompressed.js
 0 662 0 817570 0 0
 /media/com_convertforms/templates/ruby_inline_3.jpg
-1 1 0 29642 0 0
+1 3 0 88926 0 0
 /administrator/modules/mod_sppagebuilder_icons/tmpl/images/pages.png
-1 13 0 17380 0 0
+1 26 0 31600 0 0
 /media/com_phocadownload/images/administrator/icon-48-layouts.png
-1 6 0 5592 0 0
+1 10 0 9320 0 0
 /media/system/js/modal-fields.js
-0 1 12069152 2976 0 0
+0 5 0 14880 0 0
 /media/system/js/validate.js
-0 11 0 34298 0 0
+0 137 0 427166 0 0
 /media/mod_languages/images/en_gb.gif
-1 42 0 41080 0 0
+1 138 0 135564 0 0
+/images/partners/partners-3.png
+1 1 0 3398 0 0
 /media/com_convertforms/font/cfont.woff2
-0 4 0 11136 0 0
+0 9 0 22272 0 0
 /images/addons/img-9.jpg
-1 2 0 307994 0 0
+1 3 0 461991 0 0
 /images/pages/about-img2-bg.jpg
-1 8 0 79760 0 0
+1 14 0 129610 0 0
+/images/projects/projects-4.jpg
+1 1 0 148721 0 0
 /media/editors/tinymce/plugins/textcolor/plugin.min.js
-0 12 0 49740 0 0
+0 36 0 145075 0 0
 /media/system/js/subform-repeatable-uncompressed.js
 0 1 0 8814 0 0
+/blog/cognitive-computing/37-cognitive-computing-qué-es-y-cómo-puede-ayudar-a-tu-compañía/df
+0 1 0 10252 0 0
+/images/2018/09/08/quienessomos_leadera_2.jpg
+1 23 20920800 795072 0 0
+/images/home/img6.jpg
+1 2 0 60622 0 0
 /plugins/system/helixultimate/assets/css/admin/modal.css
-0 6 0 51126 0 0
+0 11 0 76689 0 0
 /media/editors/tinymce/langs/es.js
-0 11 0 72765 0 0
+0 13 0 85995 0 0
+/cache/com_templates/templates/shaper_helixultimate/70516a41925c0bf2efef521548bc6e86.js
+0 1 0 264123 0 0
 /media/com_phocadownload/images/administrator/icon-16-folder.png
-1 2 0 1074 0 0
+1 3 0 1611 0 0
+/blog/lead-nurturing/35-lead-nurturing-y-su-poderosa-atracción-de-clientes
+0 8 0 109866 0 0
 /media/jui/js/chosen.jquery.min.js
-0 54 0 1836540 0 0
+0 273 0 9284730 0 0
+/images/jdownloads/updimages/yellow.png
+1 1 0 727 0 0
 /media/com_acymailing/images/icons/icon-16-add.png
 1 1 0 618 0 0
 /administrator/components/com_sppagebuilder/assets/img/addon-default.png
-1 5 0 9764 0 0
+1 14 0 26851 0 0
+/images/home/Home1-bg2.jpg
+1 2 0 251700 0 0
 /images/addons/img-12.jpg
-1 1 12071776 217103 0 0
+1 2 0 434206 0 0
 /plugins/system/helixultimate/assets/js/admin/layout.js
-0 1 12061328 13344 0 0
+0 6 0 66720 0 0
+/images/pages/case-img-1.jpg
+1 1 0 149407 0 0
 /plugins/system/helixultimate/assets/css/admin/details.css
-0 1 25769803777 568 0 0
+0 7 0 3976 0 0
 /plugins/editors/acyeditor/acyeditor/ckeditor/plugins/codemirror/lang/es.js
-0 1 0 302 0 0
+0 2 0 604 0 0
 /media/editors/tinymce/js/plugins/dragdrop/plugin.min.js
-0 11 0 25300 0 0
+0 13 0 29900 0 0
 /media/media/css/popup-imagemanager.css
-0 16 0 49184 0 0
+0 17 0 52258 0 0
+/images/home/Home5-img2.jpg
+1 2 0 43164 0 0
 /images/2018/09/04/_spmedia_thumbs/services_leadera_opt.jpg
-1 15 7020374245161919860 578202 0 0
+1 44 0 2409175 0 0
 /components/com_sppagebuilder/addons/clients/assets/images/icon.png
-1 4 0 6882 0 0
+1 11 0 20646 0 0
+/images/sampledata/parks/animals/789px_spottedquoll_2005_seanmcclean.jpg
+1 1 0 10301 0 0
 /administrator/components/com_sppagebuilder/assets/js/script.js
-0 21 0 93940 0 0
+0 46 0 192577 0 0
 /blog/buscador
-0 2 0 1272587 0 0
+0 6 0 1317004 0 0
 /quienes-somos
-0 19 0 7509881 3 0
+0 98 0 8352679 6 0
+/images/projects/projects-3.jpg
+1 1 0 150625 0 0
+/images/convertforms/convertforms-02.png
+1 1 0 2441 0 0
+/landings/leadera-segment
+0 45 0 221511 6 0
+/images/2018/09/06/slide3_leadera_sevices.jpg
+1 157 0 13826494 0 0
 /images/2018/09/03/_spmedia_thumbs/whoisit.jpg
-1 9 0 364225 0 0
+1 32 0 1529745 0 0
 /components/com_sppagebuilder/assets/js/jquery.magnific-popup.min.js
-0 245 0 4837822 0 0
+0 745 0 14813331 0 0
+/images/projects/projects-5.jpg
+1 1 0 144579 0 0
+/images/home/img1.jpg
+1 2 0 49390 0 0
+/images/addons/gallery/img-10.jpg
+1 1 0 200170 0 0
 /images/2018/09/04/banner_blog_leadera_services.jpg
-1 45 12068752 1085307 0 0
+1 132 0 2837985 0 0
 /media/system/css/mootree.css
-0 4 12043440 1964 0 0
+0 6 0 2946 0 0
+/images/convertforms/convertforms-16.png
+1 1 0 11509 0 0
 /media/system/js/keepalive.js
-0 73 0 33726 0 0
+0 662 0 305844 0 0
 /templates/shaper_helixultimate/sppagebuilder/addons/modal/assets/images/icon.png
-1 12 0 17732 0 0
+1 22 0 30628 0 0
+/images/blog/blog-img4.jpg
+1 2 0 214974 0 0
 /plugins/editors/acyeditor/acyeditor/ckeditor/plugins/codemirror/plugin.js
-0 1 0 49901 0 0
+0 2 0 99802 0 0
 # End Of Table - urls
 # -sites- (monthly)
 ec2-54-165-174-18.compute-1.amazonaws.com
 0 1 0 381 1 1535992089
 /component/ajax/
+ec2-18-206-206-28.compute-1.amazonaws.com
+0 1 0 381 1 1536170822
+/administrator/
+ec2-52-72-111-29.compute-1.amazonaws.com
+0 1 0 381 1 1536233999
+/landings/leadera-services
+ec2-54-152-211-193.compute-1.amazonaws.com
+0 1 0 381 1 1536151199
+/administrator/
 ec2-18-206-157-114.compute-1.amazonaws.com
-0 1 0 381 1 1535984230
-/component/ajax/
+0 2 0 762 2 1536148691
+/landings/leadera-segment
 ec2-54-84-155-151.compute-1.amazonaws.com
 0 2 0 762 2 1536061578
 /precios
 static-50-81-63-95.ipcom.comunitel.net
-0 3214 3116 172457025 6 1536125938
-/component/ajax/
+0 6720 6498 391063721 7 1536439994
+/administrator/
+ec2-34-217-128-237.us-west-2.compute.amazonaws.com
+0 1 0 381 1 1536151049
+/
+159.pool92-176-177.dynamic.orange.es
+0 2047 1560 133033916 4 1536431145
+/precios
 ec2-34-219-121-1.us-west-2.compute.amazonaws.com
 0 1 0 381 1 1535980250
 /component/ajax/
 ec2-34-229-233-161.compute-1.amazonaws.com
 0 4 0 1524 4 1536081520
 /component/ajax/
+ec2-54-166-184-127.compute-1.amazonaws.com
+0 1 0 381 1 1536156054
+/
+ec2-54-174-171-62.compute-1.amazonaws.com
+0 1 0 381 1 1536136439
+/
 194.30.98.184
-0 21908 20645 2044471626 44 1536085010
-/component/ajax/
+0 46209 42742 3653894770 128 1536334603
+/administrator/
 ec2-54-218-1-176.us-west-2.compute.amazonaws.com
 0 2 0 762 2 1536068819
 /administrator/
+ec2-54-85-176-102.compute-1.amazonaws.com
+0 1 0 381 1 1536164098
+/blog
 ec2-35-166-7-158.us-west-2.compute.amazonaws.com
 0 1 0 381 1 1536050625
 /
 ec2-35-165-53-55.us-west-2.compute.amazonaws.com
 0 1 0 381 1 1536069605
 /administrator/
+ec2-34-211-193-189.us-west-2.compute.amazonaws.com
+0 1 0 381 1 1536147536
+/component/ajax/
 ec2-34-210-73-87.us-west-2.compute.amazonaws.com
 0 1 0 381 1 1536076381
 /administrator/
 ec2-52-40-20-219.us-west-2.compute.amazonaws.com
-0 3 0 1143 2 1536074174
+0 4 0 1524 3 1536140106
 /administrator/
 31-4-180-160.red-acceso.airtel.net
 0 3 0 1143 1 1535976080
 /
 google-proxy-66-249-93-55.google.com
-0 4 0 1524 4 1536102845
+0 5 0 1905 5 1536168880
 /administrator/
 ec2-54-163-83-179.compute-1.amazonaws.com
-0 2 0 762 2 1536065118
+0 3 0 1143 3 1536143871
 /administrator/
 ec2-54-185-85-155.us-west-2.compute.amazonaws.com
 0 2 0 762 2 1536079942
+/administrator/
+google-proxy-66-249-81-250.google.com
+0 1 0 381 1 1536412580
 /administrator/
 ec2-52-207-53-149.compute-1.amazonaws.com
 0 1 0 381 1 1535994871
 /administrator/
 ec2-34-228-6-255.compute-1.amazonaws.com
-0 1 0 381 1 1536067611
+0 2 0 762 2 1536234293
+/blog/lead-nurturing
+google-proxy-66-249-81-246.google.com
+0 1 0 381 1 1536431279
 /administrator/
 ec2-54-214-213-230.us-west-2.compute.amazonaws.com
 0 1 0 381 1 1535972901
 /component/ajax/
 google-proxy-66-249-93-59.google.com
-0 3 0 1143 3 1536102846
-/
+0 5 0 1905 5 1536411226
+/administrator/
 google-proxy-66-249-93-57.google.com
-0 1 0 381 1 1536080706
+0 4 0 1524 4 1536411226
 /
 ec2-34-207-239-213.compute-1.amazonaws.com
 0 1 0 381 1 1535994911
@@ -1309,147 +1894,251 @@ ec2-34-220-188-147.us-west-2.compute.amazonaws.com
 0 2 0 762 2 1536083485
 /administrator/
 13.red-83-54-185.dynamicip.rima-tde.net
-0 1080 1017 96464666 3 1536082910
+0 1160 1070 100904378 5 1536255257
 /component/ajax/
+ec2-54-164-194-74.compute-1.amazonaws.com
+0 1 0 381 1 1536170822
+/
 # End Of Table - sites (monthly)
 # -sites- (daily)
 static-50-81-63-95.ipcom.comunitel.net
-0 68 68 4080 1 1536125938
-/component/ajax/
+0 2790 2709 183873079 1 1536439994
+/administrator/
+159.pool92-176-177.dynamic.orange.es
+0 2047 1560 133033916 4 1536431145
+/precios
+google-proxy-66-249-81-250.google.com
+0 1 0 381 1 1536412580
+/administrator/
+google-proxy-66-249-81-246.google.com
+0 1 0 381 1 1536431279
+/administrator/
+google-proxy-66-249-93-59.google.com
+0 1 0 381 1 1536411226
+/administrator/
+google-proxy-66-249-93-57.google.com
+0 1 0 381 1 1536411226
+/
 # End Of Table - sites (daily)
 # -referrers- 
 http://newfront-pre.wiseconversion.com/media/jui/css/icomoon.css
-0 2
+0 3
 http://newfront-pre.wiseconversion.com/blog/35-cognitive-computing
 0 44
+http://newfront-pre.wiseconversion.com/academy-resources-downloads545
+0 4
 http://newfront-pre.wiseconversion.com/blog/9-seo-what-it-is-and-why-using-it-for-your-website-is-a-good-idea
 0 501
 http://newfront-pre.wiseconversion.com/blog/buscador
-0 8
+0 61
 http://newfront-pre.wiseconversion.com/quienes-somos
-0 188
+0 677
+http://newfront-pre.wiseconversion.com/sskldfnklsdfnksdklf
+0 1
+http://newfront-pre.wiseconversion.com/cache/com_templates/templates/shaper_helixultimate/d6b72916f745d24d33944e3df683237d.css
+0 108
+http://newfront-pre.wiseconversion.com/templates/shaper_helixultimate/css/font-awesome.min.css
+0 29
+http://newfront-pre.wiseconversion.com/landings/leadera-service
+0 1
 http://newfront-pre.wiseconversion.com/cache/com_templates/templates/shaper_helixultimate/3afbc2942ad0186a3c2c1f6f54983d9e.css
-0 78
+0 370
 http://newfront-pre.wiseconversion.com/
-0 2914
+0 9376
+http://newfront-pre.wiseconversion.com/images/home/Home1-bg1.jpg
+0 1
 http://newfront-pre.wiseconversion.com/politica-cookies
-0 7
+0 30
 http://newfront-pre.wiseconversion.com/media/com_convertforms/css/convertforms.sys.css
-0 4
+0 9
+http://newfront-pre.wiseconversion.com/landings/leadera-optimize
+0 61
+http://newfront-pre.wiseconversion.com/blog/inteligencia-artificial/36-inteligencia-artificial-aplicada-a-los-servicios-tic
+0 36
+http://newfront-pre.wiseconversion.com/blog/lead-nurturing
+0 53
+http://newfront-pre.wiseconversion.com/administrator/components/com_jdownloads/assets/css/style.css
+0 2
 http://newfront-pre.wiseconversion.com/blog
-0 1774
+0 3750
 http://newfront-pre.wiseconversion.com/administrator/index.php
-0 16616
+0 28580
 http://newfront-pre.wiseconversion.com/cache/com_templates/templates/shaper_helixultimate/55aa31a21514f3095b8fca60179e446a.css
 0 126
 http://newfront-pre.wiseconversion.com/administrator/components/com_sppagebuilder/assets/css/sppagebuilder.css
-0 3
+0 15
+http://www.google.com/search
+0 2
+http://newfront-pre.wiseconversion.com/component/mailto/
+0 2
 http://newfront-pre.wiseconversion.com/media/com_acymailing/css/acyicon.css
-0 1
+0 2
 http://newfront-pre.wiseconversion.com/create-account
-0 40
+0 225
 http://newfront-pre.wiseconversion.com/productos-marketing-automation/leadera_segment
-0 490
-http://newfront-pre.wiseconversion.com/media/system/css/modal.css
+0 1823
+http://newfront-pre.wiseconversion.com/images/2018/09/03/whoisit.jpg
 0 1
+http://newfront-pre.wiseconversion.com/media/system/css/modal.css
+0 3
 http://newfront-pre.wiseconversion.com/phpinfo.php
 0 1
 http://newfront-pre.wiseconversion.com/administrator/components/com_sppagebuilder/assets/css/font-awesome.min.css
-0 24
+0 52
 http://newfront-pre.wiseconversion.com/administrator/components/com_sppagebuilder/assets/css/pbfont.css
-0 22
+0 45
+http://newfront-pre.wiseconversion.com/blog/34-marketing-automation-estrategias-clave-para-disparar-la-venta
+0 26
+http://newfront-pre.wiseconversion.com/images/2018/08/02/dominion.png
+0 1
 http://newfront-pre.wiseconversion.com/plugins/editors/acyeditor/acyeditor/css/acyeditor_template.css
-0 2
+0 4
 - (Direct Request)
-0 229
+0 669
+http://newfront-pre.wiseconversion.com/create-account/profile
+0 9
+http://newfront-pre.wiseconversion.com/component/users/
+0 1055
+http://newfront-pre.wiseconversion.com/productos-marketing-automation/leadera_optimizesdf
+0 1
 http://newfront-pre.wiseconversion.com/administrator/templates/isis/css/template.css
-0 55
+0 235
 http://newfront-pre.wiseconversion.com/blog/marketing-automation
-0 41
+0 124
+http://newfront-pre.wiseconversion.com/blog/cognitive-computing/37-cognitive-computing-qué-es-y-cómo-puede-ayudar-a-tu-compañía/df
+0 24
 http://newfront-pre.wiseconversion.com/plugins/system/helixultimate/assets/css/font-awesome.min.css
-0 7
+0 11
 http://newfront-pre.wiseconversion.com/productos-marketing-automation/leadera_optimize
-0 799
+0 1266
 http://newfront-pre.wiseconversion.com/builder/addons-list-2/lightbox-gallery
 0 28
+http://newfront-pre.wiseconversion.com/blosds
+0 10
+http://newfront-pre.wiseconversion.com/politica-etica-y-conducta
+0 17
 http://newfront-pre.wiseconversion.com/aviso-legal
-0 55
+0 74
 http://newfront-pre.wiseconversion.com/servicios
-0 48
-http://newfront-pre.wiseconversion.com/politica-anti-spam
-0 4
-http://newfront-pre.wiseconversion.com/plugins/editors/acyeditor/acyeditor/ckeditor/skins/moono/editor.css
+0 346
+http://newfront-pre.wiseconversion.com/administrator/i
 0 1
+http://newfront-pre.wiseconversion.com/politica-anti-spam
+0 27
+http://newfront-pre.wiseconversion.com/plugins/editors/acyeditor/acyeditor/ckeditor/skins/moono/editor.css
+0 2
 http://newfront-pre.wiseconversion.com/images/home/Home1-img1.png
 0 1
+http://newfront-pre.wiseconversion.com/landings/leadera-segment
+0 289
 http://newfront-pre.wiseconversion.com/cache/com_templates/templates/shaper_helixultimate/f284ef01c74222fb6f2d7f9843cb136e.css
 0 128
 http://newfront-pre.wiseconversion.com/cache/com_templates/templates/shaper_helixultimate/bbb6c1782cf01d43cefe036fdf090dcf.css
 0 30
 http://newfront-pre.wiseconversion.com/builder/addons-list-2/modals
 0 7
+http://newfront-pre.wiseconversion.com/blog/cognitive-computing/37-cognitive-computing-qué-es-y-cómo-puede-ayudar-a-tu-compañía
+0 72
+http://newfront-pre.wiseconversion.com/cache/com_templates/templates/shaper_helixultimate/9e724b26e57aa396bf3578bb315e2114.css
+0 4
 http://newfront-pre.wiseconversion.com/images/sampledata/parks/banner_cradle.jpg
 0 1
-http://newfront-pre.wiseconversion.com/precios
-0 946
-http://newfront-pre.wiseconversion.com/media/jui/css/chosen.css
+http://newfront-pre.wiseconversion.com/images/2018/09/03/slide1_leadera_segment.jpg
 0 1
+http://newfront-pre.wiseconversion.com/blog/cognitive-computing
+0 28
+http://newfront-pre.wiseconversion.com/precios
+0 1569
+http://newfront-pre.wiseconversion.com/phocadownload/Estrategias_clave_de_Lead_Management_para_cerrar_ventas_con_exito.pdf
+0 1
+http://newfront-pre.wiseconversion.com/media/jui/css/chosen.css
+0 6
 http://newfront-pre.wiseconversion.com/blog/categoria-blog1
 0 54
 http://newfront-pre.wiseconversion.com/administrator/
-0 201
+0 332
 http://newfront-pre.wiseconversion.com/politica-privacidad
-0 267
+0 310
 http://newfront-pre.wiseconversion.com/images/coming_soon_bg.jpg
 0 1
+http://newfront-pre.wiseconversion.com/component/asd
+0 2
+http://newfront-pre.wiseconversion.com/cache/com_templates/templates/shaper_helixultimate/64ddd8725ec76cad3b04c16ba8a2e93e.css
+0 108
 http://newfront-pre.wiseconversion.com/academy-resources-downloads
-0 315
+0 1548
 http://newfront-pre.wiseconversion.com/media/editors/tinymce/skins/lightgray/skin.min.css
-0 25
+0 62
 http://newfront-pre.wiseconversion.com/media/jui/css/jquery.minicolors.css
-0 8
+0 33
 http://newfront-pre.wiseconversion.com/media/com_acymailing/css/backend_default.css
-0 8
+0 16
 http://newfront-pre.wiseconversion.com/index.php
-0 5
+0 207
 http://newfront-pre.wiseconversion.com/cache/com_templates/templates/shaper_helixultimate/56c0a507731d1007dad52ed9773638b0.css
-0 60
+0 730
+http://newfront-pre.wiseconversion.com/blog/lead-nurturing/35-lead-nurturing-y-su-poderosa-atracción-de-clientes
+0 71
+http://newfront-pre.wiseconversion.com/landings/leadera-services
+0 360
 http://newfront-pre.wiseconversion.com/media/com_phocadownload/css/administrator/phocadownload.css
-0 7
+0 17
+http://newfront-pre.wiseconversion.com/media/com_convertforms/js/convertforms.js
+0 1
+http://newfront-pre.wiseconversion.com/blog/marketing-automation/34-marketing-automation-estrategias-clave-para-disparar-la-venta
+0 183
+http://newfront-pre.wiseconversion.com/adsa
+0 3
+http://newfront-pre.wiseconversion.com/images/pages/about_img.jpg
+0 1
 http://newfront-pre.wiseconversion.com/cache/com_templates/templates/shaper_helixultimate/925e8de5a06f3d061b3a5b17e558d987.css
 0 68
+http://newfront-pre.wiseconversion.com/política-privacidad
+0 33
 # End Of Table - referrers
 # -agents- 
 Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36
-0 1008
+0 13411
 Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36
 0 10728
 Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Mobile Saf
 0 28
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; Google Web Preview) Chrome/41.0.2272.118 Safari/537.36
+0 2
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.9 Mobile Safar
+0 37
 Slackbot-LinkExpanding 1.0 (+https://api.slack.com/robots)
-0 3
+0 8
 Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/60
-0 29
+0 1463
 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36
-0 4583
+0 6996
 Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
-0 30
+0 38
 Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Mobile Safa
 0 146
+Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 
+0 63
 Mozilla/5.0 (iPhone; CPU iPhone OS 11_4_1 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) CriOS/68.0.3440.83 Mobile/1
 0 3
+Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.9 Safari/537.36
+0 2517
 Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 Google Favicon
-0 8
+0 14
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Mobile Saf
+0 2757
 Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Sa
-0 29
+0 1412
 Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Safari/537.36
-0 9649
+0 16367
 Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3534.4 Mobile Safar
-0 2
+0 140
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.1
+0 71
 # End Of Table - agents
 # -search strings- 
 # End Of Table - search strings
 # -usernames- 
 newfront-pre
-0 25393 24778 2285158249 45 1536125938
+0 53961 51870 4249573081 124 1536439994
 # End Of Table - usernames
