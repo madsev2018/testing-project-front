@@ -193,10 +193,18 @@
   font-size: 30px;
 }
 
+.toggle-custom {
+    width: 315px;
+}
+
 @media (max-width: 1200px){
   .mensual-span,.mensual-2-span,.anual-span,.anual-2-span {
   	font-size: 20px;
   }
+  .toggle-custom {
+    margin: 0 auto !important;
+    width: 255px !important;
+}
 }
 #sp-right .menu-social-blog ul {
   display: table;
@@ -311,3 +319,45 @@ form.form-search #mod-finder-searchword121 {
 	}
 }
 /*--------------------------------------------------------------------*/
+
+/*-------------------------PHOCA DOWNLOAD-----------------------------*/
+.pd-buttons, .pdtop, .pd-ctitle{
+  display: none;
+}
+
+#phoca-dl-category-box{
+  margin-top:-50px;
+}
+
+#phoca-dl-category-box div[class^='pd-document'] {
+    background: none !important;
+  padding-left: 0px;
+}
+#phoca-dl-category-box div.chzn-container{
+  margin-bottom: 0px;
+}
+
+#phoca-dl-category-box div[class^='pd-document'] a {
+  font-family: Montserrat !important;
+}
+/*--------------------------------------------------------------------*/
+@media (max-width: 767px){
+.submit-newsletter button{
+  padding: 11px !important;
+}
+  .linearicons-chevron-left:before,.linearicons-chevron-right:before {
+    font-weight: 1000;
+}
+  .sppb-carousel .sppb-carousel-arrow{
+    border: 0 !important;
+  }
+}
+
+.slicknav_menu > ul ul li{
+  list-style-type: none;
+  border-top: 1px dotted #e8e9e9;
+}
+
+.slicknav_menu > ul > li .icon {
+    bottom: 40px !important;
+}

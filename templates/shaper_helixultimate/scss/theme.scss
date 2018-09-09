@@ -182,18 +182,37 @@ ul.social-icons {
     max-width: 1700px;
 }
 #sp-header div#sp-logo {
-  @media (min-width: 320px) and (max-width: 991px) {
-   // text-align:left;
-    width: 30%!important;
+  @media (min-width: 780px) and (max-width: 991px) {
+    width: 35%!important;
+    float: left;
+    max-width: 100%;
+  }
+  @media (min-width: 501px) and (max-width: 780px) {
+    float: left;
+    width: 45%!important;
+     max-width: 100%;
+  }
+  @media (min-width: 320px) and (max-width: 500px) {
+    width: 70%!important;
     float: left;
     max-width: 100%;
   }
 }
 #sp-header div#sp-menu {
-  @media (min-width: 320px) and (max-width: 991px) {
+   @media (min-width: 780px) and (max-width: 991px) {
     //text-align:center;
-    width: 70% !important;
+    width: 65% !important;
     float: left;
+     max-width: 100%;
+  }
+ @media (min-width: 501px) and (max-width: 780px) {
+    float: left;
+    width: 55%!important;
+     max-width: 100%;
+  }
+  @media (min-width: 320px) and (max-width: 500px) {
+    float: left;
+    width: 30%!important;
      max-width: 100%;
   }
 }
