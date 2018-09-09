@@ -240,9 +240,23 @@ form.form-search .btn {
   float: left;
   border-radius: 0;
 }
-form.form-search #mod-finder-searchword121 {
-  float: left;
-  max-width: 236px;
+@media (max-width: 320px) {
+  form.form-search #mod-finder-searchword121 {
+    float: left;
+    max-width: 180px;
+  }
+}
+@media (min-width: 321px) and (max-width: 767px) {
+  form.form-search #mod-finder-searchword121 {
+    float: left;
+    max-width: 220px;
+  }
+}
+@media (min-width: 768px) {
+  form.form-search #mod-finder-searchword121 {
+    float: left;
+    max-width: 236px;
+  }
 }
 
 .tab-2-content{
@@ -360,4 +374,10 @@ form.form-search #mod-finder-searchword121 {
 
 .slicknav_menu > ul > li .icon {
     bottom: 40px !important;
+}
+
+@media (max-width: 767px){
+  .layout-blog #sp-section-1{
+    display: none;
+  }
 }
